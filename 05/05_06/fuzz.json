@@ -1,6 +1,0 @@
-{
-    "runs": 10,
-    "inputs": [
-        {"type": "int", "min": 0, "max": 10}
-    ]
-}

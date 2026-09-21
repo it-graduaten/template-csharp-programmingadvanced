@@ -1,489 +1,152 @@
 # 03_02
 
-Een jaar is een schrikkeljaar als:
+## Leerdoel
 
-- Het deelbaar is door 400, OF
-- Het deelbaar is door 4, maar niet door 100.
+Na deze oefening kan je een volledige CRUD-API bouwen met het Repository Pattern, Dependency Injection en Logging.
 
-Vraag de gebruiker om een jaartal en controleer of het een schrikkeljaar is. Toon "Schrikkeljaar" of "Geen schrikkeljaar".
+Je leert hoe je alle CRUD-operaties (Create, Read, Update, Delete) implementeert met een Interface en Repository, hoe je Dependency Injection gebruikt om de repository te injecteren in een Controller, en hoe je ILogger gebruikt om logberichten toe te voegen aan elke endpoint.
 
-## Fuzz Test Cases
+## Opdracht
 
-Below are the automatically generated input/output expectations.
+De restaurant **De Gouden Oesters** wil een API bouwen voor het beheren van bestellingen. Men wil het Repository Pattern toepassen voor alle datatoegang, Dependency Injection gebruiken en Logging invoegen in elke endpoint.
 
----
+Jouw taak is om een `BestellingController` te maken met een `IBestellingRepository`-Interface, een `InMemoryBestellingRepository`-Implementatie en een Controller die Dependency Injection en Logging gebruikt.
 
-### Case 1
+### Het Bestelling Model
 
-**Description:** Run 1: args=149
+Maak een Modelklasse `Bestelling` in de map `Models` met volgende Properties:
 
+| Property | Type | Beschrijving |
+| -------- | ---- | ------------ |
+| Id | int | Unieke identificatie van de bestelling |
+| Naam | string | De naam van de klant |
+| Tafelnummer | int | Het tafelnnummer |
+| Gerechten | string | De bestelde gerechten, gescheiden door koppeltekens (bijv. "Lasagne-Salade") |
+| Status | string | De status van de bestelling |
 
-**Input:**
+### De Repository Interface
 
-```
-149
-```
-
-**Expected Output:**
-
-```
-Geef een jaartal: Geen schrikkeljaar
-```
-
----
-
-### Case 2
-
-**Description:** Run 2: args=1409
-
-
-**Input:**
-
-```
-1409
-```
-
-**Expected Output:**
-
-```
-Geef een jaartal: Geen schrikkeljaar
-```
-
----
-
-### Case 3
-
-**Description:** Run 3: args=1070
-
-
-**Input:**
-
-```
-1070
-```
-
-**Expected Output:**
-
-```
-Geef een jaartal: Geen schrikkeljaar
-```
-
----
-
-### Case 4
-
-**Description:** Run 4: args=716
-
-
-**Input:**
-
-```
-716
-```
-
-**Expected Output:**
-
-```
-Geef een jaartal: Schrikkeljaar
-```
-
----
-
-### Case 5
-
-**Description:** Run 5: args=604
-
-
-**Input:**
-
-```
-604
-```
-
-**Expected Output:**
-
-```
-Geef een jaartal: Schrikkeljaar
-```
-
----
-
-### Case 6
-
-**Description:** Run 6: args=1766
-
-
-**Input:**
-
-```
-1766
-```
-
-**Expected Output:**
-
-```
-Geef een jaartal: Geen schrikkeljaar
-```
-
----
-
-### Case 7
-
-**Description:** Run 7: args=496
-
-
-**Input:**
-
-```
-496
-```
-
-**Expected Output:**
-
-```
-Geef een jaartal: Schrikkeljaar
-```
-
----
-
-### Case 8
-
-**Description:** Run 8: args=888
-
-
-**Input:**
-
-```
-888
-```
-
-**Expected Output:**
-
-```
-Geef een jaartal: Schrikkeljaar
-```
-
----
-
-### Case 9
-
-**Description:** Run 9: args=22
-
-
-**Input:**
-
-```
-22
-```
-
-**Expected Output:**
-
-```
-Geef een jaartal: Geen schrikkeljaar
-```
-
----
-
-### Case 10
-
-**Description:** Run 10: args=1935
-
-
-**Input:**
-
-```
-1935
-```
-
-**Expected Output:**
-
-```
-Geef een jaartal: Geen schrikkeljaar
-```
-
----
-
-### Case 11
-
-**Description:** Run 11: args=1900
-
-
-**Input:**
-
-```
-1900
-```
-
-**Expected Output:**
-
-```
-Geef een jaartal: Geen schrikkeljaar
-```
-
----
-
-### Case 12
-
-**Description:** Run 12: args=568
-
-
-**Input:**
-
-```
-568
-```
-
-**Expected Output:**
-
-```
-Geef een jaartal: Schrikkeljaar
-```
-
----
-
-### Case 13
-
-**Description:** Run 13: args=849
-
-
-**Input:**
-
-```
-849
-```
-
-**Expected Output:**
-
-```
-Geef een jaartal: Geen schrikkeljaar
-```
-
----
-
-### Case 14
-
-**Description:** Run 14: args=1259
-
-
-**Input:**
-
-```
-1259
-```
-
-**Expected Output:**
-
-```
-Geef een jaartal: Geen schrikkeljaar
-```
-
----
-
-### Case 15
-
-**Description:** Run 15: args=601
-
-
-**Input:**
-
-```
-601
-```
-
-**Expected Output:**
-
-```
-Geef een jaartal: Geen schrikkeljaar
-```
-
----
-
-### Case 16
-
-**Description:** Run 16: args=1196
-
-
-**Input:**
-
-```
-1196
-```
-
-**Expected Output:**
-
-```
-Geef een jaartal: Schrikkeljaar
-```
+Maak een nieuwe map genaamd **Repositories**. Voeg een Interface toe genaamd **IBestellingRepository.cs** met volgende methoden:
 
----
+| Methode | Return type | Beschrijving |
+| ------- | ----------- | ------------ |
+| GetAll | `List<Bestelling>` | Alle bestellingen ophalen |
+| GetById | `Bestelling?` | Eén bestelling ophalen op basis van de ID (null als niet gevonden) |
+| Create | `Bestelling` | Een nieuwe bestelling aanmaken |
+| Update | `void` | Een bestelling bijwerken (geen return waarde) |
+| Delete | `void` | Een bestelling verwijderen (geen return waarde) |
 
-### Case 17
+De Interface moet de volgende code bevatten:
 
-**Description:** Run 17: args=1544
+```csharp
+using WebApi.Models;
 
+namespace WebApi.Repositories;
 
-**Input:**
-
-```
-1544
-```
-
-**Expected Output:**
-
-```
-Geef een jaartal: Schrikkeljaar
-```
-
----
-
-### Case 18
-
-**Description:** Run 18: args=2015
-
-
-**Input:**
-
-```
-2015
-```
-
-**Expected Output:**
-
-```
-Geef een jaartal: Geen schrikkeljaar
-```
-
----
-
-### Case 19
-
-**Description:** Run 19: args=497
-
-
-**Input:**
-
-```
-497
-```
-
-**Expected Output:**
-
-```
-Geef een jaartal: Geen schrikkeljaar
-```
-
----
-
-### Case 20
-
-**Description:** Run 20: args=147
-
-
-**Input:**
-
-```
-147
-```
-
-**Expected Output:**
-
+public interface IBestellingRepository
+{
+    List<Bestelling> GetAll();
+    Bestelling? GetById(int id);
+    Bestelling Create(Bestelling bestelling);
+    void Update(int id, Bestelling bestelling);
+    void Delete(int id);
+}
 ```
-Geef een jaartal: Geen schrikkeljaar
-```
-
----
 
-### Case 21
+### De InMemory Repository Implementatie
 
-**Description:** Run 21: args=861
+Maak in dezelfde map **Repositories** een klasse `InMemoryBestellingRepository` die `IBestellingRepository` implementeert.
 
+Deze klasse moet:
 
-**Input:**
+- een privé `List<Bestelling>` veld bevatten met drie startbestellingen als seed data;
+- de `GetAll()`-methode laten teruggeven van de lijst;
+- de `GetById()`-methode laten zoeken met `FirstOrDefault`;
+- de `Create()`-methode de hoogste bestaande ID + 1 berekenen en toewijzen, dan de bestelling toevoegen;
+- de `Update()`-methode de bestelling vinden en alle Properties overschrijven (inclusief Id);
+- de `Delete()`-methode de bestelling vinden en verwijderen uit de lijst.
 
-```
-861
-```
+Seed data:
 
-**Expected Output:**
+| Id | Naam | Tafelnummer | Gerechten | Status |
+| -- | ---- | ----------- | --------- | ------ |
+| 1 | Anna Jansen | 4 | Lasagne-Salade | Gereed |
+| 2 | Youssef Benali | 7 | Risotto-Gegrilde Groenten | Bereiden |
+| 3 | Maria De Smet | 2 | Pasta Carbonara | Gereed |
 
-```
-Geef een jaartal: Geen schrikkeljaar
-```
+### De Controller
 
----
+Maak een `BestellingController` met volgende endpoints. Elke endpoint moet logging bevatten:
 
-### Case 22
+#### 1. Alle bestellingen ophalen
 
-**Description:** Run 22: args=1277
+Route: `GET /bestellingen`
 
+Geef alle bestellingen terug als JSON met HTTP-statuscode **200 OK**.
 
-**Input:**
+Voeg een logbericht van niveau `Information` toe bij het ontvangen van de request.
 
-```
-1277
-```
+#### 2. Eén bestelling ophalen op basis van de ID
 
-**Expected Output:**
+Route: `GET /bestellingen/{id}`
 
-```
-Geef een jaartal: Geen schrikkeljaar
-```
+Vind de bestelling met de gevraagde ID en geef het terug als JSON met HTTP-statuscode **200 OK**.
 
----
+Als er geen bestelling bestaat met de gevraagde ID, geef dan HTTP-statuscode **404 Not Found** terug zonder body.
 
-### Case 23
+Voeg een logbericht van niveau `Information` toe bij het ontvangen van de request en een logbericht van niveau `Warning` als de bestelling niet gevonden wordt.
 
-**Description:** Run 23: args=661
+#### 3. Een nieuwe bestelling aanmaken
 
+Route: `POST /bestellingen`
 
-**Input:**
+De client stuurt een bestelling als JSON in de Request Body. ASP.NET Core zet deze automatisch om naar een `Bestelling`-object via Model Binding.
 
-```
-661
-```
+Het endpoint moet:
 
-**Expected Output:**
+1. De nieuwe ID berekenen door de hoogste bestaande ID + 1 te nemen;
+2. De ID toewijzen aan de nieuwe bestelling;
+3. De bestelling toevoegen;
+4. De volledige bestelling (inclusief de nieuwe ID) terugsturen met HTTP-statuscode **201 Created**.
 
-```
-Geef een jaartal: Geen schrikkeljaar
-```
+De `id` in de request body mag worden genegeerd; je berekent de ID altijd zelf.
 
----
+Voeg een logbericht van niveau `Information` toe bij het aanmaken van een bestelling.
 
-### Case 24
+#### 4. Een bestelling bijwerken
 
-**Description:** Run 24: args=975
+Route: `PUT /bestellingen/{id}`
 
+De routeparameter `{id}` stelt de bestel-ID voor. De client stuurt de nieuwe gegevens van de bestelling als JSON in de Request Body via Model Binding.
 
-**Input:**
+Het endpoint moet:
 
-```
-975
-```
+1. De bestelling vinden met de gevraagde ID;
+2. Als de bestelling niet bestaat, HTTP-statuscode **404 Not Found** terugsturen zonder body;
+3. Alle Properties van de bestelling overschrijven met de nieuwe gegevens uit de Request Body;
+4. HTTP-statuscode **204 No Content** terugsturen zonder body.
 
-**Expected Output:**
+Voeg een logbericht van niveau `Information` toe bij het ontvangen van de request en een logbericht van niveau `Warning` als de bestelling niet gevonden wordt.
 
-```
-Geef een jaartal: Geen schrikkeljaar
-```
+#### 5. Een bestelling verwijderen
 
----
+Route: `DELETE /bestellingen/{id}`
 
-### Case 25
+De routeparameter `{id}` stelt de bestel-ID voor.
 
-**Description:** Run 25: args=1550
+Het endpoint moet:
 
+1. De bestelling vinden met de gevraagde ID;
+2. Als de bestelling niet bestaat, HTTP-statuscode **404 Not Found** terugsturen zonder body;
+3. De bestelling verwijderen uit de lijst;
+4. HTTP-statuscode **204 No Content** terugsturen zonder body.
 
-**Input:**
+Voeg een logbericht van niveau `Information` toe bij het ontvangen van de request en een logbericht van niveau `Error` als de bestelling niet gevonden wordt.
 
-```
-1550
-```
+### Dependency Injection
 
-**Expected Output:**
+Registreer de `IBestellingRepository` met `InMemoryBestellingRepository` in `Program.cs` met `AddScoped`.
 
-```
-Geef een jaartal: Geen schrikkeljaar
-```
+De Controller moet de repository ontvangen via de constructor (geen `new` in de Controller).
 
----
+De Controller moet ook `ILogger<BestellingController>` ontvangen via de constructor voor logging.

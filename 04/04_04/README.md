@@ -1,343 +1,179 @@
 # 04_04
 
-Een bioscoop wil de ticketverkoop voor drie verschillende filmvoorstellingen bijhouden. Er zijn precies drie voorstellingen per dag.
+## Leerdoel
 
-Vraag de gebruiker om het aantal verkochte tickets voor elke voorstelling. Sla de resultaten op in een array van het type int.
+Na deze oefening kan je alle concepten uit dit hoofdstuk combineren: een `DbContext` met Fluent API-configuratie, volledige CRUD-operaties, gefilterde LINQ-query's, Dependency Injection en Logging in één coherent API-project.
 
-Tonen: het totale aantal verkochte tickets en welke voorstelling de meeste tickets heeft verkocht (met de voorstellingsnummer: 1, 2 of 3).
+Je leert hoe je een complete applicatie bouwt die alle CRUD-operaties ondersteunt, gefilterde queries toestaat, logging gebruikt in elke endpoint, en correct omgaat met niet-bestaande resources — allemaal met een echte database via Entity Framework Core.
 
-## Fuzz Test Cases
+## Opdracht
 
-Below are the automatically generated input/output expectations.
+De evenementenorganisatie **Festivaal Vlaanderen** wil een API bouwen voor het beheren van hun evenementenagenda. Men wil alle datatoegang laten verlopen via Entity Framework Core met een echte PostgreSQL-database in plaats van een in-memory lijst. Men wil ook Logging invoegen in elke endpoint.
 
----
+Jouw taak is om een `DbContext` aan te maken met Fluent API-configuratie, een migratie toe te passen, en een volledige CRUD-API te bouwen met gefilterde queries en logging.
 
-### Case 1
+### Het Evenement Model
 
-**Description:** Run 1: args=88, 14, 29
+Maak een Modelklasse `Evenement` in de map `Models` met volgende Properties:
 
+| Property | Type | Beschrijving |
+| -------- | ---- | ------------ |
+| Id | int | Unieke identificatie van het evenement |
+| Naam | string | De naam van het evenement |
+| Locatie | string | De locatie van het evenement |
+| Datum | string | De datum van het evenement (indeling: "dd-MM-yyyy") |
+| MaxDeelnemers | int | Het maximum aantal deelnemers |
+| GeregistreerdeDeelnemers | int | Het aantal geregistreerde deelnemers |
 
-**Input:**
+### De DbContext met Fluent API
 
-```
-88
-14
-29
-```
+Maak een nieuwe map genaamd **Data**. Voeg een klasse genaamd **EvenementContext** toe die overerft van `DbContext`.
 
-**Expected Output:**
+De context moet:
+- een constructor hebben die `DbContextOptions<EvenementContext>` accepteert en doorgeeft aan de basisklasse;
+- een `DbSet<Evenement>` property genaamd **Evenementen** bevatten;
+- de Fluent API (`OnModelCreating`) overschrijven om de volgende configuraties toe te passen:
+  - de tabelnaam expliciet instellen op **Evenementen**;
+  - de string-velden `Naam`, `Locatie` en `Datum` verplicht maken (`IsRequired()`) met een maximale lengte van **200** karakters;
+- de namespace **WebApi.Data** gebruiken.
 
-```
-Geef aantal verkochte tickets voor voorstelling 1: Geef aantal verkochte tickets voor voorstelling 2: Geef aantal verkochte tickets voor voorstelling 3: Totaal aantal verkochte tickets: 131
-Voorstelling 1 heeft de meeste tickets verkocht met 88 tickets.
-```
+```csharp
+using Microsoft.EntityFrameworkCore;
+using WebApi.Models;
 
----
+namespace WebApi.Data;
 
-### Case 2
+public class EvenementContext : DbContext
+{
+    public EvenementContext(DbContextOptions<EvenementContext> options)
+        : base(options) { }
 
-**Description:** Run 2: args=10, 187, 44
+    public DbSet<Evenement> Evenementen { get; set; }
 
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        base.OnModelCreating(modelBuilder);
 
-**Input:**
+        modelBuilder.Entity<Evenement>(entity =>
+        {
+            entity.ToTable("Evenementen");
 
-```
-10
-187
-44
-```
-
-**Expected Output:**
-
-```
-Geef aantal verkochte tickets voor voorstelling 1: Geef aantal verkochte tickets voor voorstelling 2: Geef aantal verkochte tickets voor voorstelling 3: Totaal aantal verkochte tickets: 241
-Voorstelling 2 heeft de meeste tickets verkocht met 187 tickets.
-```
-
----
-
-### Case 3
-
-**Description:** Run 3: args=43, 64, 52
-
-
-**Input:**
-
-```
-43
-64
-52
+            entity.Property(p => p.Naam).IsRequired().HasMaxLength(200);
+            entity.Property(p => p.Locatie).IsRequired().HasMaxLength(200);
+            entity.Property(p => p.Datum).IsRequired().HasMaxLength(10);
+        });
+    }
+}
 ```
 
-**Expected Output:**
+### De Database registreren in Program.cs
 
-```
-Geef aantal verkochte tickets voor voorstelling 1: Geef aantal verkochte tickets voor voorstelling 2: Geef aantal verkochte tickets voor voorstelling 3: Totaal aantal verkochte tickets: 159
-Voorstelling 2 heeft de meeste tickets verkocht met 64 tickets.
-```
+Registreer de `DbContext` in `Program.cs` met `AddDbContext` en koppel deze aan de PostgreSQL-provider (Npgsql). Gebruik de connection string met naam **PostgresConnection** uit `appsettings.json`.
 
----
+### Migratie aanmaken en uitvoeren
 
-### Case 4
+Maak een migratie aan met de naam **InitialCreate** en voer deze uit om de database en tabellen te genereren.
 
-**Description:** Run 4: args=79, 6, 116
+### Seed data toevoegen
 
+Voeg de volgende seed data toe in de `OnModelCreating`-methode van de context:
 
-**Input:**
+| Id | Naam | Locatie | Datum | MaxDeelnemers | GeregistreerdeDeelnemers |
+| -- | ---- | ------- | ----- | ------------- | ---------------------- |
+| 1 | Summer Music Festival | Antwerpen | 15-07-2026 | 5000 | 3200 |
+| 2 | Culinaire Dagen | Brugge | 22-08-2026 | 200 | 145 |
+| 3 | Tech Conference | Gent | 10-09-2026 | 300 | 300 |
 
-```
-79
-6
-116
-```
-
-**Expected Output:**
-
-```
-Geef aantal verkochte tickets voor voorstelling 1: Geef aantal verkochte tickets voor voorstelling 2: Geef aantal verkochte tickets voor voorstelling 3: Totaal aantal verkochte tickets: 201
-Voorstelling 3 heeft de meeste tickets verkocht met 116 tickets.
+```csharp
+modelBuilder.Entity<Evenement>().HasData(
+    new Evenement { Id = 1, Naam = "Summer Music Festival", Locatie = "Antwerpen", Datum = "15-07-2026", MaxDeelnemers = 5000, GeregistreerdeDeelnemers = 3200 },
+    new Evenement { Id = 2, Naam = "Culinaire Dagen", Locatie = "Brugge", Datum = "22-08-2026", MaxDeelnemers = 200, GeregistreerdeDeelnemers = 145 },
+    new Evenement { Id = 3, Naam = "Tech Conference", Locatie = "Gent", Datum = "10-09-2026", MaxDeelnemers = 300, GeregistreerdeDeelnemers = 300 }
+);
 ```
 
----
+### De Controller
 
-### Case 5
+Maak een `EvenementController` met volgende endpoints. Elke endpoint moet logging bevatten:
 
-**Description:** Run 5: args=166, 61, 159
+#### 1. Alle evenementen ophalen
 
+Route: `GET /evenementen`
 
-**Input:**
+Geef alle evenementen terug als JSON met HTTP-statuscode **200 OK**.
 
-```
-166
-61
-159
-```
+Voeg een logbericht van niveau `Information` toe bij het ontvangen van de request.
 
-**Expected Output:**
+#### 2. Eén evenement ophalen op basis van de ID
 
-```
-Geef aantal verkochte tickets voor voorstelling 1: Geef aantal verkochte tickets voor voorstelling 2: Geef aantal verkochte tickets voor voorstelling 3: Totaal aantal verkochte tickets: 386
-Voorstelling 1 heeft de meeste tickets verkocht met 166 tickets.
-```
+Route: `GET /evenementen/{id}`
 
----
+Vind het evenement met de gevraagde ID en geef het terug als JSON met HTTP-statuscode **200 OK**.
 
-### Case 6
+Als er geen evenement bestaat met de gevraagde ID, geef dan HTTP-statuscode **404 Not Found** terug zonder body.
 
-**Description:** Run 6: args=163, 130, 126
+Voeg een logbericht van niveau `Information` toe bij het ontvangen van de request en een logbericht van niveau `Warning` als het evenement niet gevonden wordt.
 
+#### 3. Evenementen ophalen op basis van de locatie
 
-**Input:**
+Route: `GET /evenementen/locatie/{locatie}`
 
-```
-163
-130
-126
-```
+De routeparameter `{locatie}` stelt de locatie voor.
 
-**Expected Output:**
+Zoek evenementen met de gevraagde locatie en geef ze terug als JSON met HTTP-statuscode **200 OK**.
 
-```
-Geef aantal verkochte tickets voor voorstelling 1: Geef aantal verkochte tickets voor voorstelling 2: Geef aantal verkochte tickets voor voorstelling 3: Totaal aantal verkochte tickets: 419
-Voorstelling 1 heeft de meeste tickets verkocht met 163 tickets.
-```
+Wordt er geen evenement gevonden voor die locatie, geef dan een lege JSON-lijst `[]` terug met HTTP-statuscode **200 OK** (geen 404 voor lege resultaten).
 
----
+De query moet ongevoelig zijn voor hoofdletters en kleine letters bij het vergelijken van de locatie.
 
-### Case 7
+Voeg een logbericht van niveau `Information` toe bij het ontvangen van de request.
 
-**Description:** Run 7: args=69, 169, 135
+#### 4. Een nieuw evenement aanmaken
 
+Route: `POST /evenementen`
 
-**Input:**
+De client stuurt een evenement als JSON in de Request Body. ASP.NET Core zet deze automatisch om naar een `Evenement`-object via Model Binding.
 
-```
-69
-169
-135
-```
+Het endpoint moet:
+1. De nieuwe ID berekenen door de hoogste bestaande ID + 1 te nemen;
+2. De ID toewijzen aan het nieuwe evenement;
+3. Het evenement toevoegen aan de database;
+4. Het volledige evenement (inclusief de nieuwe ID) terugsturen met HTTP-statuscode **201 Created**.
 
-**Expected Output:**
+De `id` in de request body mag worden genegeerd; je berekent de ID altijd zelf.
 
-```
-Geef aantal verkochte tickets voor voorstelling 1: Geef aantal verkochte tickets voor voorstelling 2: Geef aantal verkochte tickets voor voorstelling 3: Totaal aantal verkochte tickets: 373
-Voorstelling 2 heeft de meeste tickets verkocht met 169 tickets.
-```
+Voeg een logbericht van niveau `Information` toe bij het aanmaken van een evenement.
 
----
+#### 5. Een evenement bijwerken
 
-### Case 8
+Route: `PUT /evenementen/{id}`
 
-**Description:** Run 8: args=154, 138, 197
+De routeparameter `{id}` stelt de evenement-ID voor. De client stuurt de nieuwe gegevens van het evenement als JSON in de Request Body via Model Binding.
 
+Het endpoint moet:
+1. Het evenement vinden met de gevraagde ID;
+2. Als het evenement niet bestaat, HTTP-statuscode **404 Not Found** terugsturen zonder body;
+3. Alle Properties van het evenement overschrijven met de nieuwe gegevens uit de Request Body;
+4. HTTP-statuscode **204 No Content** terugsturen zonder body.
 
-**Input:**
+Voeg een logbericht van niveau `Information` toe bij het ontvangen van de request en een logbericht van niveau `Warning` als het evenement niet gevonden wordt.
 
-```
-154
-138
-197
-```
+#### 6. Een evenement verwijderen
 
-**Expected Output:**
+Route: `DELETE /evenementen/{id}`
 
-```
-Geef aantal verkochte tickets voor voorstelling 1: Geef aantal verkochte tickets voor voorstelling 2: Geef aantal verkochte tickets voor voorstelling 3: Totaal aantal verkochte tickets: 489
-Voorstelling 3 heeft de meeste tickets verkocht met 197 tickets.
-```
+De routeparameter `{id}` stelt de evenement-ID voor.
 
----
+Het endpoint moet:
+1. Het evenement vinden met de gevraagde ID;
+2. Als het evenement niet bestaat, HTTP-statuscode **404 Not Found** terugsturen zonder body;
+3. Het evenement verwijderen uit de database;
+4. HTTP-statuscode **204 No Content** terugsturen zonder body.
 
-### Case 9
+Voeg een logbericht van niveau `Information` toe bij het ontvangen van de request en een logbericht van niveau `Error` als het evenement niet gevonden wordt.
 
-**Description:** Run 9: args=162, 7, 153
+### Dependency Injection
 
+De Controller moet de `DbContext` ontvangen via de constructor (geen `new` in de Controller).
 
-**Input:**
-
-```
-162
-7
-153
-```
-
-**Expected Output:**
-
-```
-Geef aantal verkochte tickets voor voorstelling 1: Geef aantal verkochte tickets voor voorstelling 2: Geef aantal verkochte tickets voor voorstelling 3: Totaal aantal verkochte tickets: 322
-Voorstelling 1 heeft de meeste tickets verkocht met 162 tickets.
-```
-
----
-
-### Case 10
-
-**Description:** Run 10: args=154, 56, 90
-
-
-**Input:**
-
-```
-154
-56
-90
-```
-
-**Expected Output:**
-
-```
-Geef aantal verkochte tickets voor voorstelling 1: Geef aantal verkochte tickets voor voorstelling 2: Geef aantal verkochte tickets voor voorstelling 3: Totaal aantal verkochte tickets: 300
-Voorstelling 1 heeft de meeste tickets verkocht met 154 tickets.
-```
-
----
-
-### Case 11
-
-**Description:** Run 11: args=108, 94, 82
-
-
-**Input:**
-
-```
-108
-94
-82
-```
-
-**Expected Output:**
-
-```
-Geef aantal verkochte tickets voor voorstelling 1: Geef aantal verkochte tickets voor voorstelling 2: Geef aantal verkochte tickets voor voorstelling 3: Totaal aantal verkochte tickets: 284
-Voorstelling 1 heeft de meeste tickets verkocht met 108 tickets.
-```
-
----
-
-### Case 12
-
-**Description:** Run 12: args=53, 165, 170
-
-
-**Input:**
-
-```
-53
-165
-170
-```
-
-**Expected Output:**
-
-```
-Geef aantal verkochte tickets voor voorstelling 1: Geef aantal verkochte tickets voor voorstelling 2: Geef aantal verkochte tickets voor voorstelling 3: Totaal aantal verkochte tickets: 388
-Voorstelling 3 heeft de meeste tickets verkocht met 170 tickets.
-```
-
----
-
-### Case 13
-
-**Description:** Run 13: args=67, 66, 113
-
-
-**Input:**
-
-```
-67
-66
-113
-```
-
-**Expected Output:**
-
-```
-Geef aantal verkochte tickets voor voorstelling 1: Geef aantal verkochte tickets voor voorstelling 2: Geef aantal verkochte tickets voor voorstelling 3: Totaal aantal verkochte tickets: 246
-Voorstelling 3 heeft de meeste tickets verkocht met 113 tickets.
-```
-
----
-
-### Case 14
-
-**Description:** Run 14: args=131, 93, 20
-
-
-**Input:**
-
-```
-131
-93
-20
-```
-
-**Expected Output:**
-
-```
-Geef aantal verkochte tickets voor voorstelling 1: Geef aantal verkochte tickets voor voorstelling 2: Geef aantal verkochte tickets voor voorstelling 3: Totaal aantal verkochte tickets: 244
-Voorstelling 1 heeft de meeste tickets verkocht met 131 tickets.
-```
-
----
-
-### Case 15
-
-**Description:** Run 15: args=32, 89, 135
-
-
-**Input:**
-
-```
-32
-89
-135
-```
-
-**Expected Output:**
-
-```
-Geef aantal verkochte tickets voor voorstelling 1: Geef aantal verkochte tickets voor voorstelling 2: Geef aantal verkochte tickets voor voorstelling 3: Totaal aantal verkochte tickets: 256
-Voorstelling 3 heeft de meeste tickets verkocht met 135 tickets.
-```
-
----
+De Controller moet ook `ILogger<EvenementController>` ontvangen via de constructor voor logging.

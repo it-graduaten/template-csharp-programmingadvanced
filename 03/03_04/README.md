@@ -1,515 +1,168 @@
 # 03_04
 
-Een online winkel biedt de volgende kortingen aan:
+## Leerdoel
 
-- Als het aankoopbedrag meer dan 100 euro is én de klant een betalende lid is, krijgt de klant 15% korting.
-- Als het aankoopbedrag meer dan 100 euro is maar de klant geen betalende lid is, krijgt de klant 5% korting.
-- Als het aankoopbedrag 100 euro of minder is, krijgt de klant geen korting.
+Na deze oefening kan je alle concepten uit dit hoofdstuk combineren: het Repository Pattern met meerdere query-methodes, Dependency Injection en Logging in een volledige CRUD-API.
 
-Vraag de gebruiker om het aankoopbedrag en of hij/zij een betalende lid is (ja/nee). Bereken en toon het totaalbedrag na korting.
+Je leert hoe je een complete applicatie bouwt die alle CRUD-operaties ondersteunt, gefilterde queries toestaat, logging gebruikt in elke endpoint, en correct omgaat met niet-bestaande resources.
 
-## Fuzz Test Cases
+## Opdracht
 
-Below are the automatically generated input/output expectations.
+De evenementenorganisatie **Festivaal Vlaanderen** wil een API bouwen voor het beheren van hun evenementenagenda. Men wil het Repository Pattern toepassen voor alle datatoegang, Dependency Injection gebruiken en Logging invoegen in elke endpoint.
 
----
+Jouw taak is om een `EvenementController` te maken met een `IEvenementRepository`-Interface met meerdere query-methodes, een `InMemoryEvenementRepository`-Implementatie en een Controller die Dependency Injection en Logging gebruikt.
 
-### Case 1
+### Het Evenement Model
 
-**Description:** Run 1: args=105, ja
+Maak een Modelklasse `Evenement` in de map `Models` met volgende Properties:
 
+| Property | Type | Beschrijving |
+| -------- | ---- | ------------ |
+| Id | int | Unieke identificatie van het evenement |
+| Naam | string | De naam van het evenement |
+| Locatie | string | De locatie van het evenement |
+| Datum | string | De datum van het evenement (indeling: "dd-MM-yyyy") |
+| MaxDeelnemers | int | Het maximum aantal deelnemers |
+| GeregistreerdeDeelnemers | int | Het aantal geregistreerde deelnemers |
 
-**Input:**
+### De Repository Interface
 
-```
-105
-ja
-```
-
-**Expected Output:**
-
-```
-Geef het aankoopbedrag: Ben je betalende lid? (ja/nee): 89.25
-```
-
----
-
-### Case 2
-
-**Description:** Run 2: args=55, nee
-
-
-**Input:**
-
-```
-55
-nee
-```
-
-**Expected Output:**
-
-```
-Geef het aankoopbedrag: Ben je betalende lid? (ja/nee): 55
-```
-
----
-
-### Case 3
-
-**Description:** Run 3: args=30, ja
-
-
-**Input:**
-
-```
-30
-ja
-```
-
-**Expected Output:**
-
-```
-Geef het aankoopbedrag: Ben je betalende lid? (ja/nee): 30
-```
-
----
-
-### Case 4
-
-**Description:** Run 4: args=193, nee
-
-
-**Input:**
-
-```
-193
-nee
-```
-
-**Expected Output:**
-
-```
-Geef het aankoopbedrag: Ben je betalende lid? (ja/nee): 183.35
-```
-
----
-
-### Case 5
-
-**Description:** Run 5: args=146, ja
-
-
-**Input:**
-
-```
-146
-ja
-```
-
-**Expected Output:**
-
-```
-Geef het aankoopbedrag: Ben je betalende lid? (ja/nee): 124.1
-```
-
----
-
-### Case 6
-
-**Description:** Run 6: args=117, nee
-
-
-**Input:**
-
-```
-117
-nee
-```
-
-**Expected Output:**
-
-```
-Geef het aankoopbedrag: Ben je betalende lid? (ja/nee): 111.14999999999999
-```
-
----
-
-### Case 7
-
-**Description:** Run 7: args=90, ja
-
-
-**Input:**
-
-```
-90
-ja
-```
-
-**Expected Output:**
-
-```
-Geef het aankoopbedrag: Ben je betalende lid? (ja/nee): 90
-```
-
----
-
-### Case 8
-
-**Description:** Run 8: args=110, ja
-
-
-**Input:**
-
-```
-110
-ja
-```
-
-**Expected Output:**
-
-```
-Geef het aankoopbedrag: Ben je betalende lid? (ja/nee): 93.5
-```
-
----
-
-### Case 9
-
-**Description:** Run 9: args=82, nee
-
-
-**Input:**
-
-```
-82
-nee
-```
-
-**Expected Output:**
-
-```
-Geef het aankoopbedrag: Ben je betalende lid? (ja/nee): 82
-```
-
----
-
-### Case 10
-
-**Description:** Run 10: args=17, ja
-
-
-**Input:**
-
-```
-17
-ja
-```
-
-**Expected Output:**
-
-```
-Geef het aankoopbedrag: Ben je betalende lid? (ja/nee): 17
-```
-
----
-
-### Case 11
-
-**Description:** Run 11: args=171, nee
-
-
-**Input:**
-
-```
-171
-nee
-```
-
-**Expected Output:**
-
-```
-Geef het aankoopbedrag: Ben je betalende lid? (ja/nee): 162.45
-```
-
----
-
-### Case 12
-
-**Description:** Run 12: args=79, ja
-
-
-**Input:**
-
-```
-79
-ja
-```
-
-**Expected Output:**
-
-```
-Geef het aankoopbedrag: Ben je betalende lid? (ja/nee): 79
-```
-
----
-
-### Case 13
-
-**Description:** Run 13: args=4, nee
-
-
-**Input:**
-
-```
-4
-nee
-```
-
-**Expected Output:**
-
-```
-Geef het aankoopbedrag: Ben je betalende lid? (ja/nee): 4
-```
-
----
-
-### Case 14
-
-**Description:** Run 14: args=36, ja
-
-
-**Input:**
-
-```
-36
-ja
-```
-
-**Expected Output:**
-
-```
-Geef het aankoopbedrag: Ben je betalende lid? (ja/nee): 36
-```
-
----
-
-### Case 15
-
-**Description:** Run 15: args=54, ja
-
-
-**Input:**
-
-```
-54
-ja
-```
-
-**Expected Output:**
-
-```
-Geef het aankoopbedrag: Ben je betalende lid? (ja/nee): 54
-```
-
----
-
-### Case 16
-
-**Description:** Run 16: args=75, nee
-
-
-**Input:**
-
-```
-75
-nee
-```
+Maak een nieuwe map genaamd **Repositories**. Voeg een Interface toe genaamd **IEvenementRepository.cs** met volgende methoden:
 
-**Expected Output:**
+| Methode | Return type | Beschrijving |
+| ------- | ----------- | ------------ |
+| GetAll | `List<Evenement>` | Alle evenementen ophalen |
+| GetById | `Evenement?` | Eén evenement ophalen op basis van de ID (null als niet gevonden) |
+| GetByLocatie | `List<Evenement>?` | Evenementen ophalen op basis van de locatie (null of lege lijst als geen gevonden) |
+| Create | `Evenement` | Een nieuw evenement aanmaken |
+| Update | `void` | Een evenement bijwerken (geen return waarde) |
+| Delete | `void` | Een evenement verwijderen (geen return waarde) |
 
-```
-Geef het aankoopbedrag: Ben je betalende lid? (ja/nee): 75
-```
-
----
-
-### Case 17
-
-**Description:** Run 17: args=46, ja
-
-
-**Input:**
-
-```
-46
-ja
-```
-
-**Expected Output:**
-
-```
-Geef het aankoopbedrag: Ben je betalende lid? (ja/nee): 46
-```
-
----
-
-### Case 18
-
-**Description:** Run 18: args=75, nee
-
-
-**Input:**
-
-```
-75
-nee
-```
-
-**Expected Output:**
-
-```
-Geef het aankoopbedrag: Ben je betalende lid? (ja/nee): 75
-```
-
----
-
-### Case 19
-
-**Description:** Run 19: args=17, ja
-
+De Interface moet de volgende code bevatten:
 
-**Input:**
+```csharp
+using WebApi.Models;
 
-```
-17
-ja
-```
-
-**Expected Output:**
+namespace WebApi.Repositories;
 
+public interface IEvenementRepository
+{
+    List<Evenement> GetAll();
+    Evenement? GetById(int id);
+    List<Evenement>? GetByLocatie(string locatie);
+    Evenement Create(Evenement evenement);
+    void Update(int id, Evenement evenement);
+    void Delete(int id);
+}
 ```
-Geef het aankoopbedrag: Ben je betalende lid? (ja/nee): 17
-```
-
----
-
-### Case 20
-
-**Description:** Run 20: args=73, nee
 
+### De InMemory Repository Implementatie
 
-**Input:**
+Maak in dezelfde map **Repositories** een klasse `InMemoryEvenementRepository` die `IEvenementRepository` implementeert.
 
-```
-73
-nee
-```
+Deze klasse moet:
 
-**Expected Output:**
+- een privé `List<Evenement>` veld bevatten met drie startevenementen als seed data;
+- de `GetAll()`-methode laten teruggeven van de lijst;
+- de `GetById()`-methode laten zoeken met `FirstOrDefault`;
+- de `GetByLocatie()`-methode laten filteren op locatie met `Where`, ongevoelig voor hoofdletters/kleine letters;
+- de `Create()`-methode de hoogste bestaande ID + 1 berekenen en toewijzen, dan het evenement toevoegen;
+- de `Update()`-methode het evenement vinden en alle Properties overschrijven (inclusief Id);
+- de `Delete()`-methode het evenement vinden en verwijderen uit de lijst.
 
-```
-Geef het aankoopbedrag: Ben je betalende lid? (ja/nee): 73
-```
+Seed data:
 
----
+| Id | Naam | Locatie | Datum | MaxDeelnemers | GeregistreerdeDeelnemers |
+| -- | ---- | ------- | ----- | ------------- | ---------------------- |
+| 1 | Summer Music Festival | Antwerpen | 15-07-2026 | 5000 | 3200 |
+| 2 | Culinaire Dagen | Brugge | 22-08-2026 | 200 | 145 |
+| 3 | Tech Conference | Gent | 10-09-2026 | 300 | 300 |
 
-### Case 21
+### De Controller
 
-**Description:** Run 21: args=135, ja
+Maak een `EvenementController` met volgende endpoints. Elke endpoint moet logging bevatten:
 
+#### 1. Alle evenementen ophalen
 
-**Input:**
+Route: `GET /evenementen`
 
-```
-135
-ja
-```
+Geef alle evenementen terug als JSON met HTTP-statuscode **200 OK**.
 
-**Expected Output:**
+Voeg een logbericht van niveau `Information` toe bij het ontvangen van de request.
 
-```
-Geef het aankoopbedrag: Ben je betalende lid? (ja/nee): 114.75
-```
+#### 2. Eén evenement ophalen op basis van de ID
 
----
+Route: `GET /evenementen/{id}`
 
-### Case 22
+Vind het evenement met de gevraagde ID en geef het terug als JSON met HTTP-statuscode **200 OK**.
 
-**Description:** Run 22: args=8, ja
+Als er geen evenement bestaat met de gevraagde ID, geef dan HTTP-statuscode **404 Not Found** terug zonder body.
 
+Voeg een logbericht van niveau `Information` toe bij het ontvangen van de request en een logbericht van niveau `Warning` als het evenement niet gevonden wordt.
 
-**Input:**
+#### 3. Evenementen ophalen op basis van de locatie
 
-```
-8
-ja
-```
+Route: `GET /evenementen/locatie/{locatie}`
 
-**Expected Output:**
+De routeparameter `{locatie}` stelt de locatie voor.
 
-```
-Geef het aankoopbedrag: Ben je betalende lid? (ja/nee): 8
-```
+Zoek evenementen met de gevraagde locatie en geef ze terug als JSON met HTTP-statuscode **200 OK**.
 
----
+Wordt er geen evenement gevonden voor die locatie, geef dan een lege JSON-lijst `[]` terug met HTTP-statuscode **200 OK** (geen 404 voor lege resultaten).
 
-### Case 23
+Voeg een logbericht van niveau `Information` toe bij het ontvangen van de request.
 
-**Description:** Run 23: args=66, nee
+#### 4. Een nieuw evenement aanmaken
 
+Route: `POST /evenementen`
 
-**Input:**
+De client stuurt een evenement als JSON in de Request Body. ASP.NET Core zet deze automatisch om naar een `Evenement`-object via Model Binding.
 
-```
-66
-nee
-```
+Het endpoint moet:
 
-**Expected Output:**
+1. De nieuwe ID berekenen door de hoogste bestaande ID + 1 te nemen;
+2. De ID toewijzen aan het nieuwe evenement;
+3. Het evenement toevoegen;
+4. Het volledige evenement (inclusief de nieuwe ID) terugsturen met HTTP-statuscode **201 Created**.
 
-```
-Geef het aankoopbedrag: Ben je betalende lid? (ja/nee): 66
-```
+De `id` in de request body mag worden genegeerd; je berekent de ID altijd zelf.
 
----
+Voeg een logbericht van niveau `Information` toe bij het aanmaken van een evenement.
 
-### Case 24
+#### 5. Een evenement bijwerken
 
-**Description:** Run 24: args=189, ja
+Route: `PUT /evenementen/{id}`
 
+De routeparameter `{id}` stelt de evenement-ID voor. De client stuurt de nieuwe gegevens van het evenement als JSON in de Request Body via Model Binding.
 
-**Input:**
+Het endpoint moet:
 
-```
-189
-ja
-```
+1. Het evenement vinden met de gevraagde ID;
+2. Als het evenement niet bestaat, HTTP-statuscode **404 Not Found** terugsturen zonder body;
+3. Alle Properties van het evenement overschrijven met de nieuwe gegevens uit de Request Body;
+4. HTTP-statuscode **204 No Content** terugsturen zonder body.
 
-**Expected Output:**
+Voeg een logbericht van niveau `Information` toe bij het ontvangen van de request en een logbericht van niveau `Warning` als het evenement niet gevonden wordt.
 
-```
-Geef het aankoopbedrag: Ben je betalende lid? (ja/nee): 160.65
-```
+#### 6. Een evenement verwijderen
 
----
+Route: `DELETE /evenementen/{id}`
 
-### Case 25
+De routeparameter `{id}` stelt de evenement-ID voor.
 
-**Description:** Run 25: args=51, ja
+Het endpoint moet:
 
+1. Het evenement vinden met de gevraagde ID;
+2. Als het evenement niet bestaat, HTTP-statuscode **404 Not Found** terugsturen zonder body;
+3. Het evenement verwijderen uit de lijst;
+4. HTTP-statuscode **204 No Content** terugsturen zonder body.
 
-**Input:**
+Voeg een logbericht van niveau `Information` toe bij het ontvangen van de request en een logbericht van niveau `Error` als het evenement niet gevonden wordt.
 
-```
-51
-ja
-```
+### Dependency Injection
 
-**Expected Output:**
+Registreer de `IEvenementRepository` met `InMemoryEvenementRepository` in `Program.cs` met `AddScoped`.
 
-```
-Geef het aankoopbedrag: Ben je betalende lid? (ja/nee): 51
-```
+De Controller moet de repository ontvangen via de constructor (geen `new` in de Controller).
 
----
+De Controller moet ook `ILogger<EvenementController>` ontvangen via de constructor voor logging.

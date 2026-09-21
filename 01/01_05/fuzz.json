@@ -1,7 +1,0 @@
-{
-    "runs": 25,
-    "inputs": [
-        {"type": "float", "min": 100, "max": 250},
-        {"type": "float", "min": 10, "max": 30}
-    ]
-}

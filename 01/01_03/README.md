@@ -1,511 +1,135 @@
 # 01_03
 
-Bereken de totale kosten van een bestelling met verzendkosten en BTW.
+## Leerdoel
 
-Een webshop berekent €0,12 per product als verzendkosten, plus een vaste kosten van €23,00. Daarna wordt er 21% BTW geheven op het totaal (verzending + producten). Vraag het aantal nationale en internationale producten. Bereken en toon het totaalbedrag dat de klant moet betalen.
+Na deze oefening kan je meerdere GET-endpoints logisch groeperen binnen één ASP.NET Core API-controller.
 
-## Fuzz Test Cases
+Je leert verschillende routeparameters combineren, waarden uit een URL gebruiken in gewone C#-logica en op basis van die waarden een dynamisch antwoord genereren.
 
-Below are the automatically generated input/output expectations.
+Daarnaast oefen je hoe de combinatie van de basisroute van een controller en de route van een specifieke methode samen de uiteindelijke URL van een endpoint vormt.
 
----
+##
 
-### Case 1
+## Opdracht
 
-**Description:** Run 1: args=365, 621
+De fictieve pizzeria **Pizza Palazzo** wil klanten helpen bij het kiezen van hun pizza.
 
+Daarom willen ze een eenvoudige Bestelhulp API waarmee klanten informatie kunnen opvragen over de pizzeria, pizzaformaten en pizzakeuzes.
 
-**Input:**
+Jouw taak is om een `PizzeriaController` te maken met verschillende GET-endpoints.
 
-```
-365
-621
-```
+Via de API moeten klanten:
 
-**Expected Output:**
+1. de specialiteit van het huis kunnen opvragen;
+2. informatie over een pizzaformaat kunnen opvragen;
+3. een persoonlijk bericht kunnen krijgen bij hun pizzakeuze;
+4. een eenvoudige prijsindicatie kunnen opvragen op basis van een pizzaformaat.
 
-```
-171.00
-```
+Implementeer onderstaande functionaliteiten.
 
----
+### 1. Specialiteit van het huis
 
-### Case 2
+Voorzie een GET-endpoint op:
 
-**Description:** Run 2: args=54, 261
+`/pizzeria`
 
+Dit endpoint geeft volgende tekst terug:
 
-**Input:**
+`De specialiteit van Pizza Palazzo is de Pizza Palazzo Special.`
 
-```
-54
-261
-```
+### 2. Informatie over een pizzaformaat
 
-**Expected Output:**
+Voorzie een GET-endpoint op:
 
-```
-73.57
-```
+`/pizzeria/formaat/{formaat}`
 
----
+Het endpoint ontvangt het gewenste pizzaformaat via de route.
 
-### Case 3
+De API moet drie formaten herkennen:
 
-**Description:** Run 3: args=883, 191
+* small
+* medium
+* large
 
+Geef voor ieder formaat het bijbehorende bericht terug:
 
-**Input:**
+| Formaat | Bericht                                        |
+| ------- | ---------------------------------------------- |
+| small   | Een small pizza heeft een diameter van 20 cm.  |
+| medium  | Een medium pizza heeft een diameter van 30 cm. |
+| large   | Een large pizza heeft een diameter van 40 cm.  |
 
-```
-883
-191
-```
+Wordt een onbekend formaat opgegeven, geef dan het bericht terug:
 
-**Expected Output:**
+`Dit pizzaformaat bestaat niet.`
 
-```
-183.77
-```
+Je mag ervan uitgaan dat de waarden voor `{formaat}` in kleine letters worden ingegeven.
 
----
+### 3. Persoonlijke pizzakeuze
 
-### Case 4
+Voorzie een GET-endpoint op:
 
-**Description:** Run 4: args=203, 78
+`/pizzeria/keuze/{naam}/{pizza}`
 
+Dit endpoint ontvangt twee waarden via de URL:
 
-**Input:**
+* `{naam}`: de naam van de klant;
+* `{pizza}`: de gekozen pizza.
 
-```
-203
-78
-```
+Gebruik beide routeparameters om een persoonlijk bericht samen te stellen.
 
-**Expected Output:**
+Bijvoorbeeld:
 
-```
-68.63
-```
+`GET /pizzeria/keuze/Emma/Margherita`
 
----
+geeft als resultaat:
 
-### Case 5
+`Emma kiest voor een pizza Margherita. Smakelijk!`
 
-**Description:** Run 5: args=609, 267
+Een ander request:
 
+`GET /pizzeria/keuze/Youssef/Diavola`
 
-**Input:**
+geeft als resultaat:
 
-```
-609
-267
-```
+`Youssef kiest voor een pizza Diavola. Smakelijk!`
 
-**Expected Output:**
+De naam en pizzakeuze moeten afkomstig zijn uit de routeparameters. Je mag dus geen specifieke namen of pizzakeuzes hardcoderen.
 
-```
-155.03
-```
+### 4. Prijsindicatie op basis van formaat
 
----
+Voorzie een GET-endpoint op:
 
-### Case 6
+`/pizzeria/prijs/{formaat}`
 
-**Description:** Run 6: args=968, 923
+De API moet op basis van het opgegeven formaat de basisprijs van een pizza teruggeven.
 
+Gebruik volgende prijzen:
 
-**Input:**
+| Formaat | Prijs |
+| ------- | ----: |
+| small   |    €8 |
+| medium  |   €11 |
+| large   |   €14 |
 
-```
-968
-923
-```
+Geef het resultaat terug in volgende vorm:
 
-**Expected Output:**
+`Een {formaat} pizza kost €{prijs}.`
 
-```
-302.40
-```
+Bijvoorbeeld:
 
----
+`GET /pizzeria/prijs/medium`
 
-### Case 7
+geeft als resultaat:
 
-**Description:** Run 7: args=544, 239
+`Een medium pizza kost €11.`
 
+`GET /pizzeria/prijs/large`
 
-**Input:**
+geeft als resultaat:
 
-```
-544
-239
-```
+`Een large pizza kost €14.`
 
-**Expected Output:**
+Wordt een onbekend formaat opgegeven, geef dan het bericht terug:
 
-```
-141.52
-```
-
----
-
-### Case 8
-
-**Description:** Run 8: args=859, 715
-
-
-**Input:**
-
-```
-859
-715
-```
-
-**Expected Output:**
-
-```
-256.37
-```
-
----
-
-### Case 9
-
-**Description:** Run 9: args=965, 87
-
-
-**Input:**
-
-```
-965
-87
-```
-
-**Expected Output:**
-
-```
-180.58
-```
-
----
-
-### Case 10
-
-**Description:** Run 10: args=945, 499
-
-
-**Input:**
-
-```
-945
-499
-```
-
-**Expected Output:**
-
-```
-237.50
-```
-
----
-
-### Case 11
-
-**Description:** Run 11: args=688, 933
-
-
-**Input:**
-
-```
-688
-933
-```
-
-**Expected Output:**
-
-```
-263.20
-```
-
----
-
-### Case 12
-
-**Description:** Run 12: args=155, 935
-
-
-**Input:**
-
-```
-155
-935
-```
-
-**Expected Output:**
-
-```
-186.10
-```
-
----
-
-### Case 13
-
-**Description:** Run 13: args=100, 784
-
-
-**Input:**
-
-```
-100
-784
-```
-
-**Expected Output:**
-
-```
-156.19
-```
-
----
-
-### Case 14
-
-**Description:** Run 14: args=211, 121
-
-
-**Input:**
-
-```
-211
-121
-```
-
-**Expected Output:**
-
-```
-76.04
-```
-
----
-
-### Case 15
-
-**Description:** Run 15: args=174, 824
-
-
-**Input:**
-
-```
-174
-824
-```
-
-**Expected Output:**
-
-```
-172.74
-```
-
----
-
-### Case 16
-
-**Description:** Run 16: args=96, 669
-
-
-**Input:**
-
-```
-96
-669
-```
-
-**Expected Output:**
-
-```
-138.91
-```
-
----
-
-### Case 17
-
-**Description:** Run 17: args=613, 150
-
-
-**Input:**
-
-```
-613
-150
-```
-
-**Expected Output:**
-
-```
-138.62
-```
-
----
-
-### Case 18
-
-**Description:** Run 18: args=996, 662
-
-
-**Input:**
-
-```
-996
-662
-```
-
-**Expected Output:**
-
-```
-268.57
-```
-
----
-
-### Case 19
-
-**Description:** Run 19: args=46, 736
-
-
-**Input:**
-
-```
-46
-736
-```
-
-**Expected Output:**
-
-```
-141.38
-```
-
----
-
-### Case 20
-
-**Description:** Run 20: args=701, 578
-
-
-**Input:**
-
-```
-701
-578
-```
-
-**Expected Output:**
-
-```
-213.54
-```
-
----
-
-### Case 21
-
-**Description:** Run 21: args=10, 330
-
-
-**Input:**
-
-```
-10
-330
-```
-
-**Expected Output:**
-
-```
-77.20
-```
-
----
-
-### Case 22
-
-**Description:** Run 22: args=575, 550
-
-
-**Input:**
-
-```
-575
-550
-```
-
-**Expected Output:**
-
-```
-191.18
-```
-
----
-
-### Case 23
-
-**Description:** Run 23: args=741, 455
-
-
-**Input:**
-
-```
-741
-455
-```
-
-**Expected Output:**
-
-```
-201.49
-```
-
----
-
-### Case 24
-
-**Description:** Run 24: args=610, 307
-
-
-**Input:**
-
-```
-610
-307
-```
-
-**Expected Output:**
-
-```
-160.98
-```
-
----
-
-### Case 25
-
-**Description:** Run 25: args=975, 641
-
-
-**Input:**
-
-```
-975
-641
-```
-
-**Expected Output:**
-
-```
-262.47
-```
-
----
+`Voor dit pizzaformaat is geen prijs beschikbaar.`

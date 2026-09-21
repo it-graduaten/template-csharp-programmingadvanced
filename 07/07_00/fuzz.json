@@ -1,9 +1,0 @@
-{
-  "runs": 25,
-  "inputs": [
-    {
-      "type": "firstname",
-      "name": "naam"
-    }
-  ]
-}

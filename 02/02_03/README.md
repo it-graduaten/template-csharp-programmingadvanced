@@ -1,517 +1,171 @@
 # 02_03
 
-Vraag de gebruiker om de prijs van een product in euro's en het aantal stuks dat hij/zij wil kopen. Bereken de totale prijs. Als de totale prijs meer is dan 50, geef dan 10% korting en toon de nieuwe prijs. Toon anders "Geen korting" en de totale prijs zonder korting.
+## Leerdoel
 
-## Fuzz Test Cases
+Na deze oefening kan je een ASP.NET Core API-controller maken met GET-, PUT- en DELETE-endpoints.
 
-Below are the automatically generated input/output expectations.
+Je leert hoe je bestaande data bijwerkt via een PUT-verzoek met HTTP-statuscode **204 No Content**, hoe je data verwijdert via een DELETE-verzoek met HTTP-statuscode **204 No Content**, en hoe je correct omgaat met niet-bestaande resources met HTTP-statuscode **404 Not Found**.
 
----
+Je oefent ook het overschrijven van alle Properties van een bestaand object in de lijst.
 
-### Case 1
+## Opdracht
 
-**Description:** Run 1: args=49.51875634388606, 1
+De restaurant **De Gouden Oesters** wil een eenvoudige API bouwen voor het beheren van bestellingen.
 
+Jouw taak is om een `BestellingController` te maken met GET-, PUT- en DELETE-endpoints en een `Bestelling`-Model.
 
-**Input:**
+### Het Bestelling Model
 
-```
-49.51875634388606
-1
-```
-
-**Expected Output:**
-
-```
-Geef de prijs van het product: Hoeveel stuks wil je kopen? Geen korting
-49.51875634388606
-```
-
----
-
-### Case 2
-
-**Description:** Run 2: args=35.30654264637855, 6
-
-
-**Input:**
-
-```
-35.30654264637855
-6
-```
-
-**Expected Output:**
-
-```
-Geef de prijs van het product: Hoeveel stuks wil je kopen? 190.6553302904442
-```
-
----
-
-### Case 3
-
-**Description:** Run 3: args=35.28341007922804, 8
-
-
-**Input:**
-
-```
-35.28341007922804
-8
-```
-
-**Expected Output:**
-
-```
-Geef de prijs van het product: Hoeveel stuks wil je kopen? 254.0405525704419
-```
-
----
-
-### Case 4
-
-**Description:** Run 4: args=25.187191416245028, 6
-
-
-**Input:**
-
-```
-25.187191416245028
-6
-```
-
-**Expected Output:**
-
-```
-Geef de prijs van het product: Hoeveel stuks wil je kopen? 136.01083364772316
-```
-
----
-
-### Case 5
-
-**Description:** Run 5: args=42.343939380614934, 10
-
-
-**Input:**
-
-```
-42.343939380614934
-10
-```
-
-**Expected Output:**
-
-```
-Geef de prijs van het product: Hoeveel stuks wil je kopen? 381.0954544255344
-```
-
----
-
-### Case 6
-
-**Description:** Run 6: args=6.538503302536483, 5
-
-
-**Input:**
-
-```
-6.538503302536483
-5
-```
-
-**Expected Output:**
-
-```
-Geef de prijs van het product: Hoeveel stuks wil je kopen? Geen korting
-32.69251651268242
-```
-
----
-
-### Case 7
-
-**Description:** Run 7: args=24.315041491853343, 7
-
-
-**Input:**
-
-```
-24.315041491853343
-7
-```
-
-**Expected Output:**
-
-```
-Geef de prijs van het product: Hoeveel stuks wil je kopen? 153.18476139867605
-```
-
----
-
-### Case 8
-
-**Description:** Run 8: args=36.38853993072345, 1
-
-
-**Input:**
-
-```
-36.38853993072345
-1
-```
-
-**Expected Output:**
-
-```
-Geef de prijs van het product: Hoeveel stuks wil je kopen? Geen korting
-36.38853993072345
-```
-
----
-
-### Case 9
-
-**Description:** Run 9: args=25.293280367307194, 7
-
-
-**Input:**
-
-```
-25.293280367307194
-7
-```
-
-**Expected Output:**
-
-```
-Geef de prijs van het product: Hoeveel stuks wil je kopen? 159.3476663140353
-```
-
----
-
-### Case 10
-
-**Description:** Run 10: args=40.798073284884474, 3
-
-
-**Input:**
-
-```
-40.798073284884474
-3
-```
-
-**Expected Output:**
-
-```
-Geef de prijs van het product: Hoeveel stuks wil je kopen? 110.15479786918807
-```
-
----
-
-### Case 11
-
-**Description:** Run 11: args=2.7962859507612885, 10
-
-
-**Input:**
-
-```
-2.7962859507612885
-10
-```
-
-**Expected Output:**
-
-```
-Geef de prijs van het product: Hoeveel stuks wil je kopen? Geen korting
-27.962859507612883
-```
-
----
-
-### Case 12
-
-**Description:** Run 12: args=30.875001367912027, 3
-
-
-**Input:**
-
-```
-30.875001367912027
-3
-```
-
-**Expected Output:**
-
-```
-Geef de prijs van het product: Hoeveel stuks wil je kopen? 83.36250369336247
-```
-
----
-
-### Case 13
-
-**Description:** Run 13: args=39.84943556109869, 1
-
-
-**Input:**
-
-```
-39.84943556109869
-1
-```
-
-**Expected Output:**
-
-```
-Geef de prijs van het product: Hoeveel stuks wil je kopen? Geen korting
-39.84943556109869
-```
-
----
-
-### Case 14
-
-**Description:** Run 14: args=19.77570433808676, 9
-
-
-**Input:**
-
-```
-19.77570433808676
-9
-```
-
-**Expected Output:**
-
-```
-Geef de prijs van het product: Hoeveel stuks wil je kopen? 160.18320513850279
-```
-
----
-
-### Case 15
-
-**Description:** Run 15: args=16.11755022900381, 10
-
-
-**Input:**
-
-```
-16.11755022900381
-10
-```
-
-**Expected Output:**
-
-```
-Geef de prijs van het product: Hoeveel stuks wil je kopen? 145.0579520610343
-```
-
----
-
-### Case 16
-
-**Description:** Run 16: args=22.19123555858872, 8
-
-
-**Input:**
-
-```
-22.19123555858872
-8
-```
-
-**Expected Output:**
-
-```
-Geef de prijs van het product: Hoeveel stuks wil je kopen? 159.77689602183878
-```
-
----
-
-### Case 17
-
-**Description:** Run 17: args=45.17399544304556, 8
-
-
-**Input:**
-
-```
-45.17399544304556
-8
-```
-
-**Expected Output:**
+Maak een Modelklasse `Bestelling` in de map `Models` met volgende Properties:
 
-```
-Geef de prijs van het product: Hoeveel stuks wil je kopen? 325.252767189928
-```
-
----
-
-### Case 18
-
-**Description:** Run 18: args=4.295393454593135, 10
-
-
-**Input:**
+| Property | Type | Beschrijving |
+| -------- | ---- | ------------ |
+| Id | int | Unieke identificatie van de bestelling |
+| Naam | string | De naam van de klant |
+| Tafelnummer | int | Het tafelnnummer |
+| Gerechten | string | De bestelde gerechten, gescheiden door koppeltekens (bijv. "Lasagne-Salade") |
+| Status | string | De status van de bestelling |
 
-```
-4.295393454593135
-10
-```
-
-**Expected Output:**
-
-```
-Geef de prijs van het product: Hoeveel stuks wil je kopen? Geen korting
-42.953934545931354
-```
+### Startgegevens
 
----
+Voeg in je Controller een in-memory lijst met drie bestellingen toe als startgegevens:
 
-### Case 19
+| Id | Naam | Tafelnummer | Gerechten | Status |
+| -- | ---- | ----------- | --------- | ------ |
+| 1 | Anna Jansen | 4 | Lasagne-Salade | Gereed |
+| 2 | Youssef Benali | 7 | Risotto-Gegrilde Groenten | Bereiden |
+| 3 | Maria De Smet | 2 | Pasta Carbonara | Gereed |
 
-**Description:** Run 19: args=21.380956306708626, 7
+### 1. Alle bestellingen ophalen
 
+Voorzie een GET-endpoint op:
 
-**Input:**
+`/bestellingen`
 
-```
-21.380956306708626
-7
-```
+Dit endpoint geeft alle bestellingen terug als een JSON-lijst met HTTP-statuscode **200 OK**.
 
-**Expected Output:**
+Bijvoorbeeld:
 
 ```
-Geef de prijs van het product: Hoeveel stuks wil je kopen? 134.70002473226432
+GET /bestellingen
 ```
 
----
+Statuscode: **200 OK**
 
-### Case 20
-
-**Description:** Run 20: args=17.963804471363957, 10
-
-
-**Input:**
-
-```
-17.963804471363957
-10
+```json
+[
+  {
+    "id": 1,
+    "naam": "Anna Jansen",
+    "tafelnummer": 4,
+    "gerechten": "Lasagne-Salade",
+    "status": "Gereed"
+  },
+  {
+    "id": 2,
+    "naam": "Youssef Benali",
+    "tafelnummer": 7,
+    "gerechten": "Risotto-Gegrilde Groenten",
+    "status": "Bereiden"
+  },
+  {
+    "id": 3,
+    "naam": "Maria De Smet",
+    "tafelnummer": 2,
+    "gerechten": "Pasta Carbonara",
+    "status": "Gereed"
+  }
+]
 ```
 
-**Expected Output:**
-
-```
-Geef de prijs van het product: Hoeveel stuks wil je kopen? 161.67424024227563
-```
+### 2. Eén bestelling ophalen op basis van de ID
 
----
+Voorzie een GET-endpoint op:
 
-### Case 21
+`/bestellingen/{id}`
 
-**Description:** Run 21: args=4.520198052343387, 5
+De routeparameter `{id}` stelt de bestel-ID voor.
 
+Vind de bestelling met de gevraagde ID en geef het terug als JSON met HTTP-statuscode **200 OK**.
 
-**Input:**
+Bijvoorbeeld:
 
 ```
-4.520198052343387
-5
+GET /bestellingen/2
 ```
 
-**Expected Output:**
+Statuscode: **200 OK**
 
-```
-Geef de prijs van het product: Hoeveel stuks wil je kopen? Geen korting
-22.600990261716937
+```json
+{
+  "id": 2,
+  "naam": "Youssef Benali",
+  "tafelnummer": 7,
+  "gerechten": "Risotto-Gegrilde Groenten",
+  "status": "Bereiden"
+}
 ```
-
----
-
-### Case 22
 
-**Description:** Run 22: args=39.51743800871498, 2
-
-
-**Input:**
-
-```
-39.51743800871498
-2
-```
+Als er geen bestelling bestaat met de gevraagde ID, geef dan HTTP-statuscode **404 Not Found** terug zonder body.
 
-**Expected Output:**
+### 3. Een bestelling bijwerken
 
-```
-Geef de prijs van het product: Hoeveel stuks wil je kopen? 71.13138841568697
-```
+Voorzie een PUT-endpoint op:
 
----
+`/bestellingen/{id}`
 
-### Case 23
+De routeparameter `{id}` stelt de bestel-ID voor. De client stuurt de nieuwe gegevens van de bestelling als JSON in de Request Body via Model Binding.
 
-**Description:** Run 23: args=11.388617912336718, 4
+Het endpoint moet het volgende doen:
 
+1. De bestelling vinden met de gevraagde ID;
+2. Als de bestelling niet bestaat, HTTP-statuscode **404 Not Found** terugsturen zonder body;
+3. Alle Properties van de bestelling overschrijven met de nieuwe gegevens uit de Request Body;
+4. HTTP-statuscode **204 No Content** terugsturen zonder body.
 
-**Input:**
+Bijvoorbeeld:
 
 ```
-11.388617912336718
-4
+PUT /bestellingen/2
 ```
 
-**Expected Output:**
+Request Body:
 
+```json
+{
+  "id": 2,
+  "naam": "Youssef Benali",
+  "tafelnummer": 7,
+  "gerechten": "Risotto-Gegrilde Groenten",
+  "status": "Gereed"
+}
 ```
-Geef de prijs van het product: Hoeveel stuks wil je kopen? Geen korting
-45.55447164934687
-```
-
----
-
-### Case 24
-
-**Description:** Run 24: args=49.22720578513119, 8
 
+Statuscode: **204 No Content**
 
-**Input:**
+Na dit verzoek heeft de bestelling met ID 2 de status "Gereed".
 
-```
-49.22720578513119
-8
-```
+### 4. Een bestelling verwijderen
 
-**Expected Output:**
-
-```
-Geef de prijs van het product: Hoeveel stuks wil je kopen? 354.43588165294454
-```
+Voorzie een DELETE-endpoint op:
 
----
+`/bestellingen/{id}`
 
-### Case 25
+De routeparameter `{id}` stelt de bestel-ID voor.
 
-**Description:** Run 25: args=26.149190446368642, 9
+Het endpoint moet het volgende doen:
 
+1. De bestelling vinden met de gevraagde ID;
+2. Als de bestelling niet bestaat, HTTP-statuscode **404 Not Found** terugsturen zonder body;
+3. De bestelling verwijderen uit de lijst;
+4. HTTP-statuscode **204 No Content** terugsturen zonder body.
 
-**Input:**
+Bijvoorbeeld:
 
 ```
-26.149190446368642
-9
+DELETE /bestellingen/1
 ```
-
-**Expected Output:**
 
-```
-Geef de prijs van het product: Hoeveel stuks wil je kopen? 211.808442615586
-```
+Statuscode: **204 No Content**
 
----
+Na dit verzoek bestaat de bestelling met ID 1 niet meer in de lijst.

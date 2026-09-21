@@ -1,486 +1,139 @@
 # 01_04
 
-Converteer Celsius naar Fahrenheit.
+## Leerdoel
 
-Vraag de gebruiker om een temperatuur in graden Celsius. Bereken de equivalente temperatuur in Fahrenheit met de formule: F = C × 9/5 + 32. Toon het resultaat met twee decimalen.
+Na deze oefening kan je een ASP.NET Core API-controller maken met meerdere GET-endpoints die verschillende soorten routeparameters verwerken.
 
-## Fuzz Test Cases
+Je leert meerdere waarden uit een URL ontvangen, verschillende datatypes gebruiken als routeparameter en deze waarden combineren met gewone C#-logica.
 
-Below are the automatically generated input/output expectations.
+Daarnaast oefen je zelfstandig met routing: je bepaalt welke informatie via de URL wordt doorgegeven en hoe de combinatie van de controllerroute en methoderoute het uiteindelijke endpoint vormt.
 
----
+##
 
-### Case 1
+## Opdracht
 
-**Description:** Run 1: args=684.7483903178405
+Het fictieve ruimtevaartagentschap **Nova Space Agency** bereidt de ruimtemissie **Odyssey** voor.
 
+Het controlecentrum wil een eenvoudige API waarmee informatie over de missie kan worden opgevraagd. De API wordt gebruikt om astronauten te verwelkomen, informatie over bestemmingen op te vragen en de voortgang van de missie te controleren.
 
-**Input:**
+Jouw taak is om een `MissionController` te maken met verschillende GET-endpoints.
 
-```
-684.7483903178405
-```
+Via de API moeten gebruikers:
 
-**Expected Output:**
+1. algemene informatie over de missie kunnen opvragen;
+2. een astronaut persoonlijk kunnen verwelkomen;
+3. informatie over een bestemming kunnen opvragen;
+4. de voortgang naar een bestemming kunnen controleren.
 
-```
-1,264.55
-```
+Implementeer onderstaande functionaliteiten.
 
----
+### 1. Algemene missie-informatie
 
-### Case 2
+Voorzie een GET-endpoint op:
 
-**Description:** Run 2: args=618.0054586891699
+`/mission`
 
+Dit endpoint geeft volgende tekst terug:
 
-**Input:**
+`Odyssey is klaar voor vertrek!`
 
-```
-618.0054586891699
-```
+### 2. Astronaut verwelkomen
 
-**Expected Output:**
+Voorzie een GET-endpoint op:
 
-```
-1,144.41
-```
+`/mission/astronaut/{naam}`
 
----
+De naam van de astronaut wordt meegegeven via de URL.
 
-### Case 3
+Bijvoorbeeld:
 
-**Description:** Run 3: args=391.46114822943144
+`GET /mission/astronaut/Emma`
 
+geeft als resultaat:
 
-**Input:**
+`Astronaut Emma, welkom aan boord van Odyssey!`
 
-```
-391.46114822943144
-```
+Een andere astronaut moet uiteraard een persoonlijk bericht krijgen.
 
-**Expected Output:**
+Bijvoorbeeld:
 
-```
-736.63
-```
+`GET /mission/astronaut/Youssef`
 
----
+geeft als resultaat:
 
-### Case 4
+`Astronaut Youssef, welkom aan boord van Odyssey!`
 
-**Description:** Run 4: args=810.5212167559991
+De naam moet afkomstig zijn uit de routeparameter. Je mag dus geen specifieke namen hardcoderen.
 
+### 3. Informatie over een bestemming
 
-**Input:**
+Voorzie een GET-endpoint op:
 
-```
-810.5212167559991
-```
+`/mission/bestemming/{bestemming}`
 
-**Expected Output:**
+Het endpoint ontvangt de naam van een bestemming via de route.
 
-```
-1,490.94
-```
+De API moet drie bestemmingen herkennen:
 
----
+* maan
+* mars
+* europa
 
-### Case 5
+Geef voor iedere bestemming het bijbehorende bericht terug:
 
-**Description:** Run 5: args=453.6015243084379
+| Bestemming | Bericht                                                         |
+| ---------- | --------------------------------------------------------------- |
+| maan       | De Maan is de natuurlijke satelliet van de aarde.               |
+| mars       | Mars staat bekend als de rode planeet.                          |
+| europa     | Europa is een maan van Jupiter en heeft een bevroren oppervlak. |
 
+Wordt een onbekende bestemming opgegeven, geef dan het bericht terug:
 
-**Input:**
+`Deze bestemming is niet opgenomen in de Odyssey-missie.`
 
-```
-453.6015243084379
-```
+Je mag ervan uitgaan dat de waarden voor `{bestemming}` in kleine letters worden ingegeven.
 
-**Expected Output:**
+### 4. Voortgang van de ruimtereis
 
-```
-848.48
-```
+Het controlecentrum wil kunnen bepalen in welke fase een ruimtereis zich bevindt.
 
----
+Voorzie hiervoor een GET-endpoint met twee routeparameters:
 
-### Case 6
+`/mission/reis/{bestemming}/{afstand}`
 
-**Description:** Run 6: args=806.0843130858813
+De routeparameters stellen het volgende voor:
 
+* `{bestemming}`: de naam van de bestemming;
+* `{afstand}`: het aantal kilometer dat nog moet worden afgelegd.
 
-**Input:**
+`afstand` wordt in de C#-methode ontvangen als een `int`.
 
-```
-806.0843130858813
-```
+Gebruik de resterende afstand om een statusbericht te bepalen.
 
-**Expected Output:**
+* Minder dan 1.000 kilometer: de bestemming is bijna bereikt.
+* 1.000 tot en met 100.000 kilometer: het ruimteschip is onderweg naar de bestemming.
+* Meer dan 100.000 kilometer: het ruimteschip heeft nog een lange reis voor de boeg.
 
-```
-1,482.95
-```
+De naam van de bestemming moet telkens in het antwoord verwerkt worden.
 
----
+Bijvoorbeeld:
 
-### Case 7
+`GET /mission/reis/maan/500`
 
-**Description:** Run 7: args=-2.2461441544632663
+geeft als resultaat:
 
+`Odyssey heeft maan bijna bereikt!`
 
-**Input:**
+`GET /mission/reis/maan/50000`
 
-```
--2.2461441544632663
-```
+geeft als resultaat:
 
-**Expected Output:**
+`Odyssey is onderweg naar maan.`
 
-```
-27.96
-```
+`GET /mission/reis/mars/250000`
 
----
+geeft als resultaat:
 
-### Case 8
+`Odyssey heeft nog een lange reis naar mars voor de boeg.`
 
-**Description:** Run 8: args=812.7149349841083
-
-
-**Input:**
-
-```
-812.7149349841083
-```
-
-**Expected Output:**
-
-```
-1,494.89
-```
-
----
-
-### Case 9
-
-**Description:** Run 9: args=561.9956865582512
-
-
-**Input:**
-
-```
-561.9956865582512
-```
-
-**Expected Output:**
-
-```
-1,043.59
-```
-
----
-
-### Case 10
-
-**Description:** Run 10: args=56.0705108626704
-
-
-**Input:**
-
-```
-56.0705108626704
-```
-
-**Expected Output:**
-
-```
-132.93
-```
-
----
-
-### Case 11
-
-**Description:** Run 11: args=321.9671207020194
-
-
-**Input:**
-
-```
-321.9671207020194
-```
-
-**Expected Output:**
-
-```
-611.54
-```
-
----
-
-### Case 12
-
-**Description:** Run 12: args=471.4492476623867
-
-
-**Input:**
-
-```
-471.4492476623867
-```
-
-**Expected Output:**
-
-```
-880.61
-```
-
----
-
-### Case 13
-
-**Description:** Run 13: args=959.5181148086206
-
-
-**Input:**
-
-```
-959.5181148086206
-```
-
-**Expected Output:**
-
-```
-1,759.13
-```
-
----
-
-### Case 14
-
-**Description:** Run 14: args=68.47705500748307
-
-
-**Input:**
-
-```
-68.47705500748307
-```
-
-**Expected Output:**
-
-```
-155.26
-```
-
----
-
-### Case 15
-
-**Description:** Run 15: args=6.491558090750189
-
-
-**Input:**
-
-```
-6.491558090750189
-```
-
-**Expected Output:**
-
-```
-43.68
-```
-
----
-
-### Case 16
-
-**Description:** Run 16: args=465.5948724696167
-
-
-**Input:**
-
-```
-465.5948724696167
-```
-
-**Expected Output:**
-
-```
-870.07
-```
-
----
-
-### Case 17
-
-**Description:** Run 17: args=888.1713330419848
-
-
-**Input:**
-
-```
-888.1713330419848
-```
-
-**Expected Output:**
-
-```
-1,630.71
-```
-
----
-
-### Case 18
-
-**Description:** Run 18: args=399.6364779256351
-
-
-**Input:**
-
-```
-399.6364779256351
-```
-
-**Expected Output:**
-
-```
-751.35
-```
-
----
-
-### Case 19
-
-**Description:** Run 19: args=-11.349933038919943
-
-
-**Input:**
-
-```
--11.349933038919943
-```
-
-**Expected Output:**
-
-```
-11.57
-```
-
----
-
-### Case 20
-
-**Description:** Run 20: args=867.4653332974663
-
-
-**Input:**
-
-```
-867.4653332974663
-```
-
-**Expected Output:**
-
-```
-1,593.44
-```
-
----
-
-### Case 21
-
-**Description:** Run 21: args=933.7014720961838
-
-
-**Input:**
-
-```
-933.7014720961838
-```
-
-**Expected Output:**
-
-```
-1,712.66
-```
-
----
-
-### Case 22
-
-**Description:** Run 22: args=655.0065683174547
-
-
-**Input:**
-
-```
-655.0065683174547
-```
-
-**Expected Output:**
-
-```
-1,211.01
-```
-
----
-
-### Case 23
-
-**Description:** Run 23: args=149.07987013954607
-
-
-**Input:**
-
-```
-149.07987013954607
-```
-
-**Expected Output:**
-
-```
-300.34
-```
-
----
-
-### Case 24
-
-**Description:** Run 24: args=597.5901008719441
-
-
-**Input:**
-
-```
-597.5901008719441
-```
-
-**Expected Output:**
-
-```
-1,107.66
-```
-
----
-
-### Case 25
-
-**Description:** Run 25: args=422.2279266250524
-
-
-**Input:**
-
-```
-422.2279266250524
-```
-
-**Expected Output:**
-
-```
-792.01
-```
-
----
+Zowel de bestemming als de afstand moeten afkomstig zijn uit de routeparameters. Je mag deze waarden dus niet hardcoderen.

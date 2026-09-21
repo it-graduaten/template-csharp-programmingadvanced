@@ -1,509 +1,228 @@
 # 02_04
 
-Vraag de gebruiker om zijn geslacht (man of vrouw) en zijn leeftijd in jaren. Als de persoon ouder is dan 60 jaar, toon dan "Pensioen". Als de persoon tussen 18 en 60 jaar oud is, toon dan "Werkend". Toon anders "Kind".
+## Leerdoel
 
-## Fuzz Test Cases
+Na deze oefening kan je een volledige CRUD-API bouwen met alle HTTP Verbs (GET, POST, PUT, DELETE) en het correct toepassen van HTTP-statuscodes.
 
-Below are the automatically generated input/output expectations.
+Je leert een compleet resourcebeheer te implementeren: het opvragen van alle items en één item, het aanmaken van nieuwe items, het bijwerken van bestaande items, en het verwijderen van items. Je oefent ook het omgaan met randgevallen zoals dubbele IDs, niet-bestaande resources, en het genereren van unieke IDs.
 
----
+Je leert hoe je de `CreatedAtAction`-methode gebruikt om na het aanmaken van een item een Location-header toe te voegen.
 
-### Case 1
+## Opdracht
 
-**Description:** Run 1: args=man, 73
+De evenementenorganisatie **Festivaal Vlaanderen** wil een API bouwen voor het beheren van hun evenementenagenda.
 
+Jouw taak is om een `EvenementController` te maken met volledige CRUD-functionaliteit en een `Evenement`-Model.
 
-**Input:**
+### Het Evenement Model
 
-```
-man
-73
-```
-
-**Expected Output:**
-
-```
-Voor welk geslacht vraag je het tarief? Voor welke leeftijd vraag je het tarief? Pensioen
-```
-
----
-
-### Case 2
-
-**Description:** Run 2: args=vrouw, 68
-
-
-**Input:**
-
-```
-vrouw
-68
-```
-
-**Expected Output:**
-
-```
-Voor welk geslacht vraag je het tarief? Voor welke leeftijd vraag je het tarief? Pensioen
-```
-
----
-
-### Case 3
-
-**Description:** Run 3: args=vrouw, 2
-
-
-**Input:**
-
-```
-vrouw
-2
-```
-
-**Expected Output:**
-
-```
-Voor welk geslacht vraag je het tarief? Voor welke leeftijd vraag je het tarief? Kind
-```
-
----
-
-### Case 4
-
-**Description:** Run 4: args=man, 14
-
-
-**Input:**
-
-```
-man
-14
-```
-
-**Expected Output:**
-
-```
-Voor welk geslacht vraag je het tarief? Voor welke leeftijd vraag je het tarief? Kind
-```
-
----
-
-### Case 5
-
-**Description:** Run 5: args=vrouw, 18
-
-
-**Input:**
-
-```
-vrouw
-18
-```
-
-**Expected Output:**
-
-```
-Voor welk geslacht vraag je het tarief? Voor welke leeftijd vraag je het tarief? Werkend
-```
-
----
-
-### Case 6
-
-**Description:** Run 6: args=man, 17
-
-
-**Input:**
-
-```
-man
-17
-```
-
-**Expected Output:**
-
-```
-Voor welk geslacht vraag je het tarief? Voor welke leeftijd vraag je het tarief? Kind
-```
-
----
-
-### Case 7
-
-**Description:** Run 7: args=man, 0
-
-
-**Input:**
-
-```
-man
-0
-```
-
-**Expected Output:**
-
-```
-Voor welk geslacht vraag je het tarief? Voor welke leeftijd vraag je het tarief? Kind
-```
-
----
-
-### Case 8
-
-**Description:** Run 8: args=vrouw, 23
-
-
-**Input:**
-
-```
-vrouw
-23
-```
-
-**Expected Output:**
-
-```
-Voor welk geslacht vraag je het tarief? Voor welke leeftijd vraag je het tarief? Werkend
-```
-
----
-
-### Case 9
-
-**Description:** Run 9: args=vrouw, 36
-
-
-**Input:**
-
-```
-vrouw
-36
-```
-
-**Expected Output:**
-
-```
-Voor welk geslacht vraag je het tarief? Voor welke leeftijd vraag je het tarief? Werkend
-```
-
----
-
-### Case 10
-
-**Description:** Run 10: args=man, 75
-
-
-**Input:**
-
-```
-man
-75
-```
-
-**Expected Output:**
+Maak een Modelklasse `Evenement` in de map `Models` met volgende Properties:
 
-```
-Voor welk geslacht vraag je het tarief? Voor welke leeftijd vraag je het tarief? Pensioen
-```
-
----
-
-### Case 11
-
-**Description:** Run 11: args=man, 72
-
-
-**Input:**
-
-```
-man
-72
-```
-
-**Expected Output:**
-
-```
-Voor welk geslacht vraag je het tarief? Voor welke leeftijd vraag je het tarief? Pensioen
-```
-
----
-
-### Case 12
-
-**Description:** Run 12: args=vrouw, 86
-
-
-**Input:**
-
-```
-vrouw
-86
-```
-
-**Expected Output:**
-
-```
-Voor welk geslacht vraag je het tarief? Voor welke leeftijd vraag je het tarief? Pensioen
-```
-
----
-
-### Case 13
-
-**Description:** Run 13: args=vrouw, 37
-
-
-**Input:**
-
-```
-vrouw
-37
-```
-
-**Expected Output:**
-
-```
-Voor welk geslacht vraag je het tarief? Voor welke leeftijd vraag je het tarief? Werkend
-```
-
----
-
-### Case 14
-
-**Description:** Run 14: args=vrouw, 71
-
-
-**Input:**
-
-```
-vrouw
-71
-```
-
-**Expected Output:**
-
-```
-Voor welk geslacht vraag je het tarief? Voor welke leeftijd vraag je het tarief? Pensioen
-```
-
----
-
-### Case 15
-
-**Description:** Run 15: args=vrouw, 32
-
-
-**Input:**
+| Property | Type | Beschrijving |
+| -------- | ---- | ------------ |
+| Id | int | Unieke identificatie van het evenement |
+| Naam | string | De naam van het evenement |
+| Locatie | string | De locatie van het evenement |
+| Datum | string | De datum van het evenement (indeling: "dd-MM-yyyy") |
+| MaxDeelnemers | int | Het maximum aantal deelnemers |
+| GeregistreerdeDeelnemers | int | Het aantal geregistreerde deelnemers |
 
-```
-vrouw
-32
-```
-
-**Expected Output:**
+### Startgegevens
 
-```
-Voor welk geslacht vraag je het tarief? Voor welke leeftijd vraag je het tarief? Werkend
-```
+Voeg in je Controller een in-memory lijst met drie evenementen toe als startgegevens:
 
----
+| Id | Naam | Locatie | Datum | MaxDeelnemers | GeregistreerdeDeelnemers |
+| -- | ---- | ------- | ----- | ------------- | ---------------------- |
+| 1 | Summer Music Festival | Antwerpen | 15-07-2026 | 5000 | 3200 |
+| 2 | Culinaire Dagen | Brugge | 22-08-2026 | 200 | 145 |
+| 3 | Tech Conference | Gent | 10-09-2026 | 300 | 300 |
 
-### Case 16
+### 1. Alle evenementen ophalen
 
-**Description:** Run 16: args=vrouw, 14
+Voorzie een GET-endpoint op:
 
+`/evenementen`
 
-**Input:**
-
-```
-vrouw
-14
-```
+Dit endpoint geeft alle evenementen terug als een JSON-lijst met HTTP-statuscode **200 OK**.
 
-**Expected Output:**
+Bijvoorbeeld:
 
 ```
-Voor welk geslacht vraag je het tarief? Voor welke leeftijd vraag je het tarief? Kind
+GET /evenementen
 ```
-
----
-
-### Case 17
 
-**Description:** Run 17: args=vrouw, 1
+Statuscode: **200 OK**
 
-
-**Input:**
-
+```json
+[
+  {
+    "id": 1,
+    "naam": "Summer Music Festival",
+    "locatie": "Antwerpen",
+    "datum": "15-07-2026",
+    "maxDeelnemers": 5000,
+    "geregistreerdeDeelnemers": 3200
+  },
+  {
+    "id": 2,
+    "naam": "Culinaire Dagen",
+    "locatie": "Brugge",
+    "datum": "22-08-2026",
+    "maxDeelnemers": 200,
+    "geregistreerdeDeelnemers": 145
+  },
+  {
+    "id": 3,
+    "naam": "Tech Conference",
+    "locatie": "Gent",
+    "datum": "10-09-2026",
+    "maxDeelnemers": 300,
+    "geregistreerdeDeelnemers": 300
+  }
+]
 ```
-vrouw
-1
-```
-
-**Expected Output:**
 
-```
-Voor welk geslacht vraag je het tarief? Voor welke leeftijd vraag je het tarief? Kind
-```
+### 2. Eén evenement ophalen op basis van de ID
 
----
+Voorzie een GET-endpoint op:
 
-### Case 18
+`/evenementen/{id}`
 
-**Description:** Run 18: args=vrouw, 98
+De routeparameter `{id}` stelt de evenement-ID voor.
 
+Vind het evenement met de gevraagde ID en geef het terug als JSON met HTTP-statuscode **200 OK**.
 
-**Input:**
+Bijvoorbeeld:
 
 ```
-vrouw
-98
+GET /evenementen/2
 ```
 
-**Expected Output:**
+Statuscode: **200 OK**
 
-```
-Voor welk geslacht vraag je het tarief? Voor welke leeftijd vraag je het tarief? Pensioen
+```json
+{
+  "id": 2,
+  "naam": "Culinaire Dagen",
+  "locatie": "Brugge",
+  "datum": "22-08-2026",
+  "maxDeelnemers": 200,
+  "geregistreerdeDeelnemers": 145
+}
 ```
-
----
-
-### Case 19
-
-**Description:** Run 19: args=vrouw, 34
-
 
-**Input:**
+Als er geen evenement bestaat met de gevraagde ID, geef dan HTTP-statuscode **404 Not Found** terug zonder body.
 
-```
-vrouw
-34
-```
-
-**Expected Output:**
+### 3. Een nieuw evenement aanmaken
 
-```
-Voor welk geslacht vraag je het tarief? Voor welke leeftijd vraag je het tarief? Werkend
-```
+Voorzie een POST-endpoint op:
 
----
+`/evenementen`
 
-### Case 20
+De client stuurt een evenement als JSON in de Request Body. ASP.NET Core zet deze automatisch om naar een `Evenement`-object via Model Binding.
 
-**Description:** Run 20: args=vrouw, 89
+Het endpoint moet het volgende doen:
 
+1. De nieuwe ID berekenen door de hoogste bestaande ID + 1 te nemen;
+2. De ID toewijzen aan het nieuwe evenement;
+3. Het evenement toevoegen aan de lijst;
+4. Het volledige evenement (inclusief de nieuwe ID) terugsturen met HTTP-statuscode **201 Created** en een Location-header naar het nieuwe item.
 
-**Input:**
+Bijvoorbeeld:
 
 ```
-vrouw
-89
+POST /evenementen
 ```
 
-**Expected Output:**
+Request Body:
 
+```json
+{
+  "id": 0,
+  "naam": "Boekenfestival",
+  "locatie": "Leuven",
+  "datum": "05-10-2026",
+  "maxDeelnemers": 150,
+  "geregistreerdeDeelnemers": 0
+}
 ```
-Voor welk geslacht vraag je het tarief? Voor welke leeftijd vraag je het tarief? Pensioen
-```
-
----
 
-### Case 21
+Statuscode: **201 Created**
 
-**Description:** Run 21: args=vrouw, 15
+Response Body:
 
-
-**Input:**
-
-```
-vrouw
-15
-```
-
-**Expected Output:**
-
-```
-Voor welk geslacht vraag je het tarief? Voor welke leeftijd vraag je het tarief? Kind
+```json
+{
+  "id": 4,
+  "naam": "Boekenfestival",
+  "locatie": "Leuven",
+  "datum": "05-10-2026",
+  "maxDeelnemers": 150,
+  "geregistreerdeDeelnemers": 0
+}
 ```
 
----
-
-### Case 22
-
-**Description:** Run 22: args=man, 13
-
-
-**Input:**
-
-```
-man
-13
-```
+De `id` in de request body mag worden genegeerd; je berekent de ID altijd zelf.
 
-**Expected Output:**
+### 4. Een evenement bijwerken
 
-```
-Voor welk geslacht vraag je het tarief? Voor welke leeftijd vraag je het tarief? Kind
-```
+Voorzie een PUT-endpoint op:
 
----
+`/evenementen/{id}`
 
-### Case 23
+De routeparameter `{id}` stelt de evenement-ID voor. De client stuurt de nieuwe gegevens van het evenement als JSON in de Request Body via Model Binding.
 
-**Description:** Run 23: args=vrouw, 1
+Het endpoint moet het volgende doen:
 
+1. Het evenement vinden met de gevraagde ID;
+2. Als het evenement niet bestaat, HTTP-statuscode **404 Not Found** terugsturen zonder body;
+3. Alle Properties van het evenement overschrijven met de nieuwe gegevens uit de Request Body;
+4. HTTP-statuscode **204 No Content** terugsturen zonder body.
 
-**Input:**
+Bijvoorbeeld:
 
 ```
-vrouw
-1
+PUT /evenementen/2
 ```
 
-**Expected Output:**
+Request Body:
 
-```
-Voor welk geslacht vraag je het tarief? Voor welke leeftijd vraag je het tarief? Kind
+```json
+{
+  "id": 2,
+  "naam": "Culinaire Dagen Brugge",
+  "locatie": "Brugge",
+  "datum": "22-08-2026",
+  "maxDeelnemers": 250,
+  "geregistreerdeDeelnemers": 145
+}
 ```
-
----
-
-### Case 24
-
-**Description:** Run 24: args=vrouw, 68
-
 
-**Input:**
+Statuscode: **204 No Content**
 
-```
-vrouw
-68
-```
+Na dit verzoek heeft het evenement met ID 2 de naam "Culinaire Dagen Brugge" en een nieuw maximum van 250 deelnemers.
 
-**Expected Output:**
+### 5. Een evenement verwijderen
 
-```
-Voor welk geslacht vraag je het tarief? Voor welke leeftijd vraag je het tarief? Pensioen
-```
+Voorzie een DELETE-endpoint op:
 
----
+`/evenementen/{id}`
 
-### Case 25
+De routeparameter `{id}` stelt de evenement-ID voor.
 
-**Description:** Run 25: args=vrouw, 53
+Het endpoint moet het volgende doen:
 
+1. Het evenement vinden met de gevraagde ID;
+2. Als het evenement niet bestaat, HTTP-statuscode **404 Not Found** terugsturen zonder body;
+3. Het evenement verwijderen uit de lijst;
+4. HTTP-statuscode **204 No Content** terugsturen zonder body.
 
-**Input:**
+Bijvoorbeeld:
 
 ```
-vrouw
-53
+DELETE /evenementen/1
 ```
-
-**Expected Output:**
 
-```
-Voor welk geslacht vraag je het tarief? Voor welke leeftijd vraag je het tarief? Werkend
-```
+Statuscode: **204 No Content**
 
----
+Na dit verzoek bestaat het evenement met ID 1 niet meer in de lijst.

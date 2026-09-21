@@ -1,494 +1,93 @@
 # 03_01
 
-Schrijf een programma dat de gebruiker vraagt om een dag van de week in te geven als getal (1 t/m 7). Het programma toont daarna de naam van de dag in het Nederlands:
+## Leerdoel
 
-- 1 = maandag
-- 2 = dinsdag
-- 3 = woensdag
-- 4 = donderdag
-- 5 = vrijdag
-- 6 = zaterdag
-- 7 = zondag
+Na deze oefening kan je een Interface en een Repository Pattern gebruiken om data te beheren in een ASP.NET Core API.
 
-Als de gebruiker een ongeldig getal invoert (minder dan 1 of meer dan 7), toon dan "Ongeldige dag".
+Je leert hoe je een contract definieert met een Interface, hoe je die implementeert met een `InMemoryRepository`, en hoe je Dependency Injection gebruikt om de repository te injecteren in een Controller.
 
-## Fuzz Test Cases
+## Opdracht
 
-Below are the automatically generated input/output expectations.
+De fictieve bibliotheek **Stadsbibliotheek Noord** wil een eenvoudige catalogus-API bouwen. In plaats van de data rechtstreeks in de Controller te beheren, wil men het Repository Pattern toepassen.
 
----
+Jouw taak is om een `BoekController` te maken met een `IBoekRepository`-Interface en een `InMemoryBoekRepository`-Implementatie.
 
-### Case 1
+### Het Boek Model
 
-**Description:** Run 1: args=9
+Maak een Modelklasse `Boek` in de map `Models` met volgende Properties:
 
+| Property | Type | Beschrijving |
+| -------- | ---- | ------------ |
+| Id | int | Unieke identificatie van het boek |
+| Titel | string | De titel van het boek |
+| Auteur | string | De auteur van het boek |
+| Uitgeverij | string | De uitgeverij |
+| Jaartal | int | Het publicatiejaar |
 
-**Input:**
+### De Repository Interface
 
-```
-9
-```
-
-**Expected Output:**
-
-```
-Geef een getal tussen 1 en 7: Ongeldige dag
-```
-
----
-
-### Case 2
-
-**Description:** Run 2: args=7
-
-
-**Input:**
-
-```
-7
-```
-
-**Expected Output:**
-
-```
-Geef een getal tussen 1 en 7: zondag
-```
-
----
-
-### Case 3
-
-**Description:** Run 3: args=9
-
-
-**Input:**
-
-```
-9
-```
-
-**Expected Output:**
-
-```
-Geef een getal tussen 1 en 7: Ongeldige dag
-```
-
----
-
-### Case 4
-
-**Description:** Run 4: args=8
-
-
-**Input:**
-
-```
-8
-```
-
-**Expected Output:**
-
-```
-Geef een getal tussen 1 en 7: Ongeldige dag
-```
-
----
-
-### Case 5
-
-**Description:** Run 5: args=4
-
-
-**Input:**
-
-```
-4
-```
-
-**Expected Output:**
-
-```
-Geef een getal tussen 1 en 7: donderdag
-```
-
----
-
-### Case 6
-
-**Description:** Run 6: args=8
-
-
-**Input:**
-
-```
-8
-```
-
-**Expected Output:**
-
-```
-Geef een getal tussen 1 en 7: Ongeldige dag
-```
-
----
-
-### Case 7
-
-**Description:** Run 7: args=0
-
-
-**Input:**
-
-```
-0
-```
-
-**Expected Output:**
-
-```
-Geef een getal tussen 1 en 7: Ongeldige dag
-```
-
----
-
-### Case 8
-
-**Description:** Run 8: args=1
-
-
-**Input:**
-
-```
-1
-```
-
-**Expected Output:**
-
-```
-Geef een getal tussen 1 en 7: maandag
-```
-
----
-
-### Case 9
-
-**Description:** Run 9: args=3
-
-
-**Input:**
-
-```
-3
-```
-
-**Expected Output:**
-
-```
-Geef een getal tussen 1 en 7: woensdag
-```
-
----
-
-### Case 10
-
-**Description:** Run 10: args=0
-
-
-**Input:**
-
-```
-0
-```
-
-**Expected Output:**
-
-```
-Geef een getal tussen 1 en 7: Ongeldige dag
-```
-
----
-
-### Case 11
-
-**Description:** Run 11: args=5
-
-
-**Input:**
-
-```
-5
-```
-
-**Expected Output:**
-
-```
-Geef een getal tussen 1 en 7: vrijdag
-```
-
----
-
-### Case 12
-
-**Description:** Run 12: args=8
-
-
-**Input:**
-
-```
-8
-```
-
-**Expected Output:**
+Maak een nieuwe map genaamd **Repositories**. Voeg een Interface toe genaamd **IBoekRepository.cs** met volgende methoden:
 
-```
-Geef een getal tussen 1 en 7: Ongeldige dag
-```
-
----
-
-### Case 13
-
-**Description:** Run 13: args=7
-
-
-**Input:**
-
-```
-7
-```
-
-**Expected Output:**
-
-```
-Geef een getal tussen 1 en 7: zondag
-```
-
----
-
-### Case 14
-
-**Description:** Run 14: args=4
-
-
-**Input:**
-
-```
-4
-```
-
-**Expected Output:**
-
-```
-Geef een getal tussen 1 en 7: donderdag
-```
-
----
-
-### Case 15
-
-**Description:** Run 15: args=2
-
-
-**Input:**
-
-```
-2
-```
-
-**Expected Output:**
-
-```
-Geef een getal tussen 1 en 7: dinsdag
-```
-
----
-
-### Case 16
-
-**Description:** Run 16: args=5
-
-
-**Input:**
-
-```
-5
-```
-
-**Expected Output:**
-
-```
-Geef een getal tussen 1 en 7: vrijdag
-```
-
----
-
-### Case 17
-
-**Description:** Run 17: args=10
-
-
-**Input:**
-
-```
-10
-```
-
-**Expected Output:**
-
-```
-Geef een getal tussen 1 en 7: Ongeldige dag
-```
-
----
-
-### Case 18
-
-**Description:** Run 18: args=5
-
-
-**Input:**
-
-```
-5
-```
-
-**Expected Output:**
-
-```
-Geef een getal tussen 1 en 7: vrijdag
-```
-
----
-
-### Case 19
-
-**Description:** Run 19: args=1
-
-
-**Input:**
-
-```
-1
-```
-
-**Expected Output:**
-
-```
-Geef een getal tussen 1 en 7: maandag
-```
-
----
-
-### Case 20
-
-**Description:** Run 20: args=7
-
-
-**Input:**
-
-```
-7
-```
-
-**Expected Output:**
-
-```
-Geef een getal tussen 1 en 7: zondag
-```
-
----
-
-### Case 21
-
-**Description:** Run 21: args=6
-
+| Methode | Return type | Beschrijving |
+| ------- | ----------- | ------------ |
+| GetAll | `List<Boek>` | Alle boeken ophalen |
+| GetById | `Boek?` | Eén boek ophalen op basis van de ID (null als niet gevonden) |
+| Create | `Boek` | Een nieuw boek aanmaken |
 
-**Input:**
+De Interface moet de volgende code bevatten:
 
-```
-6
-```
-
-**Expected Output:**
-
-```
-Geef een getal tussen 1 en 7: zaterdag
-```
-
----
-
-### Case 22
-
-**Description:** Run 22: args=4
-
-
-**Input:**
-
-```
-4
-```
-
-**Expected Output:**
-
-```
-Geef een getal tussen 1 en 7: donderdag
-```
-
----
-
-### Case 23
-
-**Description:** Run 23: args=3
+```csharp
+using WebApi.Models;
 
+namespace WebApi.Repositories;
 
-**Input:**
-
-```
-3
+public interface IBoekRepository
+{
+    List<Boek> GetAll();
+    Boek? GetById(int id);
+    Boek Create(Boek boek);
+}
 ```
 
-**Expected Output:**
-
-```
-Geef een getal tussen 1 en 7: woensdag
-```
+### De InMemory Repository Implementatie
 
----
+Maak in dezelfde map **Repositories** een klasse `InMemoryBoekRepository` die `IBoekRepository` implementeert.
 
-### Case 24
+Deze klasse moet:
 
-**Description:** Run 24: args=6
+- een privé `List<Boek>` veld bevatten met drie startboeken als seed data;
+- de `GetAll()`-methode laten teruggeven van de lijst;
+- de `GetById()`-methode laten zoeken met `FirstOrDefault`;
+- de `Create()`-methode de hoogste bestaande ID + 1 berekenen en toewijzen, dan het boek toevoegen.
 
+Seed data:
 
-**Input:**
+| Id | Titel | Auteur | Uitgeverij | Jaartal |
+| -- | ----- | ------ | ---------- | ------- |
+| 1 | De Ontdekking van de Hemel | Harry Mulisch | De Arbeiderspers | 1992 |
+| 2 | Het Dagboek van Anne Frank | Anne Frank | Contact | 1947 |
+| 3 | De Avonturen van Pi | Yann Martel | De Bezige Bij | 2001 |
 
-```
-6
-```
+### De Controller
 
-**Expected Output:**
+Maak een `BoekController` met volgende endpoints:
 
-```
-Geef een getal tussen 1 en 7: zaterdag
-```
+#### 1. Alle boeken ophalen
 
----
+Route: `GET /boeken`
 
-### Case 25
+Geef alle boeken terug met HTTP-statuscode **200 OK**.
 
-**Description:** Run 25: args=8
+#### 2. Eén boek ophalen op basis van de ID
 
+Route: `GET /boeken/{id}`
 
-**Input:**
+Vind het boek met de gevraagde ID en geef het terug als JSON met HTTP-statuscode **200 OK**.
 
-```
-8
-```
+Als er geen boek bestaat met de gevraagde ID, geef dan HTTP-statuscode **404 Not Found** terug zonder body.
 
-**Expected Output:**
+### Dependency Injection
 
-```
-Geef een getal tussen 1 en 7: Ongeldige dag
-```
+Registreer de `IBoekRepository` met `InMemoryBoekRepository` in `Program.cs` met `AddScoped`.
 
----
+De Controller moet de repository ontvangen via de constructor (geen `new` in de Controller).

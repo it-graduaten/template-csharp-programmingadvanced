@@ -1,0 +1,11 @@
+@WebApi_Headers
+GET {BaseUrl}/weatherforecast
+Accept: application/json
+
+###
+
+@WebApi_Headers
+GET {BaseUrl}/pizzeria
+Accept: application/json
+
+###

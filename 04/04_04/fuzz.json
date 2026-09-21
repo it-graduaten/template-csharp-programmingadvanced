@@ -1,8 +1,0 @@
-{
-    "runs": 15,
-    "inputs": [
-        {"type": "int", "min": 0, "max": 200},
-        {"type": "int", "min": 0, "max": 200},
-        {"type": "int", "min": 0, "max": 200}
-    ]
-}

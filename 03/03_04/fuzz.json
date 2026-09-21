@@ -1,7 +1,0 @@
-{
-    "runs": 25,
-    "inputs": [
-        {"type": "int", "min": 0, "max": 200},
-        {"type": "string", "choices": ["ja", "nee"]}
-    ]
-}

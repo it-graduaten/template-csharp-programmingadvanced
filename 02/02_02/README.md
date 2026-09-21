@@ -1,484 +1,158 @@
 # 02_02
 
-Vraag de gebruiker om een cijfer (tussen 0 en 100). Als het cijfer 50 of meer is, toon dan "Geslaagd". Anders toon je "Niet geslaagd."
+## Leerdoel
 
-## Fuzz Test Cases
+Na deze oefening kan je een ASP.NET Core API-controller maken met zowel GET- als POST-endpoints.
 
-Below are the automatically generated input/output expectations.
+Je leert hoe je gegevens naar de server stuurt via de Request Body met Model Binding, hoe je een nieuw item toevoegt aan een in-memory lijst, en hoe je de correcte HTTP-statuscodes terugstuurt: **200 OK** voor leesacties, **201 Created** voor het aanmaken van nieuwe items, en **404 Not Found** wanneer een resource niet bestaat.
 
----
+Je oefent ook het berekenen van een nieuwe ID op basis van de hoogste bestaande ID.
 
-### Case 1
+## Opdracht
 
-**Description:** Run 1: args=12
+De bibliotheek **Stadsbibliotheek Noord** wil haar catalogus-API uitbreiden zodat nieuwe boeken kunnen worden toegevoegd.
 
+Jouw taak is om een `BoekController` te maken met GET- en POST-endpoints en een `Boek`-Model.
 
-**Input:**
+### Het Boek Model
 
-```
-12
-```
-
-**Expected Output:**
-
-```
-Geef het behaalde cijfer: Niet geslaagd.
-```
-
----
-
-### Case 2
-
-**Description:** Run 2: args=27
-
-
-**Input:**
-
-```
-27
-```
-
-**Expected Output:**
-
-```
-Geef het behaalde cijfer: Niet geslaagd.
-```
-
----
-
-### Case 3
-
-**Description:** Run 3: args=42
-
-
-**Input:**
-
-```
-42
-```
-
-**Expected Output:**
-
-```
-Geef het behaalde cijfer: Niet geslaagd.
-```
-
----
-
-### Case 4
-
-**Description:** Run 4: args=86
-
-
-**Input:**
-
-```
-86
-```
-
-**Expected Output:**
-
-```
-Geef het behaalde cijfer: Geslaagd
-```
-
----
-
-### Case 5
-
-**Description:** Run 5: args=82
-
-
-**Input:**
-
-```
-82
-```
-
-**Expected Output:**
-
-```
-Geef het behaalde cijfer: Geslaagd
-```
-
----
-
-### Case 6
-
-**Description:** Run 6: args=96
-
-
-**Input:**
-
-```
-96
-```
-
-**Expected Output:**
-
-```
-Geef het behaalde cijfer: Geslaagd
-```
-
----
-
-### Case 7
-
-**Description:** Run 7: args=5
-
-
-**Input:**
-
-```
-5
-```
-
-**Expected Output:**
-
-```
-Geef het behaalde cijfer: Niet geslaagd.
-```
-
----
-
-### Case 8
-
-**Description:** Run 8: args=78
-
-
-**Input:**
-
-```
-78
-```
-
-**Expected Output:**
-
-```
-Geef het behaalde cijfer: Geslaagd
-```
-
----
-
-### Case 9
-
-**Description:** Run 9: args=97
-
-
-**Input:**
-
-```
-97
-```
-
-**Expected Output:**
-
-```
-Geef het behaalde cijfer: Geslaagd
-```
-
----
-
-### Case 10
-
-**Description:** Run 10: args=49
-
-
-**Input:**
-
-```
-49
-```
-
-**Expected Output:**
-
-```
-Geef het behaalde cijfer: Niet geslaagd.
-```
-
----
-
-### Case 11
-
-**Description:** Run 11: args=59
-
-
-**Input:**
-
-```
-59
-```
-
-**Expected Output:**
-
-```
-Geef het behaalde cijfer: Geslaagd
-```
-
----
-
-### Case 12
-
-**Description:** Run 12: args=60
-
-
-**Input:**
-
-```
-60
-```
-
-**Expected Output:**
-
-```
-Geef het behaalde cijfer: Geslaagd
-```
-
----
-
-### Case 13
-
-**Description:** Run 13: args=69
-
-
-**Input:**
-
-```
-69
-```
-
-**Expected Output:**
-
-```
-Geef het behaalde cijfer: Geslaagd
-```
-
----
-
-### Case 14
-
-**Description:** Run 14: args=44
-
-
-**Input:**
-
-```
-44
-```
-
-**Expected Output:**
-
-```
-Geef het behaalde cijfer: Niet geslaagd.
-```
-
----
-
-### Case 15
-
-**Description:** Run 15: args=93
-
-
-**Input:**
-
-```
-93
-```
-
-**Expected Output:**
-
-```
-Geef het behaalde cijfer: Geslaagd
-```
-
----
-
-### Case 16
-
-**Description:** Run 16: args=23
-
-
-**Input:**
-
-```
-23
-```
-
-**Expected Output:**
-
-```
-Geef het behaalde cijfer: Niet geslaagd.
-```
+Maak een Modelklasse `Boek` in de map `Models` met volgende Properties:
 
----
+| Property | Type | Beschrijving |
+| -------- | ---- | ------------ |
+| Id | int | Unieke identificatie van het boek |
+| Titel | string | De titel van het boek |
+| Auteur | string | De auteur van het boek |
+| Uitgeverij | string | De uitgeverij |
+| Jaartal | int | Het publicatiejaar |
 
-### Case 17
+### Startgegevens
 
-**Description:** Run 17: args=43
+Voeg in je Controller een in-memory lijst met drie boeken toe als startgegevens:
 
+| Id | Titel | Auteur | Uitgeverij | Jaartal |
+| -- | ----- | ------ | ---------- | ------- |
+| 1 | De Ontdekking van de Hemel | Harry Mulisch | De Arbeiderspers | 1992 |
+| 2 | Het Dagboek van Anne Frank | Anne Frank | Contact | 1947 |
+| 3 | De Avonturen van Pi | Yann Martel | De Bezige Bij | 2001 |
 
-**Input:**
+### 1. Alle boeken ophalen
 
-```
-43
-```
-
-**Expected Output:**
-
-```
-Geef het behaalde cijfer: Niet geslaagd.
-```
-
----
-
-### Case 18
-
-**Description:** Run 18: args=11
-
-
-**Input:**
-
-```
-11
-```
-
-**Expected Output:**
-
-```
-Geef het behaalde cijfer: Niet geslaagd.
-```
-
----
-
-### Case 19
-
-**Description:** Run 19: args=77
-
-
-**Input:**
-
-```
-77
-```
-
-**Expected Output:**
-
-```
-Geef het behaalde cijfer: Geslaagd
-```
-
----
+Voorzie een GET-endpoint op:
 
-### Case 20
+`/boeken`
 
-**Description:** Run 20: args=42
+Dit endpoint geeft alle boeken terug als een JSON-lijst met HTTP-statuscode **200 OK**.
 
+Bijvoorbeeld:
 
-**Input:**
-
-```
-42
-```
-
-**Expected Output:**
-
 ```
-Geef het behaalde cijfer: Niet geslaagd.
+GET /boeken
 ```
-
----
-
-### Case 21
-
-**Description:** Run 21: args=52
 
+Statuscode: **200 OK**
 
-**Input:**
-
-```
-52
+```json
+[
+  {
+    "id": 1,
+    "titel": "De Ontdekking van de Hemel",
+    "auteur": "Harry Mulisch",
+    "uitgeverij": "De Arbeiderspers",
+    "jaartal": 1992
+  },
+  {
+    "id": 2,
+    "titel": "Het Dagboek van Anne Frank",
+    "auteur": "Anne Frank",
+    "uitgeverij": "Contact",
+    "jaartal": 1947
+  },
+  {
+    "id": 3,
+    "titel": "De Avonturen van Pi",
+    "auteur": "Yann Martel",
+    "uitgeverij": "De Bezige Bij",
+    "jaartal": 2001
+  }
+]
 ```
 
-**Expected Output:**
-
-```
-Geef het behaalde cijfer: Geslaagd
-```
+### 2. Eén boek ophalen op basis van de ID
 
----
+Voorzie een GET-endpoint op:
 
-### Case 22
+`/boeken/{id}`
 
-**Description:** Run 22: args=90
+De routeparameter `{id}` stelt de boeken-ID voor.
 
+Vind het boek met de gevraagde ID en geef het terug als JSON met HTTP-statuscode **200 OK**.
 
-**Input:**
+Bijvoorbeeld:
 
 ```
-90
+GET /boeken/1
 ```
 
-**Expected Output:**
+Statuscode: **200 OK**
 
-```
-Geef het behaalde cijfer: Geslaagd
+```json
+{
+  "id": 1,
+  "titel": "De Ontdekking van de Hemel",
+  "auteur": "Harry Mulisch",
+  "uitgeverij": "De Arbeiderspers",
+  "jaartal": 1992
+}
 ```
-
----
-
-### Case 23
 
-**Description:** Run 23: args=26
+Als er geen boek bestaat met de gevraagde ID, geef dan HTTP-statuscode **404 Not Found** terug zonder body.
 
+### 3. Een nieuw boek aanmaken
 
-**Input:**
+Voorzie een POST-endpoint op:
 
-```
-26
-```
-
-**Expected Output:**
-
-```
-Geef het behaalde cijfer: Niet geslaagd.
-```
+`/boeken`
 
----
+De client stuurt een boek als JSON in de Request Body. ASP.NET Core zet deze automatisch om naar een `Boek`-object via Model Binding.
 
-### Case 24
+Het endpoint moet het volgende doen:
 
-**Description:** Run 24: args=43
+1. De nieuwe ID berekenen door de hoogste bestaande ID + 1 te nemen;
+2. De ID toewijzen aan het nieuwe boek;
+3. Het boek toevoegen aan de lijst;
+4. Het volledige boek (inclusief de nieuwe ID) terugsturen met HTTP-statuscode **201 Created**.
 
+Bijvoorbeeld:
 
-**Input:**
-
 ```
-43
+POST /boeken
 ```
 
-**Expected Output:**
+Request Body:
 
-```
-Geef het behaalde cijfer: Niet geslaagd.
+```json
+{
+  "id": 0,
+  "titel": "De Kringloop van het Leven",
+  "auteur": "Hella Haasse",
+  "uitgeverij": "Contact",
+  "jaartal": 1960
+}
 ```
 
----
+Statuscode: **201 Created**
 
-### Case 25
+Response Body:
 
-**Description:** Run 25: args=53
-
-
-**Input:**
-
-```
-53
-```
-
-**Expected Output:**
-
-```
-Geef het behaalde cijfer: Geslaagd
+```json
+{
+  "id": 4,
+  "titel": "De Kringloop van het Leven",
+  "auteur": "Hella Haasse",
+  "uitgeverij": "Contact",
+  "jaartal": 1960
+}
 ```
 
----
+De `id` in de request body mag worden genegeerd; je berekent de ID altijd zelf.

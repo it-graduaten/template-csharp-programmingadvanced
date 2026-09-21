@@ -1,326 +1,75 @@
 # 04_01
 
-Een gebruiker wil drie getallen invoeren. Sla deze getallen op in een array van het type int.
+## Leerdoel
 
-Toon daarna het grootste getal van de drie.
+Na deze oefening kan je een `DbContext` aanmaken met `DbSet<T>` voor een model, de context registreren in de Dependency Injection container, en een migratie aanmaken en uitvoeren voor een PostgreSQL-database.
 
-## Fuzz Test Cases
+Je leert hoe je een Code-First database opzet vanuit C#-modellen, hoe je de `DbContext` configureert in `Program.cs`, en hoe je migraties gebruikt om de database te synchroniseren met je modellen.
 
-Below are the automatically generated input/output expectations.
+## Opdracht
 
----
+De bibliotheek **Stadsbibliotheek Noord** wil haar catalogus-API migreren van een in-memory lijst naar een echte PostgreSQL-database met Entity Framework Core.
 
-### Case 1
+Jouw taak is om een `DbContext` aan te maken, een migratie toe te passen, en een eenvoudige GET-endpoint te maken die alle boeken uit de database ophaalt.
 
-**Description:** Run 1: args=28, 46, -15
+### Het Boek Model
 
+Gebruik het bestaande `Boek`-Model in de map `Models`:
 
-**Input:**
+| Property | Type | Beschrijving |
+| -------- | ---- | ------------ |
+| Id | int | Unieke identificatie van het boek |
+| Titel | string | De titel van het boek |
+| Auteur | string | De auteur van het boek |
+| Uitgeverij | string | De uitgeverij |
+| Jaartal | int | Het publicatiejaar |
 
-```
-28
-46
--15
-```
+### De DbContext
 
-**Expected Output:**
+Maak een nieuwe map genaamd **Data**. Voeg een klasse genaamd **BoekCatalogusContext** toe die overerft van `DbContext`.
 
-```
-Geef getal 1: Geef getal 2: Geef getal 3: Het grootste getal is 46.
-```
+De context moet:
+- een constructor hebben die `DbContextOptions<BoekCatalogusContext>` accepteert en doorgeeft aan de basisklasse;
+- een `DbSet<Boek>` property genaamd **Boeken** bevatten;
+- de namespace **WebApi.Data** gebruiken.
 
----
+```csharp
+using Microsoft.EntityFrameworkCore;
+using WebApi.Models;
 
-### Case 2
+namespace WebApi.Data;
 
-**Description:** Run 2: args=-25, -13, -21
+public class BoekCatalogusContext : DbContext
+{
+    public BoekCatalogusContext(DbContextOptions<BoekCatalogusContext> options)
+        : base(options) { }
 
-
-**Input:**
-
-```
--25
--13
--21
-```
-
-**Expected Output:**
-
-```
-Geef getal 1: Geef getal 2: Geef getal 3: Het grootste getal is -13.
+    public DbSet<Boek> Boeken { get; set; }
+}
 ```
 
----
+### De Database registreren in Program.cs
 
-### Case 3
+Registreer de `DbContext` in `Program.cs` met `AddDbContext` en koppel deze aan de PostgreSQL-provider (Npgsql). Gebruik de connection string met naam **PostgresConnection** uit `appsettings.json`.
 
-**Description:** Run 3: args=-12, -88, -45
-
-
-**Input:**
-
-```
--12
--88
--45
+```csharp
+var connectionString = builder.Configuration.GetConnectionString("PostgresConnection");
+builder.Services.AddDbContext<BoekCatalogusContext>(options =>
+    options.UseNpgsql(connectionString));
 ```
 
-**Expected Output:**
+### Migratie aanmaken en uitvoeren
 
-```
-Geef getal 1: Geef getal 2: Geef getal 3: Het grootste getal is -12.
-```
+Maak een migratie aan met de naam **InitialCreate** en voer deze uit om de database en tabellen te genereren.
 
----
+### De Controller
 
-### Case 4
+Maak een `BoekController` met volgende endpoint:
 
-**Description:** Run 4: args=-30, 83, -6
+#### 1. Alle boeken ophalen
 
+Route: `GET /boeken`
 
-**Input:**
+Geef alle boeken terug als JSON met HTTP-statuscode **200 OK**.
 
-```
--30
-83
--6
-```
-
-**Expected Output:**
-
-```
-Geef getal 1: Geef getal 2: Geef getal 3: Het grootste getal is 83.
-```
-
----
-
-### Case 5
-
-**Description:** Run 5: args=27, -14, 36
-
-
-**Input:**
-
-```
-27
--14
-36
-```
-
-**Expected Output:**
-
-```
-Geef getal 1: Geef getal 2: Geef getal 3: Het grootste getal is 36.
-```
-
----
-
-### Case 6
-
-**Description:** Run 6: args=16, 33, 72
-
-
-**Input:**
-
-```
-16
-33
-72
-```
-
-**Expected Output:**
-
-```
-Geef getal 1: Geef getal 2: Geef getal 3: Het grootste getal is 72.
-```
-
----
-
-### Case 7
-
-**Description:** Run 7: args=-24, 55, -51
-
-
-**Input:**
-
-```
--24
-55
--51
-```
-
-**Expected Output:**
-
-```
-Geef getal 1: Geef getal 2: Geef getal 3: Het grootste getal is 55.
-```
-
----
-
-### Case 8
-
-**Description:** Run 8: args=37, 28, 1
-
-
-**Input:**
-
-```
-37
-28
-1
-```
-
-**Expected Output:**
-
-```
-Geef getal 1: Geef getal 2: Geef getal 3: Het grootste getal is 37.
-```
-
----
-
-### Case 9
-
-**Description:** Run 9: args=41, 33, 52
-
-
-**Input:**
-
-```
-41
-33
-52
-```
-
-**Expected Output:**
-
-```
-Geef getal 1: Geef getal 2: Geef getal 3: Het grootste getal is 52.
-```
-
----
-
-### Case 10
-
-**Description:** Run 10: args=74, -52, 59
-
-
-**Input:**
-
-```
-74
--52
-59
-```
-
-**Expected Output:**
-
-```
-Geef getal 1: Geef getal 2: Geef getal 3: Het grootste getal is 74.
-```
-
----
-
-### Case 11
-
-**Description:** Run 11: args=-42, 18, -82
-
-
-**Input:**
-
-```
--42
-18
--82
-```
-
-**Expected Output:**
-
-```
-Geef getal 1: Geef getal 2: Geef getal 3: Het grootste getal is 18.
-```
-
----
-
-### Case 12
-
-**Description:** Run 12: args=21, -44, 88
-
-
-**Input:**
-
-```
-21
--44
-88
-```
-
-**Expected Output:**
-
-```
-Geef getal 1: Geef getal 2: Geef getal 3: Het grootste getal is 88.
-```
-
----
-
-### Case 13
-
-**Description:** Run 13: args=84, 70, -18
-
-
-**Input:**
-
-```
-84
-70
--18
-```
-
-**Expected Output:**
-
-```
-Geef getal 1: Geef getal 2: Geef getal 3: Het grootste getal is 84.
-```
-
----
-
-### Case 14
-
-**Description:** Run 14: args=33, -59, 6
-
-
-**Input:**
-
-```
-33
--59
-6
-```
-
-**Expected Output:**
-
-```
-Geef getal 1: Geef getal 2: Geef getal 3: Het grootste getal is 33.
-```
-
----
-
-### Case 15
-
-**Description:** Run 15: args=-28, 48, -50
-
-
-**Input:**
-
-```
--28
-48
--50
-```
-
-**Expected Output:**
-
-```
-Geef getal 1: Geef getal 2: Geef getal 3: Het grootste getal is 48.
-```
-
----
+De controller moet de `DbContext` ontvangen via de constructor (geen `new` in de Controller).

@@ -1,465 +1,130 @@
 # 04_02
 
-Een gebruiker wil een boodschappenlijst bijhouden. Gebruik een List<string> om de items te bewaren.
+## Leerdoel
 
-Vraag de gebruiker om vijf producten in te voeren. Voeg elk product toe aan de lijst.
+Na deze oefening kan je een `DbContext` configureren met de Fluent API (`OnModelCreating`) om databasetabellen te finetunen, en een volledige CRUD-API bouwen met Entity Framework Core.
 
-Vraag daarna of de gebruiker een product wil verwijderen. Als ja, vraag dan welk product. Verwijder het product uit de lijst.
+Je leert hoe je string-lengtes en vereiste velden configureert met de Fluent API, hoe je de databasecontext registreert in DI, en hoe je alle CRUD-operaties (Create, Read, Update, Delete) implementeert met correcte HTTP-statuscodes.
 
-Tonen: het aantal producten na het verwijderen en de namen van alle resterende producten.
+## Opdracht
 
-## Fuzz Test Cases
+De restaurant **De Gouden Oesters** wil haar bestellingen-API migreren van een in-memory lijst naar een echte PostgreSQL-database met Entity Framework Core.
 
-Below are the automatically generated input/output expectations.
+Jouw taak is om een `DbContext` aan te maken met Fluent API-configuratie, alle CRUD-endpoints te implementeren, en de database te synchroniseren via migraties.
 
----
+### Het Bestelling Model
 
-### Case 1
+Maak een Modelklasse `Bestelling` in de map `Models` met volgende Properties:
 
-**Description:** Run 1: args=AJi29, FoQBS, SqCPi, Rd3iG, DYrBh, ja, M46Ts
+| Property | Type | Beschrijving |
+| -------- | ---- | ------------ |
+| Id | int | Unieke identificatie van de bestelling |
+| Naam | string | De naam van de klant |
+| Tafelnummer | int | Het tafelnnummer |
+| Gerechten | string | De bestelde gerechten, gescheiden door koppeltekens (bijv. "Lasagne-Salade") |
+| Status | string | De status van de bestelling |
 
+### De DbContext met Fluent API
 
-**Input:**
+Maak een nieuwe map genaamd **Data**. Voeg een klasse genaamd **BestellingContext** toe die overerft van `DbContext`.
 
-```
-AJi29
-FoQBS
-SqCPi
-Rd3iG
-DYrBh
-ja
-M46Ts
-```
+De context moet:
+- een constructor hebben die `DbContextOptions<BestellingContext>` accepteert en doorgeeft aan de basisklasse;
+- een `DbSet<Bestelling>` property genaamd **Bestellingen** bevatten;
+- de Fluent API (`OnModelCreating`) overschrijven om de volgende configuraties toe te passen:
+  - de tabelnaam expliciet instellen op **Bestellingen**;
+  - de string-velden `Naam`, `Gerechten` en `Status` verplicht maken (`IsRequired()`) met een maximale lengte van **100** karakters;
+- de namespace **WebApi.Data** gebruiken.
 
-**Expected Output:**
+```csharp
+using Microsoft.EntityFrameworkCore;
+using WebApi.Models;
 
-```
-Geef product 1: Geef product 2: Geef product 3: Geef product 4: Geef product 5: Wil je een product verwijderen? (ja/nee): Welk product wil je verwijderen? Aantal producten: 5
-AJi29
-FoQBS
-SqCPi
-Rd3iG
-DYrBh
-```
+namespace WebApi.Data;
 
----
+public class BestellingContext : DbContext
+{
+    public BestellingContext(DbContextOptions<BestellingContext> options)
+        : base(options) { }
 
-### Case 2
+    public DbSet<Bestelling> Bestellingen { get; set; }
 
-**Description:** Run 2: args=GUgm0, 8nSc5, wa9Mc, Npnlx, jwPlG, ja, 8X93o
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        base.OnModelCreating(modelBuilder);
 
+        modelBuilder.Entity<Bestelling>(entity =>
+        {
+            entity.ToTable("Bestellingen");
 
-**Input:**
-
-```
-GUgm0
-8nSc5
-wa9Mc
-Npnlx
-jwPlG
-ja
-8X93o
-```
-
-**Expected Output:**
-
-```
-Geef product 1: Geef product 2: Geef product 3: Geef product 4: Geef product 5: Wil je een product verwijderen? (ja/nee): Welk product wil je verwijderen? Aantal producten: 5
-GUgm0
-8nSc5
-wa9Mc
-Npnlx
-jwPlG
+            entity.Property(p => p.Naam).IsRequired().HasMaxLength(100);
+            entity.Property(p => p.Gerechten).IsRequired().HasMaxLength(100);
+            entity.Property(p => p.Status).IsRequired().HasMaxLength(100);
+        });
+    }
+}
 ```
 
----
+### De Database registreren in Program.cs
 
-### Case 3
+Registreer de `DbContext` in `Program.cs` met `AddDbContext` en koppel deze aan de PostgreSQL-provider (Npgsql). Gebruik de connection string met naam **PostgresConnection** uit `appsettings.json`.
 
-**Description:** Run 3: args=H8SqC, UaUuv, d31yn, xljgY, itkX4, nee, sJZY8
+### Migratie aanmaken en uitvoeren
 
+Maak een migratie aan met de naam **InitialCreate** en voer deze uit om de database en tabellen te genereren.
 
-**Input:**
+### De Controller
 
-```
-H8SqC
-UaUuv
-d31yn
-xljgY
-itkX4
-nee
-sJZY8
-```
+Maak een `BestellingController` met volgende endpoints:
 
-**Expected Output:**
+#### 1. Alle bestellingen ophalen
 
-```
-Geef product 1: Geef product 2: Geef product 3: Geef product 4: Geef product 5: Wil je een product verwijderen? (ja/nee): Aantal producten: 5
-H8SqC
-UaUuv
-d31yn
-xljgY
-itkX4
-```
+Route: `GET /bestellingen`
 
----
+Geef alle bestellingen terug als JSON met HTTP-statuscode **200 OK**.
 
-### Case 4
+#### 2. Eén bestelling ophalen op basis van de ID
 
-**Description:** Run 4: args=lNkG0, VG5iP, grDeP, VT55F, XkB5l, nee, PBawz
+Route: `GET /bestellingen/{id}`
 
+Vind de bestelling met de gevraagde ID en geef het terug als JSON met HTTP-statuscode **200 OK**.
 
-**Input:**
+Als er geen bestelling bestaat met de gevraagde ID, geef dan HTTP-statuscode **404 Not Found** terug zonder body.
 
-```
-lNkG0
-VG5iP
-grDeP
-VT55F
-XkB5l
-nee
-PBawz
-```
+#### 3. Een nieuwe bestelling aanmaken
 
-**Expected Output:**
+Route: `POST /bestellingen`
 
-```
-Geef product 1: Geef product 2: Geef product 3: Geef product 4: Geef product 5: Wil je een product verwijderen? (ja/nee): Aantal producten: 5
-lNkG0
-VG5iP
-grDeP
-VT55F
-XkB5l
-```
+De client stuurt een bestelling als JSON in de Request Body. ASP.NET Core zet deze automatisch om naar een `Bestelling`-object via Model Binding.
 
----
+Het endpoint moet:
+1. De nieuwe bestelling toevoegen aan de database;
+2. De volledige bestelling (inclusief de gegenereerde ID) terugsturen met HTTP-statuscode **201 Created**.
 
-### Case 5
+De `id` in de request body mag worden genegeerd; Entity Framework genereert de ID automatisch.
 
-**Description:** Run 5: args=h63v3, HxANF, Uxj48, VvlSr, pDfpQ, ja, JmaO3
+#### 4. Een bestelling bijwerken
 
+Route: `PUT /bestellingen/{id}`
 
-**Input:**
+De routeparameter `{id}` stelt de bestel-ID voor. De client stuurt de nieuwe gegevens van de bestelling als JSON in de Request Body via Model Binding.
 
-```
-h63v3
-HxANF
-Uxj48
-VvlSr
-pDfpQ
-ja
-JmaO3
-```
+Het endpoint moet:
+1. De bestelling vinden met de gevraagde ID;
+2. Als de bestelling niet bestaat, HTTP-statuscode **404 Not Found** terugsturen zonder body;
+3. Alle Properties van de bestelling overschrijven met de nieuwe gegevens uit de Request Body;
+4. HTTP-statuscode **204 No Content** terugsturen zonder body.
 
-**Expected Output:**
+#### 5. Een bestelling verwijderen
 
-```
-Geef product 1: Geef product 2: Geef product 3: Geef product 4: Geef product 5: Wil je een product verwijderen? (ja/nee): Welk product wil je verwijderen? Aantal producten: 5
-h63v3
-HxANF
-Uxj48
-VvlSr
-pDfpQ
-```
+Route: `DELETE /bestellingen/{id}`
 
----
+De routeparameter `{id}` stelt de bestel-ID voor.
 
-### Case 6
+Het endpoint moet:
+1. De bestelling vinden met de gevraagde ID;
+2. Als de bestelling niet bestaat, HTTP-statuscode **404 Not Found** terugsturen zonder body;
+3. De bestelling verwijderen uit de database;
+4. HTTP-statuscode **204 No Content** terugsturen zonder body.
 
-**Description:** Run 6: args=cK0l7, pzS1m, DQf14, ZgkuL, j7T3b, nee, vCa8k
-
-
-**Input:**
-
-```
-cK0l7
-pzS1m
-DQf14
-ZgkuL
-j7T3b
-nee
-vCa8k
-```
-
-**Expected Output:**
-
-```
-Geef product 1: Geef product 2: Geef product 3: Geef product 4: Geef product 5: Wil je een product verwijderen? (ja/nee): Aantal producten: 5
-cK0l7
-pzS1m
-DQf14
-ZgkuL
-j7T3b
-```
-
----
-
-### Case 7
-
-**Description:** Run 7: args=18PRR, fZBf4, j9cyk, bKql0, WtSl0, nee, pQDId
-
-
-**Input:**
-
-```
-18PRR
-fZBf4
-j9cyk
-bKql0
-WtSl0
-nee
-pQDId
-```
-
-**Expected Output:**
-
-```
-Geef product 1: Geef product 2: Geef product 3: Geef product 4: Geef product 5: Wil je een product verwijderen? (ja/nee): Aantal producten: 5
-18PRR
-fZBf4
-j9cyk
-bKql0
-WtSl0
-```
-
----
-
-### Case 8
-
-**Description:** Run 8: args=XLSYq, T7Nad, bOVe8, ku6UR, qPcuB, nee, B5BTm
-
-
-**Input:**
-
-```
-XLSYq
-T7Nad
-bOVe8
-ku6UR
-qPcuB
-nee
-B5BTm
-```
-
-**Expected Output:**
-
-```
-Geef product 1: Geef product 2: Geef product 3: Geef product 4: Geef product 5: Wil je een product verwijderen? (ja/nee): Aantal producten: 5
-XLSYq
-T7Nad
-bOVe8
-ku6UR
-qPcuB
-```
-
----
-
-### Case 9
-
-**Description:** Run 9: args=wlEio, 0Ozoq, 7Zqhn, MAxpZ, H2dOC, ja, umJx9
-
-
-**Input:**
-
-```
-wlEio
-0Ozoq
-7Zqhn
-MAxpZ
-H2dOC
-ja
-umJx9
-```
-
-**Expected Output:**
-
-```
-Geef product 1: Geef product 2: Geef product 3: Geef product 4: Geef product 5: Wil je een product verwijderen? (ja/nee): Welk product wil je verwijderen? Aantal producten: 5
-wlEio
-0Ozoq
-7Zqhn
-MAxpZ
-H2dOC
-```
-
----
-
-### Case 10
-
-**Description:** Run 10: args=5mO1n, K2nWM, ffQWp, QmyGJ, L4d9h, nee, 2kC9c
-
-
-**Input:**
-
-```
-5mO1n
-K2nWM
-ffQWp
-QmyGJ
-L4d9h
-nee
-2kC9c
-```
-
-**Expected Output:**
-
-```
-Geef product 1: Geef product 2: Geef product 3: Geef product 4: Geef product 5: Wil je een product verwijderen? (ja/nee): Aantal producten: 5
-5mO1n
-K2nWM
-ffQWp
-QmyGJ
-L4d9h
-```
-
----
-
-### Case 11
-
-**Description:** Run 11: args=KBgue, 7Rpgz, 5zW0d, gGwXf, ACL7k, nee, q7xBm
-
-
-**Input:**
-
-```
-KBgue
-7Rpgz
-5zW0d
-gGwXf
-ACL7k
-nee
-q7xBm
-```
-
-**Expected Output:**
-
-```
-Geef product 1: Geef product 2: Geef product 3: Geef product 4: Geef product 5: Wil je een product verwijderen? (ja/nee): Aantal producten: 5
-KBgue
-7Rpgz
-5zW0d
-gGwXf
-ACL7k
-```
-
----
-
-### Case 12
-
-**Description:** Run 12: args=TJzlQ, 04xIS, Dh9CQ, 7juOW, lHo3o, ja, N6kpe
-
-
-**Input:**
-
-```
-TJzlQ
-04xIS
-Dh9CQ
-7juOW
-lHo3o
-ja
-N6kpe
-```
-
-**Expected Output:**
-
-```
-Geef product 1: Geef product 2: Geef product 3: Geef product 4: Geef product 5: Wil je een product verwijderen? (ja/nee): Welk product wil je verwijderen? Aantal producten: 5
-TJzlQ
-04xIS
-Dh9CQ
-7juOW
-lHo3o
-```
-
----
-
-### Case 13
-
-**Description:** Run 13: args=9g8ja, fIIvD, ZGHx7, lADaY, 3tvxR, nee, G1mfr
-
-
-**Input:**
-
-```
-9g8ja
-fIIvD
-ZGHx7
-lADaY
-3tvxR
-nee
-G1mfr
-```
-
-**Expected Output:**
-
-```
-Geef product 1: Geef product 2: Geef product 3: Geef product 4: Geef product 5: Wil je een product verwijderen? (ja/nee): Aantal producten: 5
-9g8ja
-fIIvD
-ZGHx7
-lADaY
-3tvxR
-```
-
----
-
-### Case 14
-
-**Description:** Run 14: args=97Oo1, XAmSV, Ae8d3, J6tVf, EVP3a, ja, PNNXu
-
-
-**Input:**
-
-```
-97Oo1
-XAmSV
-Ae8d3
-J6tVf
-EVP3a
-ja
-PNNXu
-```
-
-**Expected Output:**
-
-```
-Geef product 1: Geef product 2: Geef product 3: Geef product 4: Geef product 5: Wil je een product verwijderen? (ja/nee): Welk product wil je verwijderen? Aantal producten: 5
-97Oo1
-XAmSV
-Ae8d3
-J6tVf
-EVP3a
-```
-
----
-
-### Case 15
-
-**Description:** Run 15: args=bkO3D, cjxLN, nu0ZL, 2ODT5, lgYXB, ja, EiJJ6
-
-
-**Input:**
-
-```
-bkO3D
-cjxLN
-nu0ZL
-2ODT5
-lgYXB
-ja
-EiJJ6
-```
-
-**Expected Output:**
-
-```
-Geef product 1: Geef product 2: Geef product 3: Geef product 4: Geef product 5: Wil je een product verwijderen? (ja/nee): Welk product wil je verwijderen? Aantal producten: 5
-bkO3D
-cjxLN
-nu0ZL
-2ODT5
-lgYXB
-```
-
----
+De controller moet de `DbContext` ontvangen via de constructor (geen `new` in de Controller).

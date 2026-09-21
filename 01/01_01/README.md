@@ -1,511 +1,100 @@
 # 01_01
 
-Bereken de prijs inclusief BTW.
+## Leerdoel
 
-Vraag de gebruiker om de prijs exclusief BTW en het BTW percentage. Bereken de BTW-bedrag en voeg dit bij de oorspronkelijke prijs. Toon de totale prijs inclusief BTW met twee decimalen.
+Na deze oefening kan je een eenvoudige ASP.NET Core API-controller maken met verschillende GET-endpoints.
 
-## Fuzz Test Cases
+Je leert routes definiëren, waarden uit een URL als parameter ontvangen en deze waarden gebruiken in gewone C#-logica.
 
-Below are the automatically generated input/output expectations.
+Daarnaast leer je dat een gebruiker van een API jouw C#-methoden niet rechtstreeks aanspreekt. De communicatie verloopt via de HTTP-routes die jij aan je controller en methoden koppelt.
 
----
+## 
 
-### Case 1
+## Opdracht
 
-**Description:** Run 1: args=169.3945082806777, 13.678318142325196
+De fictieve hogeschool Northwind College wil nieuwe studenten verwelkomen met een eenvoudige informatie-API.
 
+Jouw taak is om een CampusController te maken met verschillende GET-endpoints.
 
-**Input:**
+Via de API moeten studenten:
 
-```
-169.3945082806777
-13.678318142325196
-```
+1. een algemeen welkomstbericht kunnen opvragen;
+2. een persoonlijk welkomstbericht kunnen krijgen;
+3. informatie over een campusgebouw kunnen opvragen;
+4. advies kunnen krijgen op basis van het aantal minuten tot hun volgende les.
 
-**Expected Output:**
+Implementeer onderstaande functionaliteiten.
 
-```
-192.56
-```
+### 1. Algemeen welkomstbericht
 
----
+Voorzie een GET-endpoint op:
 
-### Case 2
+`/campus`
 
-**Description:** Run 2: args=246.2215291799838, 21.316141601292216
+Dit endpoint geeft volgende tekst terug:
 
+`Welkom bij Northwind College!`
 
-**Input:**
+### 2. Persoonlijk welkomstbericht
 
-```
-246.2215291799838
-21.316141601292216
-```
+Voorzie een GET-endpoint op:
 
-**Expected Output:**
+`/campus/welkom/{naam}`
 
-```
-298.71
-```
+De naam van de student wordt meegegeven via de URL.
 
----
+Bijvoorbeeld:
 
-### Case 3
+`GET /campus/welkom/Amina`
 
-**Description:** Run 3: args=174.24464662087763, 9.117511943109971
+geeft als resultaat:
 
+`Welkom bij Northwind College, Amina!`
 
-**Input:**
+De naam moet afkomstig zijn uit de routeparameter. Je mag dus geen specifieke studentennamen hardcoderen.
 
-```
-174.24464662087763
-9.117511943109971
-```
+### 3. Informatie over een campusgebouw
 
-**Expected Output:**
+Voorzie een GET-endpoint op:
 
-```
-190.13
-```
+`/campus/gebouw/{gebouw}`
 
----
+Het endpoint ontvangt de naam van een gebouw via de route.
 
-### Case 4
+De API moet drie gebouwen herkennen:
 
-**Description:** Run 4: args=172.11187375660862, 17.880277446180155
+- bibliotheek
+- sport
+- technologie
 
+Geef voor ieder gebouw het bijbehorende bericht terug:
 
-**Input:**
+| Gebouw      | Bericht                                                                 |
+|------------|-------------------------------------------------------------------------|
+| bibliotheek | In de bibliotheek kan je studeren en boeken ontlenen.
+| sport       | In het sportgebouw vind je de fitnessruimte en indoor sportzalen.
+| technologie | In het technologiegebouw vind je de computerlokalen.
 
-```
-172.11187375660862
-17.880277446180155
-```
+Wordt een onbekend gebouw opgegeven, geef dan het bericht terug:
 
-**Expected Output:**
+`Sorry, we hebben geen informatie over dit gebouw.`
 
-```
-202.89
-```
+### 4. Advies op basis van het aantal minuten tot de volgende les
 
----
+Voorzie een GET-endpoint op:
 
-### Case 5
+`/campus/les/{minuten}`
 
-**Description:** Run 5: args=417.0902663786983, 19.73257336456022
+De routeparameter `{minuten}` stelt het aantal minuten voor tot de volgende les van de student.
 
+Geef het volgende advies:
 
-**Input:**
+- Minder dan 10 minuten: `Ga nu naar je leslokaal.`
+- 10 tot en met 30 minuten: `Je hebt nog even tijd voor je les begint.`
+- Meer dan 30 minuten: `Je hebt nog ruim voldoende tijd voor je les.`
 
-```
-417.0902663786983
-19.73257336456022
-```
+Bijvoorbeeld:
 
-**Expected Output:**
-
-```
-499.39
-```
-
----
-
-### Case 6
-
-**Description:** Run 6: args=849.7052182215689, 16.765404999193855
-
-
-**Input:**
-
-```
-849.7052182215689
-16.765404999193855
-```
-
-**Expected Output:**
-
-```
-992.16
-```
-
----
-
-### Case 7
-
-**Description:** Run 7: args=757.9942931341857, 19.313186998039818
-
-
-**Input:**
-
-```
-757.9942931341857
-19.313186998039818
-```
-
-**Expected Output:**
-
-```
-904.39
-```
-
----
-
-### Case 8
-
-**Description:** Run 8: args=754.6613909989459, 20.407940939784226
-
-
-**Input:**
-
-```
-754.6613909989459
-20.407940939784226
-```
-
-**Expected Output:**
-
-```
-908.67
-```
-
----
-
-### Case 9
-
-**Description:** Run 9: args=415.24726716272716, 7.212790724294559
-
-
-**Input:**
-
-```
-415.24726716272716
-7.212790724294559
-```
-
-**Expected Output:**
-
-```
-445.20
-```
-
----
-
-### Case 10
-
-**Description:** Run 10: args=469.55019260768375, 23.936822988377592
-
-
-**Input:**
-
-```
-469.55019260768375
-23.936822988377592
-```
-
-**Expected Output:**
-
-```
-581.95
-```
-
----
-
-### Case 11
-
-**Description:** Run 11: args=237.1354449978945, 7.658315427421204
-
-
-**Input:**
-
-```
-237.1354449978945
-7.658315427421204
-```
-
-**Expected Output:**
-
-```
-255.30
-```
-
----
-
-### Case 12
-
-**Description:** Run 12: args=2.3332728870189046, 24.09165787511167
-
-
-**Input:**
-
-```
-2.3332728870189046
-24.09165787511167
-```
-
-**Expected Output:**
-
-```
-2.90
-```
-
----
-
-### Case 13
-
-**Description:** Run 13: args=535.7909712388324, 17.198951894597176
-
-
-**Input:**
-
-```
-535.7909712388324
-17.198951894597176
-```
-
-**Expected Output:**
-
-```
-627.94
-```
-
----
-
-### Case 14
-
-**Description:** Run 14: args=479.23970937826425, 25.00873106754695
-
-
-**Input:**
-
-```
-479.23970937826425
-25.00873106754695
-```
-
-**Expected Output:**
-
-```
-599.09
-```
-
----
-
-### Case 15
-
-**Description:** Run 15: args=859.3303491580675, 22.55310317224446
-
-
-**Input:**
-
-```
-859.3303491580675
-22.55310317224446
-```
-
-**Expected Output:**
-
-```
-1,053.14
-```
-
----
-
-### Case 16
-
-**Description:** Run 16: args=759.0903309488596, 24.905438371075853
-
-
-**Input:**
-
-```
-759.0903309488596
-24.905438371075853
-```
-
-**Expected Output:**
-
-```
-948.15
-```
-
----
-
-### Case 17
-
-**Description:** Run 17: args=490.37487101561135, 20.253048619962378
-
-
-**Input:**
-
-```
-490.37487101561135
-20.253048619962378
-```
-
-**Expected Output:**
-
-```
-589.69
-```
-
----
-
-### Case 18
-
-**Description:** Run 18: args=726.5416938327794, 15.401109962798019
-
-
-**Input:**
-
-```
-726.5416938327794
-15.401109962798019
-```
-
-**Expected Output:**
-
-```
-838.44
-```
-
----
-
-### Case 19
-
-**Description:** Run 19: args=49.18330119423749, 7.21069025553288
-
-
-**Input:**
-
-```
-49.18330119423749
-7.21069025553288
-```
-
-**Expected Output:**
-
-```
-52.73
-```
-
----
-
-### Case 20
-
-**Description:** Run 20: args=834.0810724718411, 24.90227834292433
-
-
-**Input:**
-
-```
-834.0810724718411
-24.90227834292433
-```
-
-**Expected Output:**
-
-```
-1,041.79
-```
-
----
-
-### Case 21
-
-**Description:** Run 21: args=40.47695833494298, 6.65058486714871
-
-
-**Input:**
-
-```
-40.47695833494298
-6.65058486714871
-```
-
-**Expected Output:**
-
-```
-43.17
-```
-
----
-
-### Case 22
-
-**Description:** Run 22: args=895.5319437823039, 6.828604849308667
-
-
-**Input:**
-
-```
-895.5319437823039
-6.828604849308667
-```
-
-**Expected Output:**
-
-```
-956.68
-```
-
----
-
-### Case 23
-
-**Description:** Run 23: args=575.6951919948743, 15.528691288095166
-
-
-**Input:**
-
-```
-575.6951919948743
-15.528691288095166
-```
-
-**Expected Output:**
-
-```
-665.09
-```
-
----
-
-### Case 24
-
-**Description:** Run 24: args=33.13215049354999, 24.442704556205797
-
-
-**Input:**
-
-```
-33.13215049354999
-24.442704556205797
-```
-
-**Expected Output:**
-
-```
-41.23
-```
-
----
-
-### Case 25
-
-**Description:** Run 25: args=218.5834619041512, 22.92326760740393
-
-
-**Input:**
-
-```
-218.5834619041512
-22.92326760740393
-```
-
-**Expected Output:**
-
-```
-268.69
-```
-
----
+`GET /campus/les/5` geeft als resultaat: `Ga nu naar je leslokaal.`
+`GET /campus/les/15` geeft als resultaat: `Je hebt nog even tijd voor je les begint.`
+`GET /campus/les/45` geeft als resultaat: `Je hebt nog ruim voldoende tijd voor je les.`

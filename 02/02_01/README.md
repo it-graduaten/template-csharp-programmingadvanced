@@ -1,484 +1,113 @@
 # 02_01
 
-Vraag de gebruiker om een getal. Toon "Het getal is positief" als het getal groter is dan 0. Toon "Het getal is negatief" als het getal kleiner is dan 0. Toon "Het getal is nul" als het getal gelijk is aan 0.
+## Leerdoel
 
-## Fuzz Test Cases
+Na deze oefening kan je een eenvoudige ASP.NET Core API-controller maken met een Model en meerdere GET-endpoints.
 
-Below are the automatically generated input/output expectations.
+Je leert een Modelklasse aanmaken met Properties, data opslaan in een in-memory lijst, en het retourtype `ActionResult<T>` gebruiken om HTTP-statuscodes terug te sturen.
 
----
+Je oefent ook het gebruik van routeparameters om een specifiek item uit de lijst op te halen, en het correct afhandelen van niet-bestaande items met een `404 Not Found`-status.
 
-### Case 1
+## Opdracht
 
-**Description:** Run 1: args=-9
+De bibliotheek **Stadsbibliotheek Noord** wil een eenvoudige catalogus-API bouwen waarmee bezoekers boeken kunnen opzoeken.
 
+Jouw taak is om een `BoekController` te maken met verschillende GET-endpoints en een `Boek`-Model.
 
-**Input:**
+### Het Boek Model
 
-```
--9
-```
-
-**Expected Output:**
-
-```
-Geef een getal: Het getal is negatief
-```
-
----
-
-### Case 2
-
-**Description:** Run 2: args=32
-
-
-**Input:**
-
-```
-32
-```
-
-**Expected Output:**
-
-```
-Geef een getal: Het getal is positief
-```
-
----
-
-### Case 3
-
-**Description:** Run 3: args=22
-
-
-**Input:**
-
-```
-22
-```
-
-**Expected Output:**
-
-```
-Geef een getal: Het getal is positief
-```
-
----
-
-### Case 4
-
-**Description:** Run 4: args=77
-
-
-**Input:**
-
-```
-77
-```
-
-**Expected Output:**
-
-```
-Geef een getal: Het getal is positief
-```
-
----
-
-### Case 5
-
-**Description:** Run 5: args=71
-
-
-**Input:**
-
-```
-71
-```
-
-**Expected Output:**
-
-```
-Geef een getal: Het getal is positief
-```
-
----
-
-### Case 6
-
-**Description:** Run 6: args=11
-
-
-**Input:**
-
-```
-11
-```
-
-**Expected Output:**
-
-```
-Geef een getal: Het getal is positief
-```
-
----
-
-### Case 7
-
-**Description:** Run 7: args=55
-
-
-**Input:**
-
-```
-55
-```
-
-**Expected Output:**
-
-```
-Geef een getal: Het getal is positief
-```
-
----
-
-### Case 8
-
-**Description:** Run 8: args=-55
-
-
-**Input:**
-
-```
--55
-```
-
-**Expected Output:**
-
-```
-Geef een getal: Het getal is negatief
-```
-
----
-
-### Case 9
-
-**Description:** Run 9: args=-17
-
-
-**Input:**
-
-```
--17
-```
-
-**Expected Output:**
-
-```
-Geef een getal: Het getal is negatief
-```
-
----
-
-### Case 10
-
-**Description:** Run 10: args=54
-
-
-**Input:**
-
-```
-54
-```
-
-**Expected Output:**
-
-```
-Geef een getal: Het getal is positief
-```
-
----
-
-### Case 11
-
-**Description:** Run 11: args=-39
-
-
-**Input:**
-
-```
--39
-```
-
-**Expected Output:**
-
-```
-Geef een getal: Het getal is negatief
-```
-
----
-
-### Case 12
-
-**Description:** Run 12: args=-51
-
-
-**Input:**
-
-```
--51
-```
-
-**Expected Output:**
-
-```
-Geef een getal: Het getal is negatief
-```
-
----
-
-### Case 13
-
-**Description:** Run 13: args=-13
-
-
-**Input:**
-
-```
--13
-```
-
-**Expected Output:**
-
-```
-Geef een getal: Het getal is negatief
-```
-
----
-
-### Case 14
-
-**Description:** Run 14: args=11
-
-
-**Input:**
-
-```
-11
-```
-
-**Expected Output:**
-
-```
-Geef een getal: Het getal is positief
-```
-
----
-
-### Case 15
-
-**Description:** Run 15: args=-67
-
-
-**Input:**
-
-```
--67
-```
-
-**Expected Output:**
-
-```
-Geef een getal: Het getal is negatief
-```
-
----
-
-### Case 16
-
-**Description:** Run 16: args=-53
-
-
-**Input:**
-
-```
--53
-```
-
-**Expected Output:**
-
-```
-Geef een getal: Het getal is negatief
-```
-
----
-
-### Case 17
-
-**Description:** Run 17: args=-27
-
-
-**Input:**
-
-```
--27
-```
-
-**Expected Output:**
-
-```
-Geef een getal: Het getal is negatief
-```
+Maak een Modelklasse `Boek` in de map `Models` met volgende Properties:
 
----
+| Property | Type | Beschrijving |
+| -------- | ---- | ------------ |
+| Id | int | Unieke identificatie van het boek |
+| Titel | string | De titel van het boek |
+| Auteur | string | De auteur van het boek |
+| Uitgeverij | string | De uitgeverij |
+| Jaartal | int | Het publicatiejaar |
 
-### Case 18
+### Startgegevens
 
-**Description:** Run 18: args=56
+Voeg in je Controller een in-memory lijst met drie boeken toe als startgegevens:
 
+| Id | Titel | Auteur | Uitgeverij | Jaartal |
+| -- | ----- | ------ | ---------- | ------- |
+| 1 | De Ontdekking van de Hemel | Harry Mulisch | De Arbeiderspers | 1992 |
+| 2 | Het Dagboek van Anne Frank | Anne Frank | Contact | 1947 |
+| 3 | De Avonturen van Pi | Yann Martel | De Bezige Bij | 2001 |
 
-**Input:**
+### 1. Alle boeken ophalen
 
-```
-56
-```
-
-**Expected Output:**
-
-```
-Geef een getal: Het getal is positief
-```
-
----
-
-### Case 19
-
-**Description:** Run 19: args=-52
-
-
-**Input:**
-
-```
--52
-```
-
-**Expected Output:**
-
-```
-Geef een getal: Het getal is negatief
-```
-
----
-
-### Case 20
-
-**Description:** Run 20: args=-67
-
-
-**Input:**
-
-```
--67
-```
-
-**Expected Output:**
-
-```
-Geef een getal: Het getal is negatief
-```
-
----
-
-### Case 21
-
-**Description:** Run 21: args=-24
+Voorzie een GET-endpoint op:
 
+`/boeken`
 
-**Input:**
+Dit endpoint geeft alle boeken terug als een JSON-lijst met HTTP-statuscode **200 OK**.
 
-```
--24
-```
-
-**Expected Output:**
-
-```
-Geef een getal: Het getal is negatief
-```
-
----
-
-### Case 22
+Bijvoorbeeld:
 
-**Description:** Run 22: args=-62
-
-
-**Input:**
-
-```
--62
 ```
-
-**Expected Output:**
-
+GET /boeken
 ```
-Geef een getal: Het getal is negatief
-```
-
----
 
-### Case 23
-
-**Description:** Run 23: args=-42
-
-
-**Input:**
-
+```json
+[
+  {
+    "id": 1,
+    "titel": "De Ontdekking van de Hemel",
+    "auteur": "Harry Mulisch",
+    "uitgeverij": "De Arbeiderspers",
+    "jaartal": 1992
+  },
+  {
+    "id": 2,
+    "titel": "Het Dagboek van Anne Frank",
+    "auteur": "Anne Frank",
+    "uitgeverij": "Contact",
+    "jaartal": 1947
+  },
+  {
+    "id": 3,
+    "titel": "De Avonturen van Pi",
+    "auteur": "Yann Martel",
+    "uitgeverij": "De Bezige Bij",
+    "jaartal": 2001
+  }
+]
 ```
--42
-```
-
-**Expected Output:**
 
-```
-Geef een getal: Het getal is negatief
-```
+### 2. Eén boek ophalen op basis van de ID
 
----
+Voorzie een GET-endpoint op:
 
-### Case 24
+`/boeken/{id}`
 
-**Description:** Run 24: args=-45
+De routeparameter `{id}` stelt de boeken-ID voor.
 
+Vind het boek met de gevraagde ID en geef het terug als JSON met HTTP-statuscode **200 OK**.
 
-**Input:**
+Bijvoorbeeld:
 
 ```
--45
+GET /boeken/2
 ```
 
-**Expected Output:**
-
-```
-Geef een getal: Het getal is negatief
+```json
+{
+  "id": 2,
+  "titel": "Het Dagboek van Anne Frank",
+  "auteur": "Anne Frank",
+  "uitgeverij": "Contact",
+  "jaartal": 1947
+}
 ```
-
----
-
-### Case 25
 
-**Description:** Run 25: args=-95
-
-
-**Input:**
-
-```
--95
-```
+Als er geen boek bestaat met de gevraagde ID, geef dan HTTP-statuscode **404 Not Found** terug.
 
-**Expected Output:**
+Bijvoorbeeld:
 
 ```
-Geef een getal: Het getal is negatief
+GET /boeken/99
 ```
 
----
+De response heeft statuscode **404 Not Found** zonder body.

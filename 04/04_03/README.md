@@ -1,418 +1,137 @@
 # 04_03
 
-Een school wil de scores van zijn studenten bijhouden. Er zijn exact drie studenten in de klas. Gebruik een array om de scores op te slaan.
+## Leerdoel
 
-Vraag de gebruiker om de naam en de score (een geheel getal tussen 0 en 100) van elke student. Sla de namen in een string-array en de scores in een int-array.
+Na deze oefening kan je een `DbContext` gebruiken om gefilterde query's uit te voeren met LINQ en Entity Framework Core.
 
-Tonen na het invoeren van alle gegevens: de naam en score van elke student, gevolgd door het gemiddelde van alle scores.
+Je leert hoe je meerdere `DbSet<T>`-properties configureert in een context, hoe je LINQ-query's schrijft die door EF Core worden vertaald naar SQL, en hoe je case-insensitive vergelijkingen uitvoert in een database-query.
 
-## Fuzz Test Cases
+## Opdracht
 
-Below are the automatically generated input/output expectations.
+De fictieve bioscoop **Cinema Paradiso** wil haar filmcatalogus-API migreren van een in-memory lijst naar een echte PostgreSQL-database met Entity Framework Core. In plaats van slechts één zoekmethode (`GetById`), wil men meerdere query-methodes om films op verschillende manieren te kunnen zoeken.
 
----
+Jouw taak is om een `DbContext` aan te maken met meerdere `DbSet<T>`-properties, een migratie toe te passen, en endpoints te implementeren die gefilterde query's uitvoeren met LINQ.
 
-### Case 1
+### Het Film Model
 
-**Description:** Run 1: args=8QDZ3, 60, AzNMC, 0, xDMEs, 53
+Maak een Modelklasse `Film` in de map `Models` met volgende Properties:
 
+| Property | Type | Beschrijving |
+| -------- | ---- | ------------ |
+| Id | int | Unieke identificatie van de film |
+| Titel | string | De titel van de film |
+| Regisseur | string | De regisseur van de film |
+| Genre | string | Het genre van de film |
+| Speelduur | int | De speelduur in minuten |
 
-**Input:**
+### De DbContext
 
-```
-8QDZ3
-60
-AzNMC
-0
-xDMEs
-53
-```
+Maak een nieuwe map genaamd **Data**. Voeg een klasse genaamd **FilmCatalogusContext** toe die overerft van `DbContext`.
 
-**Expected Output:**
+De context moet:
+- een constructor hebben die `DbContextOptions<FilmCatalogusContext>` accepteert en doorgeeft aan de basisklasse;
+- twee `DbSet<T>`-properties bevatten:
+  - **Films** voor `Film`;
+  - **Regisseurs** voor `Regisseur`;
+- de Fluent API (`OnModelCreating`) overschrijven om:
+  - de tabelnaam van `Film` expliciet in te stellen op **Films**;
+  - de string-velden `Titel`, `Regisseur` en `Genre` verplicht maken (`IsRequired()`) met een maximale lengte van **150** karakters;
+  - de tabelnaam van `Regisseur` expliciet in te stellen op **Regisseurs**;
+- de namespace **WebApi.Data** gebruiken.
 
-```
-Geef naam van student 1: Geef score van student 1: Geef naam van student 2: Geef score van student 2: Geef naam van student 3: Geef score van student 3: Student 8QDZ3 heeft score 60.
-Student AzNMC heeft score 0.
-Student xDMEs heeft score 53.
-Het gemiddelde is 37.666666666666664.
-```
+```csharp
+using Microsoft.EntityFrameworkCore;
+using WebApi.Models;
 
----
+namespace WebApi.Data;
 
-### Case 2
+public class FilmCatalogusContext : DbContext
+{
+    public FilmCatalogusContext(DbContextOptions<FilmCatalogusContext> options)
+        : base(options) { }
 
-**Description:** Run 2: args=PacCv, 96, UpBBt, 33, Gg0jm, 4
+    public DbSet<Film> Films { get; set; }
+    public DbSet<Regisseur> Regisseurs { get; set; }
 
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        base.OnModelCreating(modelBuilder);
 
-**Input:**
+        modelBuilder.Entity<Film>(entity =>
+        {
+            entity.ToTable("Films");
 
-```
-PacCv
-96
-UpBBt
-33
-Gg0jm
-4
-```
+            entity.Property(p => p.Titel).IsRequired().HasMaxLength(150);
+            entity.Property(p => p.Regisseur).IsRequired().HasMaxLength(150);
+            entity.Property(p => p.Genre).IsRequired().HasMaxLength(50);
+        });
 
-**Expected Output:**
-
-```
-Geef naam van student 1: Geef score van student 1: Geef naam van student 2: Geef score van student 2: Geef naam van student 3: Geef score van student 3: Student PacCv heeft score 96.
-Student UpBBt heeft score 33.
-Student Gg0jm heeft score 4.
-Het gemiddelde is 44.333333333333336.
-```
-
----
-
-### Case 3
-
-**Description:** Run 3: args=n1drB, 21, Ltcc6, 1, DLSXm, 96
-
-
-**Input:**
-
-```
-n1drB
-21
-Ltcc6
-1
-DLSXm
-96
+        modelBuilder.Entity<Regisseur>(entity =>
+        {
+            entity.ToTable("Regisseurs");
+        });
+    }
+}
 ```
 
-**Expected Output:**
+### De Database registreren in Program.cs
 
-```
-Geef naam van student 1: Geef score van student 1: Geef naam van student 2: Geef score van student 2: Geef naam van student 3: Geef score van student 3: Student n1drB heeft score 21.
-Student Ltcc6 heeft score 1.
-Student DLSXm heeft score 96.
-Het gemiddelde is 39.333333333333336.
-```
+Registreer de `DbContext` in `Program.cs` met `AddDbContext` en koppel deze aan de PostgreSQL-provider (Npgsql). Gebruik de connection string met naam **PostgresConnection** uit `appsettings.json`.
 
----
+### Migratie aanmaken en uitvoeren
 
-### Case 4
+Maak een migratie aan met de naam **InitialCreate** en voer deze uit om de database en tabellen te genereren.
 
-**Description:** Run 4: args=Zs0un, 6, XkcFt, 39, 3k4x5, 6
+### Seed data toevoegen
 
+Voeg de volgende seed data toe in de `OnModelCreating`-methode van de context:
 
-**Input:**
+| Id | Titel | Regisseur | Genre | Speelduur |
+| -- | ----- | --------- | ----- | --------- |
+| 1 | The Shawshank Redemption | Frank Darabont | Drama | 142 |
+| 2 | Inception | Christopher Nolan | Sci-Fi | 148 |
+| 3 | De Ontdekking van de Hemel | Jeroen Krabbé | Drama | 165 |
+| 4 | Interstellar | Christopher Nolan | Sci-Fi | 169 |
+| 5 | De Avonturen van Pi | Ang Lee | Avontuur | 127 |
 
-```
-Zs0un
-6
-XkcFt
-39
-3k4x5
-6
-```
-
-**Expected Output:**
-
-```
-Geef naam van student 1: Geef score van student 1: Geef naam van student 2: Geef score van student 2: Geef naam van student 3: Geef score van student 3: Student Zs0un heeft score 6.
-Student XkcFt heeft score 39.
-Student 3k4x5 heeft score 6.
-Het gemiddelde is 17.
+```csharp
+modelBuilder.Entity<Film>().HasData(
+    new Film { Id = 1, Titel = "The Shawshank Redemption", Regisseur = "Frank Darabont", Genre = "Drama", Speelduur = 142 },
+    new Film { Id = 2, Titel = "Inception", Regisseur = "Christopher Nolan", Genre = "Sci-Fi", Speelduur = 148 },
+    new Film { Id = 3, Titel = "De Ontdekking van de Hemel", Regisseur = "Jeroen Krabbé", Genre = "Drama", Speelduur = 165 },
+    new Film { Id = 4, Titel = "Interstellar", Regisseur = "Christopher Nolan", Genre = "Sci-Fi", Speelduur = 169 },
+    new Film { Id = 5, Titel = "De Avonturen van Pi", Regisseur = "Ang Lee", Genre = "Avontuur", Speelduur = 127 }
+);
 ```
 
----
+### De Controller
 
-### Case 5
+Maak een `FilmController` met volgende endpoints:
 
-**Description:** Run 5: args=G5RuV, 50, EXVJV, 11, XfdSN, 71
+#### 1. Alle films ophalen
 
+Route: `GET /films`
 
-**Input:**
+Geef alle films terug als JSON met HTTP-statuscode **200 OK**.
 
-```
-G5RuV
-50
-EXVJV
-11
-XfdSN
-71
-```
+#### 2. Eén film ophalen op basis van de ID
 
-**Expected Output:**
+Route: `GET /films/{id}`
 
-```
-Geef naam van student 1: Geef score van student 1: Geef naam van student 2: Geef score van student 2: Geef naam van student 3: Geef score van student 3: Student G5RuV heeft score 50.
-Student EXVJV heeft score 11.
-Student XfdSN heeft score 71.
-Het gemiddelde is 44.
-```
+Vind de film met de gevraagde ID en geef het terug als JSON met HTTP-statuscode **200 OK**.
 
----
+Als er geen film bestaat met de gevraagde ID, geef dan HTTP-statuscode **404 Not Found** terug zonder body.
 
-### Case 6
+#### 3. Films ophalen op basis van het genre
 
-**Description:** Run 6: args=sJO8E, 3, 81gVG, 12, ugzB6, 64
+Route: `GET /films/genre/{genre}`
 
+De routeparameter `{genre}` stelt het genre voor.
 
-**Input:**
+Zoek films met het gevraagde genre en geef ze terug als JSON met HTTP-statuscode **200 OK**.
 
-```
-sJO8E
-3
-81gVG
-12
-ugzB6
-64
-```
+Wordt er geen film gevonden voor dat genre, geef dan een lege JSON-lijst `[]` terug met HTTP-statuscode **200 OK** (geen 404 voor lege resultaten).
 
-**Expected Output:**
+De query moet ongevoelig zijn voor hoofdletters en kleine letters bij het vergelijken van het genre.
 
-```
-Geef naam van student 1: Geef score van student 1: Geef naam van student 2: Geef score van student 2: Geef naam van student 3: Geef score van student 3: Student sJO8E heeft score 3.
-Student 81gVG heeft score 12.
-Student ugzB6 heeft score 64.
-Het gemiddelde is 26.333333333333332.
-```
-
----
-
-### Case 7
-
-**Description:** Run 7: args=tRYME, 85, M2HS1, 75, Wh6R8, 24
-
-
-**Input:**
-
-```
-tRYME
-85
-M2HS1
-75
-Wh6R8
-24
-```
-
-**Expected Output:**
-
-```
-Geef naam van student 1: Geef score van student 1: Geef naam van student 2: Geef score van student 2: Geef naam van student 3: Geef score van student 3: Student tRYME heeft score 85.
-Student M2HS1 heeft score 75.
-Student Wh6R8 heeft score 24.
-Het gemiddelde is 61.333333333333336.
-```
-
----
-
-### Case 8
-
-**Description:** Run 8: args=AzTGb, 61, lZjkb, 29, KOsWu, 86
-
-
-**Input:**
-
-```
-AzTGb
-61
-lZjkb
-29
-KOsWu
-86
-```
-
-**Expected Output:**
-
-```
-Geef naam van student 1: Geef score van student 1: Geef naam van student 2: Geef score van student 2: Geef naam van student 3: Geef score van student 3: Student AzTGb heeft score 61.
-Student lZjkb heeft score 29.
-Student KOsWu heeft score 86.
-Het gemiddelde is 58.666666666666664.
-```
-
----
-
-### Case 9
-
-**Description:** Run 9: args=wISX6, 78, zvz7X, 21, Il6FV, 5
-
-
-**Input:**
-
-```
-wISX6
-78
-zvz7X
-21
-Il6FV
-5
-```
-
-**Expected Output:**
-
-```
-Geef naam van student 1: Geef score van student 1: Geef naam van student 2: Geef score van student 2: Geef naam van student 3: Geef score van student 3: Student wISX6 heeft score 78.
-Student zvz7X heeft score 21.
-Student Il6FV heeft score 5.
-Het gemiddelde is 34.666666666666664.
-```
-
----
-
-### Case 10
-
-**Description:** Run 10: args=ELw7M, 19, vUCwh, 86, iuIiW, 35
-
-
-**Input:**
-
-```
-ELw7M
-19
-vUCwh
-86
-iuIiW
-35
-```
-
-**Expected Output:**
-
-```
-Geef naam van student 1: Geef score van student 1: Geef naam van student 2: Geef score van student 2: Geef naam van student 3: Geef score van student 3: Student ELw7M heeft score 19.
-Student vUCwh heeft score 86.
-Student iuIiW heeft score 35.
-Het gemiddelde is 46.666666666666664.
-```
-
----
-
-### Case 11
-
-**Description:** Run 11: args=jzcaD, 4, LKE8Y, 81, Cm1tK, 19
-
-
-**Input:**
-
-```
-jzcaD
-4
-LKE8Y
-81
-Cm1tK
-19
-```
-
-**Expected Output:**
-
-```
-Geef naam van student 1: Geef score van student 1: Geef naam van student 2: Geef score van student 2: Geef naam van student 3: Geef score van student 3: Student jzcaD heeft score 4.
-Student LKE8Y heeft score 81.
-Student Cm1tK heeft score 19.
-Het gemiddelde is 34.666666666666664.
-```
-
----
-
-### Case 12
-
-**Description:** Run 12: args=f0DIl, 6, HhPvI, 41, BpkU2, 0
-
-
-**Input:**
-
-```
-f0DIl
-6
-HhPvI
-41
-BpkU2
-0
-```
-
-**Expected Output:**
-
-```
-Geef naam van student 1: Geef score van student 1: Geef naam van student 2: Geef score van student 2: Geef naam van student 3: Geef score van student 3: Student f0DIl heeft score 6.
-Student HhPvI heeft score 41.
-Student BpkU2 heeft score 0.
-Het gemiddelde is 15.666666666666666.
-```
-
----
-
-### Case 13
-
-**Description:** Run 13: args=NQYfr, 97, 5FIfp, 17, xy059, 5
-
-
-**Input:**
-
-```
-NQYfr
-97
-5FIfp
-17
-xy059
-5
-```
-
-**Expected Output:**
-
-```
-Geef naam van student 1: Geef score van student 1: Geef naam van student 2: Geef score van student 2: Geef naam van student 3: Geef score van student 3: Student NQYfr heeft score 97.
-Student 5FIfp heeft score 17.
-Student xy059 heeft score 5.
-Het gemiddelde is 39.666666666666664.
-```
-
----
-
-### Case 14
-
-**Description:** Run 14: args=SPgiV, 8, JTY3E, 90, qQ1mB, 60
-
-
-**Input:**
-
-```
-SPgiV
-8
-JTY3E
-90
-qQ1mB
-60
-```
-
-**Expected Output:**
-
-```
-Geef naam van student 1: Geef score van student 1: Geef naam van student 2: Geef score van student 2: Geef naam van student 3: Geef score van student 3: Student SPgiV heeft score 8.
-Student JTY3E heeft score 90.
-Student qQ1mB heeft score 60.
-Het gemiddelde is 52.666666666666664.
-```
-
----
-
-### Case 15
-
-**Description:** Run 15: args=ujYl5, 0, Pf7an, 50, 7V8Y5, 33
-
-
-**Input:**
-
-```
-ujYl5
-0
-Pf7an
-50
-7V8Y5
-33
-```
-
-**Expected Output:**
-
-```
-Geef naam van student 1: Geef score van student 1: Geef naam van student 2: Geef score van student 2: Geef naam van student 3: Geef score van student 3: Student ujYl5 heeft score 0.
-Student Pf7an heeft score 50.
-Student 7V8Y5 heeft score 33.
-Het gemiddelde is 27.666666666666668.
-```
-
----
+De controller moet de `DbContext` ontvangen via de constructor (geen `new` in de Controller).

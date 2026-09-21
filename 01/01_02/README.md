@@ -1,511 +1,100 @@
 # 01_02
 
-Bereken de totale kaartopbrengst van een evenement.
+## Leerdoel
 
-Een evenement heeft volwassenenkaarten voor €10,00 en kinderkaarten voor €7,50. Vraag het aantal volwassenen en het aantal kinderen. Bereken en toon het totaalbedrag dat de evenementorganisatie ontvangt.
+Na deze oefening kan je een eenvoudige ASP.NET Core API-controller maken met meerdere GET-endpoints.
 
-## Fuzz Test Cases
+Je leert verschillende routes binnen één controller definiëren, waarden uit de URL ontvangen via routeparameters en deze waarden gebruiken in gewone C#-logica.
 
-Below are the automatically generated input/output expectations.
+Daarnaast leer je hoe je meerdere GET-endpoints logisch van elkaar onderscheidt en hoe ASP.NET Core op basis van de combinatie van route en HTTP-verb bepaalt welke methode uitgevoerd moet worden.
 
----
+##
 
-### Case 1
+## Opdracht
 
-**Description:** Run 1: args=157, 328
+Het fictieve muziekfestival SoundWave Festival wil bezoekers via een eenvoudige API informeren.
 
+Jouw taak is om een FestivalController te maken met verschillende GET-endpoints.
 
-**Input:**
+Via de API moeten bezoekers:
 
-```
-157
-328
-```
+1. een algemeen welkomstbericht kunnen opvragen;
+2. een persoonlijk welkomstbericht kunnen krijgen;
+3. informatie over een festivalpodium kunnen opvragen;
+4. kunnen zien hoeveel dagen het nog duurt tot het festival begint.
 
-**Expected Output:**
+Implementeer onderstaande functionaliteiten.
 
-```
-4,030.00
-```
+### 1. Algemeen welkomstbericht
 
----
+Voorzie een GET-endpoint op:
 
-### Case 2
+`/festival`
 
-**Description:** Run 2: args=44, 496
+Dit endpoint geeft volgende tekst terug:
 
+`Welkom op SoundWave Festival!`
 
-**Input:**
+### 2. Persoonlijk welkomstbericht
 
-```
-44
-496
-```
+Voorzie een GET-endpoint op:
 
-**Expected Output:**
+`/festival/welkom/{naam}`
 
-```
-4,160.00
-```
+De naam van de bezoeker wordt meegegeven via de URL.
 
----
+Bijvoorbeeld:
 
-### Case 3
+`GET /festival/welkom/Emma`
 
-**Description:** Run 3: args=922, 309
+geeft als resultaat:
 
+`Welkom op SoundWave Festival, Emma!`
 
-**Input:**
+De naam moet afkomstig zijn uit de routeparameter. Je mag dus geen specifieke bezoekersnamen hardcoderen.
 
-```
-922
-309
-```
+### 3. Informatie over een festivalpodium
 
-**Expected Output:**
+Voorzie een GET-endpoint op:
 
-```
-11,537.50
-```
+`/festival/podium/{podium}`
 
----
+Het endpoint ontvangt de naam van een podium via de route.
 
-### Case 4
+De API moet drie podia herkennen:
 
-**Description:** Run 4: args=51, 257
+* main
+* rock
+* dance
 
+Geef voor ieder podium het bijbehorende bericht terug:
 
-**Input:**
+| Podium | Bericht                                                          |
+| ------ | ---------------------------------------------------------------- |
+| main   | Op het Main Stage spelen de grootste artiesten van het festival. |
+| rock   | Op het Rock Stage hoor je gitaren, drums en stevige muziek.      |
+| dance  | Op het Dance Stage spelen DJ's en elektronische artiesten.       |
 
-```
-51
-257
-```
+Wordt een onbekend podium opgegeven, geef dan het bericht terug:
 
-**Expected Output:**
+`Dit podium bestaat niet.`
 
-```
-2,437.50
-```
+### 4. Aftellen naar het festival
 
----
+Voorzie een GET-endpoint op:
 
-### Case 5
+`/festival/aftellen/{dagen}`
 
-**Description:** Run 5: args=141, 300
+De routeparameter `{dagen}` stelt het aantal dagen voor tot SoundWave Festival begint.
 
+Geef volgend bericht terug:
 
-**Input:**
+`Nog {dagen} dagen tot SoundWave Festival!`
 
-```
-141
-300
-```
+Bijvoorbeeld:
 
-**Expected Output:**
+`GET /festival/aftellen/12` geeft als resultaat: `Nog 12 dagen tot SoundWave Festival!`
 
-```
-3,660.00
-```
+`GET /festival/aftellen/5` geeft als resultaat: `Nog 5 dagen tot SoundWave Festival!`
 
----
-
-### Case 6
-
-**Description:** Run 6: args=197, 636
-
-
-**Input:**
-
-```
-197
-636
-```
-
-**Expected Output:**
-
-```
-6,740.00
-```
-
----
-
-### Case 7
-
-**Description:** Run 7: args=959, 547
-
-
-**Input:**
-
-```
-959
-547
-```
-
-**Expected Output:**
-
-```
-13,692.50
-```
-
----
-
-### Case 8
-
-**Description:** Run 8: args=417, 476
-
-
-**Input:**
-
-```
-417
-476
-```
-
-**Expected Output:**
-
-```
-7,740.00
-```
-
----
-
-### Case 9
-
-**Description:** Run 9: args=674, 754
-
-
-**Input:**
-
-```
-674
-754
-```
-
-**Expected Output:**
-
-```
-12,395.00
-```
-
----
-
-### Case 10
-
-**Description:** Run 10: args=292, 129
-
-
-**Input:**
-
-```
-292
-129
-```
-
-**Expected Output:**
-
-```
-3,887.50
-```
-
----
-
-### Case 11
-
-**Description:** Run 11: args=887, 773
-
-
-**Input:**
-
-```
-887
-773
-```
-
-**Expected Output:**
-
-```
-14,667.50
-```
-
----
-
-### Case 12
-
-**Description:** Run 12: args=896, 834
-
-
-**Input:**
-
-```
-896
-834
-```
-
-**Expected Output:**
-
-```
-15,215.00
-```
-
----
-
-### Case 13
-
-**Description:** Run 13: args=952, 355
-
-
-**Input:**
-
-```
-952
-355
-```
-
-**Expected Output:**
-
-```
-12,182.50
-```
-
----
-
-### Case 14
-
-**Description:** Run 14: args=163, 260
-
-
-**Input:**
-
-```
-163
-260
-```
-
-**Expected Output:**
-
-```
-3,580.00
-```
-
----
-
-### Case 15
-
-**Description:** Run 15: args=84, 521
-
-
-**Input:**
-
-```
-84
-521
-```
-
-**Expected Output:**
-
-```
-4,747.50
-```
-
----
-
-### Case 16
-
-**Description:** Run 16: args=351, 551
-
-
-**Input:**
-
-```
-351
-551
-```
-
-**Expected Output:**
-
-```
-7,642.50
-```
-
----
-
-### Case 17
-
-**Description:** Run 17: args=283, 166
-
-
-**Input:**
-
-```
-283
-166
-```
-
-**Expected Output:**
-
-```
-4,075.00
-```
-
----
-
-### Case 18
-
-**Description:** Run 18: args=185, 334
-
-
-**Input:**
-
-```
-185
-334
-```
-
-**Expected Output:**
-
-```
-4,355.00
-```
-
----
-
-### Case 19
-
-**Description:** Run 19: args=694, 529
-
-
-**Input:**
-
-```
-694
-529
-```
-
-**Expected Output:**
-
-```
-10,907.50
-```
-
----
-
-### Case 20
-
-**Description:** Run 20: args=752, 985
-
-
-**Input:**
-
-```
-752
-985
-```
-
-**Expected Output:**
-
-```
-14,907.50
-```
-
----
-
-### Case 21
-
-**Description:** Run 21: args=574, 358
-
-
-**Input:**
-
-```
-574
-358
-```
-
-**Expected Output:**
-
-```
-8,425.00
-```
-
----
-
-### Case 22
-
-**Description:** Run 22: args=338, 875
-
-
-**Input:**
-
-```
-338
-875
-```
-
-**Expected Output:**
-
-```
-9,942.50
-```
-
----
-
-### Case 23
-
-**Description:** Run 23: args=372, 793
-
-
-**Input:**
-
-```
-372
-793
-```
-
-**Expected Output:**
-
-```
-9,667.50
-```
-
----
-
-### Case 24
-
-**Description:** Run 24: args=99, 234
-
-
-**Input:**
-
-```
-99
-234
-```
-
-**Expected Output:**
-
-```
-2,745.00
-```
-
----
-
-### Case 25
-
-**Description:** Run 25: args=240, 552
-
-
-**Input:**
-
-```
-240
-552
-```
-
-**Expected Output:**
-
-```
-6,540.00
-```
-
----
+`GET /festival/aftellen/1` geeft als resultaat: `Nog 1 dagen tot SoundWave Festival!`

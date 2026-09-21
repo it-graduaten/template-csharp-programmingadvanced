@@ -1,486 +1,106 @@
 # 03_03
 
-Vraag de gebruiker om een hoofdletter in te geven. Gebruik een switch-statement om te controleren of de letter een klinker (A, E, I, O, U) of een medeklinker is. Toon "Klinker" of "Medeklinker".
+## Leerdoel
 
-Overweeg hoe je omgaat met zowel hoofdletters als kleine letters.
+Na deze oefening kan je een Interface met meerdere query-methoden gebruiken om gefilterde data te ophalen uit een Repository.
 
-## Fuzz Test Cases
+Je leert hoe je een Interface uitbreidt met extra zoekmethodes, hoe je die methodes implementeert in de Repository, en hoe je ze gebruikt in een Controller met Dependency Injection.
 
-Below are the automatically generated input/output expectations.
+## Opdracht
 
----
+De fictieve bioscoop **Cinema Paradiso** wil een API bouwen voor het beheren van hun films. In plaats van slechts één zoekmethode (GetById), wil men meerdere query-methodes om films op verschillende manieren te kunnen zoeken.
 
-### Case 1
+Jouw taak is om een `FilmController` te maken met een `IFilmRepository`-Interface die meerdere query-methodes bevat, een `InMemoryFilmRepository`-Implementatie en een Controller die Dependency Injection gebruikt.
 
-**Description:** Run 1: args=W
+### Het Film Model
 
+Maak een Modelklasse `Film` in de map `Models` met volgende Properties:
 
-**Input:**
+| Property | Type | Beschrijving |
+| -------- | ---- | ------------ |
+| Id | int | Unieke identificatie van de film |
+| Titel | string | De titel van de film |
+| Regisseur | string | De regisseur van de film |
+| Genre | string | Het genre van de film |
+| Speelduur | int | De speelduur in minuten |
 
-```
-W
-```
-
-**Expected Output:**
-
-```
-Geef een letter: Medeklinker
-```
-
----
-
-### Case 2
-
-**Description:** Run 2: args=J
-
-
-**Input:**
-
-```
-J
-```
-
-**Expected Output:**
-
-```
-Geef een letter: Medeklinker
-```
-
----
-
-### Case 3
-
-**Description:** Run 3: args=u
-
-
-**Input:**
-
-```
-u
-```
-
-**Expected Output:**
-
-```
-Geef een letter: Klinker
-```
-
----
-
-### Case 4
-
-**Description:** Run 4: args=J
-
-
-**Input:**
-
-```
-J
-```
-
-**Expected Output:**
-
-```
-Geef een letter: Medeklinker
-```
-
----
-
-### Case 5
-
-**Description:** Run 5: args=v
-
-
-**Input:**
-
-```
-v
-```
-
-**Expected Output:**
-
-```
-Geef een letter: Medeklinker
-```
-
----
-
-### Case 6
-
-**Description:** Run 6: args=X
-
-
-**Input:**
-
-```
-X
-```
-
-**Expected Output:**
-
-```
-Geef een letter: Medeklinker
-```
-
----
-
-### Case 7
-
-**Description:** Run 7: args=o
-
-
-**Input:**
-
-```
-o
-```
-
-**Expected Output:**
-
-```
-Geef een letter: Klinker
-```
-
----
-
-### Case 8
-
-**Description:** Run 8: args=V
-
-
-**Input:**
-
-```
-V
-```
-
-**Expected Output:**
-
-```
-Geef een letter: Medeklinker
-```
-
----
-
-### Case 9
-
-**Description:** Run 9: args=M
-
-
-**Input:**
-
-```
-M
-```
-
-**Expected Output:**
-
-```
-Geef een letter: Medeklinker
-```
-
----
-
-### Case 10
-
-**Description:** Run 10: args=d
-
-
-**Input:**
-
-```
-d
-```
-
-**Expected Output:**
-
-```
-Geef een letter: Medeklinker
-```
-
----
-
-### Case 11
-
-**Description:** Run 11: args=l
-
-
-**Input:**
-
-```
-l
-```
-
-**Expected Output:**
-
-```
-Geef een letter: Medeklinker
-```
-
----
-
-### Case 12
-
-**Description:** Run 12: args=J
-
-
-**Input:**
-
-```
-J
-```
-
-**Expected Output:**
-
-```
-Geef een letter: Medeklinker
-```
-
----
-
-### Case 13
-
-**Description:** Run 13: args=d
-
-
-**Input:**
-
-```
-d
-```
-
-**Expected Output:**
-
-```
-Geef een letter: Medeklinker
-```
-
----
-
-### Case 14
-
-**Description:** Run 14: args=C
-
-
-**Input:**
-
-```
-C
-```
-
-**Expected Output:**
-
-```
-Geef een letter: Medeklinker
-```
-
----
-
-### Case 15
-
-**Description:** Run 15: args=u
-
-
-**Input:**
-
-```
-u
-```
-
-**Expected Output:**
-
-```
-Geef een letter: Klinker
-```
-
----
-
-### Case 16
-
-**Description:** Run 16: args=G
-
-
-**Input:**
-
-```
-G
-```
-
-**Expected Output:**
-
-```
-Geef een letter: Medeklinker
-```
-
----
-
-### Case 17
-
-**Description:** Run 17: args=y
-
-
-**Input:**
-
-```
-y
-```
-
-**Expected Output:**
-
-```
-Geef een letter: Medeklinker
-```
+### De Repository Interface
 
----
+Maak een nieuwe map genaamd **Repositories**. Voeg een Interface toe genaamd **IFilmRepository.cs** met volgende methoden:
 
-### Case 18
+| Methode | Return type | Beschrijving |
+| ------- | ----------- | ------------ |
+| GetAll | `List<Film>` | Alle films ophalen |
+| GetById | `Film?` | Eén film ophalen op basis van de ID (null als niet gevonden) |
+| GetByGenre | `List<Film>?` | Films ophalen op basis van het genre (null of lege lijst als geen gevonden) |
 
-**Description:** Run 18: args=j
+De Interface moet de volgende code bevatten:
 
+```csharp
+using WebApi.Models;
 
-**Input:**
+namespace WebApi.Repositories;
 
+public interface IFilmRepository
+{
+    List<Film> GetAll();
+    Film? GetById(int id);
+    List<Film>? GetByGenre(string genre);
+}
 ```
-j
-```
-
-**Expected Output:**
-
-```
-Geef een letter: Medeklinker
-```
-
----
-
-### Case 19
-
-**Description:** Run 19: args=A
-
-
-**Input:**
-
-```
-A
-```
-
-**Expected Output:**
-
-```
-Geef een letter: Klinker
-```
-
----
-
-### Case 20
-
-**Description:** Run 20: args=s
-
-
-**Input:**
-
-```
-s
-```
-
-**Expected Output:**
-
-```
-Geef een letter: Medeklinker
-```
-
----
-
-### Case 21
-
-**Description:** Run 21: args=r
-
 
-**Input:**
+### De InMemory Repository Implementatie
 
-```
-r
-```
-
-**Expected Output:**
-
-```
-Geef een letter: Medeklinker
-```
-
----
-
-### Case 22
-
-**Description:** Run 22: args=u
-
-
-**Input:**
-
-```
-u
-```
-
-**Expected Output:**
-
-```
-Geef een letter: Klinker
-```
-
----
-
-### Case 23
-
-**Description:** Run 23: args=z
+Maak in dezelfde map **Repositories** een klasse `InMemoryFilmRepository` die `IFilmRepository` implementeert.
 
+Deze klasse moet:
 
-**Input:**
+- een privé `List<Film>` veld bevatten met vijf startfilms als seed data;
+- de `GetAll()`-methode laten teruggeven van de lijst;
+- de `GetById()`-methode laten zoeken met `FirstOrDefault`;
+- de `GetByGenre()`-methode laten filteren op genre met `Where`, ongevoelig voor hoofdletters/kleine letters;
+- de `GetByGenre()`-methode teruggeven als `null` of lege lijst als er geen films gevonden worden.
 
-```
-z
-```
+Seed data:
 
-**Expected Output:**
-
-```
-Geef een letter: Medeklinker
-```
+| Id | Titel | Regisseur | Genre | Speelduur |
+| -- | ----- | --------- | ----- | --------- |
+| 1 | The Shawshank Redemption | Frank Darabont | Drama | 142 |
+| 2 | Inception | Christopher Nolan | Sci-Fi | 148 |
+| 3 | De Ontdekking van de Hemel | Jeroen Krabbé | Drama | 165 |
+| 4 | Interstellar | Christopher Nolan | Sci-Fi | 169 |
+| 5 | De Avonturen van Pi | Ang Lee | Avontuur | 127 |
 
----
+### De Controller
 
-### Case 24
+Maak een `FilmController` met volgende endpoints:
 
-**Description:** Run 24: args=z
+#### 1. Alle films ophalen
 
+Route: `GET /films`
 
-**Input:**
+Geef alle films terug als JSON met HTTP-statuscode **200 OK**.
 
-```
-z
-```
+#### 2. Eén film ophalen op basis van de ID
 
-**Expected Output:**
+Route: `GET /films/{id}`
 
-```
-Geef een letter: Medeklinker
-```
+Vind de film met de gevraagde ID en geef het terug als JSON met HTTP-statuscode **200 OK**.
 
----
+Als er geen film bestaat met de gevraagde ID, geef dan HTTP-statuscode **404 Not Found** terug zonder body.
 
-### Case 25
+#### 3. Films ophalen op basis van het genre
 
-**Description:** Run 25: args=T
+Route: `GET /films/genre/{genre}`
 
+De routeparameter `{genre}` stelt het genre voor.
 
-**Input:**
+Zoek films met het gevraagde genre en geef ze terug als JSON met HTTP-statuscode **200 OK**.
 
-```
-T
-```
+Wordt er geen film gevonden voor dat genre, geef dan een lege JSON-lijst `[]` terug met HTTP-statuscode **200 OK** (geen 404 voor lege resultaten).
 
-**Expected Output:**
+### Dependency Injection
 
-```
-Geef een letter: Medeklinker
-```
+Registreer de `IFilmRepository` met `InMemoryFilmRepository` in `Program.cs` met `AddScoped`.
 
----
+De Controller moet de repository ontvangen via de constructor (geen `new` in de Controller).
