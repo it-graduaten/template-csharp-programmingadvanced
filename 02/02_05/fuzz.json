@@ -1,0 +1,7 @@
+{
+    "runs": 25,
+    "inputs": [
+        {"type": "string", "choices": ["admin", "user"]},
+        {"type": "string", "choices": ["geheim123", "wachtwoord"]}
+    ]
+}

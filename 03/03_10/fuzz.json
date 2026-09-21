@@ -1,0 +1,30 @@
+{
+    "runs": 25,
+    "inputs": [
+        {
+            "type": "string",
+            "choices": [
+                "a@b.be",
+                "test@example.com",
+                "joren@thomasmore.be",
+                "student@school.nl",
+                "info@organisatie.org",
+                "abcd",
+                "testexample.com",
+                "test@example",
+                "test@example.eu",
+                "a@b.c",
+                "test@test.be",
+                "hello@world.org",
+                "x@y.nl",
+                "name@domain.com",
+                "abc",
+                "test@",
+                "@test.be",
+                "test@.be",
+                "test@@example.com",
+                ".....@.....com"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,254 @@
+{
+  "cases": [
+    {
+      "description": "Run 1: args=man, 73",
+      "args": [
+        "man",
+        "73"
+      ],
+      "outputs": [
+        "Voor welk geslacht vraag je het tarief? Voor welke leeftijd vraag je het tarief? Pensioen"
+      ]
+    },
+    {
+      "description": "Run 2: args=vrouw, 68",
+      "args": [
+        "vrouw",
+        "68"
+      ],
+      "outputs": [
+        "Voor welk geslacht vraag je het tarief? Voor welke leeftijd vraag je het tarief? Pensioen"
+      ]
+    },
+    {
+      "description": "Run 3: args=vrouw, 2",
+      "args": [
+        "vrouw",
+        "2"
+      ],
+      "outputs": [
+        "Voor welk geslacht vraag je het tarief? Voor welke leeftijd vraag je het tarief? Kind"
+      ]
+    },
+    {
+      "description": "Run 4: args=man, 14",
+      "args": [
+        "man",
+        "14"
+      ],
+      "outputs": [
+        "Voor welk geslacht vraag je het tarief? Voor welke leeftijd vraag je het tarief? Kind"
+      ]
+    },
+    {
+      "description": "Run 5: args=vrouw, 18",
+      "args": [
+        "vrouw",
+        "18"
+      ],
+      "outputs": [
+        "Voor welk geslacht vraag je het tarief? Voor welke leeftijd vraag je het tarief? Werkend"
+      ]
+    },
+    {
+      "description": "Run 6: args=man, 17",
+      "args": [
+        "man",
+        "17"
+      ],
+      "outputs": [
+        "Voor welk geslacht vraag je het tarief? Voor welke leeftijd vraag je het tarief? Kind"
+      ]
+    },
+    {
+      "description": "Run 7: args=man, 0",
+      "args": [
+        "man",
+        "0"
+      ],
+      "outputs": [
+        "Voor welk geslacht vraag je het tarief? Voor welke leeftijd vraag je het tarief? Kind"
+      ]
+    },
+    {
+      "description": "Run 8: args=vrouw, 23",
+      "args": [
+        "vrouw",
+        "23"
+      ],
+      "outputs": [
+        "Voor welk geslacht vraag je het tarief? Voor welke leeftijd vraag je het tarief? Werkend"
+      ]
+    },
+    {
+      "description": "Run 9: args=vrouw, 36",
+      "args": [
+        "vrouw",
+        "36"
+      ],
+      "outputs": [
+        "Voor welk geslacht vraag je het tarief? Voor welke leeftijd vraag je het tarief? Werkend"
+      ]
+    },
+    {
+      "description": "Run 10: args=man, 75",
+      "args": [
+        "man",
+        "75"
+      ],
+      "outputs": [
+        "Voor welk geslacht vraag je het tarief? Voor welke leeftijd vraag je het tarief? Pensioen"
+      ]
+    },
+    {
+      "description": "Run 11: args=man, 72",
+      "args": [
+        "man",
+        "72"
+      ],
+      "outputs": [
+        "Voor welk geslacht vraag je het tarief? Voor welke leeftijd vraag je het tarief? Pensioen"
+      ]
+    },
+    {
+      "description": "Run 12: args=vrouw, 86",
+      "args": [
+        "vrouw",
+        "86"
+      ],
+      "outputs": [
+        "Voor welk geslacht vraag je het tarief? Voor welke leeftijd vraag je het tarief? Pensioen"
+      ]
+    },
+    {
+      "description": "Run 13: args=vrouw, 37",
+      "args": [
+        "vrouw",
+        "37"
+      ],
+      "outputs": [
+        "Voor welk geslacht vraag je het tarief? Voor welke leeftijd vraag je het tarief? Werkend"
+      ]
+    },
+    {
+      "description": "Run 14: args=vrouw, 71",
+      "args": [
+        "vrouw",
+        "71"
+      ],
+      "outputs": [
+        "Voor welk geslacht vraag je het tarief? Voor welke leeftijd vraag je het tarief? Pensioen"
+      ]
+    },
+    {
+      "description": "Run 15: args=vrouw, 32",
+      "args": [
+        "vrouw",
+        "32"
+      ],
+      "outputs": [
+        "Voor welk geslacht vraag je het tarief? Voor welke leeftijd vraag je het tarief? Werkend"
+      ]
+    },
+    {
+      "description": "Run 16: args=vrouw, 14",
+      "args": [
+        "vrouw",
+        "14"
+      ],
+      "outputs": [
+        "Voor welk geslacht vraag je het tarief? Voor welke leeftijd vraag je het tarief? Kind"
+      ]
+    },
+    {
+      "description": "Run 17: args=vrouw, 1",
+      "args": [
+        "vrouw",
+        "1"
+      ],
+      "outputs": [
+        "Voor welk geslacht vraag je het tarief? Voor welke leeftijd vraag je het tarief? Kind"
+      ]
+    },
+    {
+      "description": "Run 18: args=vrouw, 98",
+      "args": [
+        "vrouw",
+        "98"
+      ],
+      "outputs": [
+        "Voor welk geslacht vraag je het tarief? Voor welke leeftijd vraag je het tarief? Pensioen"
+      ]
+    },
+    {
+      "description": "Run 19: args=vrouw, 34",
+      "args": [
+        "vrouw",
+        "34"
+      ],
+      "outputs": [
+        "Voor welk geslacht vraag je het tarief? Voor welke leeftijd vraag je het tarief? Werkend"
+      ]
+    },
+    {
+      "description": "Run 20: args=vrouw, 89",
+      "args": [
+        "vrouw",
+        "89"
+      ],
+      "outputs": [
+        "Voor welk geslacht vraag je het tarief? Voor welke leeftijd vraag je het tarief? Pensioen"
+      ]
+    },
+    {
+      "description": "Run 21: args=vrouw, 15",
+      "args": [
+        "vrouw",
+        "15"
+      ],
+      "outputs": [
+        "Voor welk geslacht vraag je het tarief? Voor welke leeftijd vraag je het tarief? Kind"
+      ]
+    },
+    {
+      "description": "Run 22: args=man, 13",
+      "args": [
+        "man",
+        "13"
+      ],
+      "outputs": [
+        "Voor welk geslacht vraag je het tarief? Voor welke leeftijd vraag je het tarief? Kind"
+      ]
+    },
+    {
+      "description": "Run 23: args=vrouw, 1",
+      "args": [
+        "vrouw",
+        "1"
+      ],
+      "outputs": [
+        "Voor welk geslacht vraag je het tarief? Voor welke leeftijd vraag je het tarief? Kind"
+      ]
+    },
+    {
+      "description": "Run 24: args=vrouw, 68",
+      "args": [
+        "vrouw",
+        "68"
+      ],
+      "outputs": [
+        "Voor welk geslacht vraag je het tarief? Voor welke leeftijd vraag je het tarief? Pensioen"
+      ]
+    },
+    {
+      "description": "Run 25: args=vrouw, 53",
+      "args": [
+        "vrouw",
+        "53"
+      ],
+      "outputs": [
+        "Voor welk geslacht vraag je het tarief? Voor welke leeftijd vraag je het tarief? Werkend"
+      ]
+    }
+  ]
+}

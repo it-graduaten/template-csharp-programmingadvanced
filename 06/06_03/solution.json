@@ -1,0 +1,192 @@
+{
+  "cases": [
+    {
+      "description": "Run 1: args=6, 6, 11, 10, 6, 0",
+      "args": [
+        "6",
+        "6",
+        "11",
+        "10",
+        "6",
+        "0"
+      ],
+      "outputs": [
+        "Geef een getal (0 = stop):",
+        "Geef een getal (0 = stop):",
+        "Geef een getal (0 = stop):",
+        "Geef een getal (0 = stop):",
+        "Geef een getal (0 = stop):",
+        "Geef een getal (0 = stop):",
+        "Totaal: 39"
+      ]
+    },
+    {
+      "description": "Run 2: args=11, 13, 1, 7, 3, 0",
+      "args": [
+        "11",
+        "13",
+        "1",
+        "7",
+        "3",
+        "0"
+      ],
+      "outputs": [
+        "Geef een getal (0 = stop):",
+        "Geef een getal (0 = stop):",
+        "Geef een getal (0 = stop):",
+        "Geef een getal (0 = stop):",
+        "Geef een getal (0 = stop):",
+        "Geef een getal (0 = stop):",
+        "Totaal: 35"
+      ]
+    },
+    {
+      "description": "Run 3: args=4, 11, 10, 8, 12, 0",
+      "args": [
+        "4",
+        "11",
+        "10",
+        "8",
+        "12",
+        "0"
+      ],
+      "outputs": [
+        "Geef een getal (0 = stop):",
+        "Geef een getal (0 = stop):",
+        "Geef een getal (0 = stop):",
+        "Geef een getal (0 = stop):",
+        "Geef een getal (0 = stop):",
+        "Geef een getal (0 = stop):",
+        "Totaal: 45"
+      ]
+    },
+    {
+      "description": "Run 4: args=3, 2, 9, 13, 4, 0",
+      "args": [
+        "3",
+        "2",
+        "9",
+        "13",
+        "4",
+        "0"
+      ],
+      "outputs": [
+        "Geef een getal (0 = stop):",
+        "Geef een getal (0 = stop):",
+        "Geef een getal (0 = stop):",
+        "Geef een getal (0 = stop):",
+        "Geef een getal (0 = stop):",
+        "Geef een getal (0 = stop):",
+        "Totaal: 31"
+      ]
+    },
+    {
+      "description": "Run 5: args=6, 11, 8, 1, 11, 0",
+      "args": [
+        "6",
+        "11",
+        "8",
+        "1",
+        "11",
+        "0"
+      ],
+      "outputs": [
+        "Geef een getal (0 = stop):",
+        "Geef een getal (0 = stop):",
+        "Geef een getal (0 = stop):",
+        "Geef een getal (0 = stop):",
+        "Geef een getal (0 = stop):",
+        "Geef een getal (0 = stop):",
+        "Totaal: 37"
+      ]
+    },
+    {
+      "description": "Run 6: args=5, 9, 2, 3, 9, 0",
+      "args": [
+        "5",
+        "9",
+        "2",
+        "3",
+        "9",
+        "0"
+      ],
+      "outputs": [
+        "Geef een getal (0 = stop):",
+        "Geef een getal (0 = stop):",
+        "Geef een getal (0 = stop):",
+        "Geef een getal (0 = stop):",
+        "Geef een getal (0 = stop):",
+        "Geef een getal (0 = stop):",
+        "Totaal: 28"
+      ]
+    },
+    {
+      "description": "Run 7: args=1, 0, 0, 3, 12, 0",
+      "args": [
+        "1",
+        "0",
+        "0",
+        "3",
+        "12",
+        "0"
+      ],
+      "outputs": [
+        "Geef een getal (0 = stop):",
+        "Geef een getal (0 = stop):",
+        "Totaal: 1"
+      ]
+    },
+    {
+      "description": "Run 8: args=0, 8, 11, 5, 9, 0",
+      "args": [
+        "0",
+        "8",
+        "11",
+        "5",
+        "9",
+        "0"
+      ],
+      "outputs": [
+        "Geef een getal (0 = stop):",
+        "Totaal: 0"
+      ]
+    },
+    {
+      "description": "Run 9: args=4, 12, 0, 9, 9, 0",
+      "args": [
+        "4",
+        "12",
+        "0",
+        "9",
+        "9",
+        "0"
+      ],
+      "outputs": [
+        "Geef een getal (0 = stop):",
+        "Geef een getal (0 = stop):",
+        "Geef een getal (0 = stop):",
+        "Totaal: 16"
+      ]
+    },
+    {
+      "description": "Run 10: args=5, 5, 11, 14, 6, 0",
+      "args": [
+        "5",
+        "5",
+        "11",
+        "14",
+        "6",
+        "0"
+      ],
+      "outputs": [
+        "Geef een getal (0 = stop):",
+        "Geef een getal (0 = stop):",
+        "Geef een getal (0 = stop):",
+        "Geef een getal (0 = stop):",
+        "Geef een getal (0 = stop):",
+        "Geef een getal (0 = stop):",
+        "Totaal: 41"
+      ]
+    }
+  ]
+}

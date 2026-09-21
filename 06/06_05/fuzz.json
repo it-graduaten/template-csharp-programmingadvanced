@@ -1,0 +1,20 @@
+{
+  "runs": 10,
+  "inputs": [
+    {
+      "repeat": {
+        "count": 5,
+        "inputs": [
+          {
+            "type": "int",
+            "choices": [8, 15, 3, 12, 19]
+          }
+        ]
+      }
+    },
+    {
+      "type": "int",
+      "fixed": 0
+    }
+  ]
+}

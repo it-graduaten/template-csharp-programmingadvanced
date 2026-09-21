@@ -1,0 +1,199 @@
+{
+  "cases": [
+    {
+      "description": "Run 1: args=73, 11, 89, 1, 96",
+      "args": [
+        "73",
+        "11",
+        "89",
+        "1",
+        "96"
+      ],
+      "outputs": [
+        "Geef score van student 1: Geef score van student 2: Geef score van student 3: Geef score van student 4: Geef score van student 5: Het gemiddelde is 54."
+      ]
+    },
+    {
+      "description": "Run 2: args=46, 87, 88, 94, 83",
+      "args": [
+        "46",
+        "87",
+        "88",
+        "94",
+        "83"
+      ],
+      "outputs": [
+        "Geef score van student 1: Geef score van student 2: Geef score van student 3: Geef score van student 4: Geef score van student 5: Het gemiddelde is 79.6."
+      ]
+    },
+    {
+      "description": "Run 3: args=92, 35, 31, 92, 59",
+      "args": [
+        "92",
+        "35",
+        "31",
+        "92",
+        "59"
+      ],
+      "outputs": [
+        "Geef score van student 1: Geef score van student 2: Geef score van student 3: Geef score van student 4: Geef score van student 5: Het gemiddelde is 61.8."
+      ]
+    },
+    {
+      "description": "Run 4: args=17, 68, 12, 62, 61",
+      "args": [
+        "17",
+        "68",
+        "12",
+        "62",
+        "61"
+      ],
+      "outputs": [
+        "Geef score van student 1: Geef score van student 2: Geef score van student 3: Geef score van student 4: Geef score van student 5: Het gemiddelde is 44."
+      ]
+    },
+    {
+      "description": "Run 5: args=74, 29, 57, 95, 79",
+      "args": [
+        "74",
+        "29",
+        "57",
+        "95",
+        "79"
+      ],
+      "outputs": [
+        "Geef score van student 1: Geef score van student 2: Geef score van student 3: Geef score van student 4: Geef score van student 5: Het gemiddelde is 66.8."
+      ]
+    },
+    {
+      "description": "Run 6: args=11, 39, 69, 14, 48",
+      "args": [
+        "11",
+        "39",
+        "69",
+        "14",
+        "48"
+      ],
+      "outputs": [
+        "Geef score van student 1: Geef score van student 2: Geef score van student 3: Geef score van student 4: Geef score van student 5: Het gemiddelde is 36.2."
+      ]
+    },
+    {
+      "description": "Run 7: args=75, 32, 33, 12, 4",
+      "args": [
+        "75",
+        "32",
+        "33",
+        "12",
+        "4"
+      ],
+      "outputs": [
+        "Geef score van student 1: Geef score van student 2: Geef score van student 3: Geef score van student 4: Geef score van student 5: Het gemiddelde is 31.2."
+      ]
+    },
+    {
+      "description": "Run 8: args=74, 11, 99, 39, 68",
+      "args": [
+        "74",
+        "11",
+        "99",
+        "39",
+        "68"
+      ],
+      "outputs": [
+        "Geef score van student 1: Geef score van student 2: Geef score van student 3: Geef score van student 4: Geef score van student 5: Het gemiddelde is 58.2."
+      ]
+    },
+    {
+      "description": "Run 9: args=31, 28, 48, 13, 4",
+      "args": [
+        "31",
+        "28",
+        "48",
+        "13",
+        "4"
+      ],
+      "outputs": [
+        "Geef score van student 1: Geef score van student 2: Geef score van student 3: Geef score van student 4: Geef score van student 5: Het gemiddelde is 24.8."
+      ]
+    },
+    {
+      "description": "Run 10: args=57, 90, 3, 96, 11",
+      "args": [
+        "57",
+        "90",
+        "3",
+        "96",
+        "11"
+      ],
+      "outputs": [
+        "Geef score van student 1: Geef score van student 2: Geef score van student 3: Geef score van student 4: Geef score van student 5: Het gemiddelde is 51.4."
+      ]
+    },
+    {
+      "description": "Run 11: args=32, 13, 90, 22, 67",
+      "args": [
+        "32",
+        "13",
+        "90",
+        "22",
+        "67"
+      ],
+      "outputs": [
+        "Geef score van student 1: Geef score van student 2: Geef score van student 3: Geef score van student 4: Geef score van student 5: Het gemiddelde is 44.8."
+      ]
+    },
+    {
+      "description": "Run 12: args=15, 90, 35, 8, 89",
+      "args": [
+        "15",
+        "90",
+        "35",
+        "8",
+        "89"
+      ],
+      "outputs": [
+        "Geef score van student 1: Geef score van student 2: Geef score van student 3: Geef score van student 4: Geef score van student 5: Het gemiddelde is 47.4."
+      ]
+    },
+    {
+      "description": "Run 13: args=12, 26, 49, 33, 24",
+      "args": [
+        "12",
+        "26",
+        "49",
+        "33",
+        "24"
+      ],
+      "outputs": [
+        "Geef score van student 1: Geef score van student 2: Geef score van student 3: Geef score van student 4: Geef score van student 5: Het gemiddelde is 28.8."
+      ]
+    },
+    {
+      "description": "Run 14: args=32, 5, 66, 56, 5",
+      "args": [
+        "32",
+        "5",
+        "66",
+        "56",
+        "5"
+      ],
+      "outputs": [
+        "Geef score van student 1: Geef score van student 2: Geef score van student 3: Geef score van student 4: Geef score van student 5: Het gemiddelde is 32.8."
+      ]
+    },
+    {
+      "description": "Run 15: args=20, 38, 39, 17, 72",
+      "args": [
+        "20",
+        "38",
+        "39",
+        "17",
+        "72"
+      ],
+      "outputs": [
+        "Geef score van student 1: Geef score van student 2: Geef score van student 3: Geef score van student 4: Geef score van student 5: Het gemiddelde is 37.2."
+      ]
+    }
+  ]
+}

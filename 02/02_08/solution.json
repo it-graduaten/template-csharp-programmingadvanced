@@ -1,0 +1,229 @@
+{
+  "cases": [
+    {
+      "description": "Run 1: args=1279.9375260208087",
+      "args": [
+        "1279.9375260208087"
+      ],
+      "outputs": [
+        "Geef je saldo: Goed sparen!"
+      ]
+    },
+    {
+      "description": "Run 2: args=1213.6531237137342",
+      "args": [
+        "1213.6531237137342"
+      ],
+      "outputs": [
+        "Geef je saldo: Goed sparen!"
+      ]
+    },
+    {
+      "description": "Run 3: args=1072.5627725548977",
+      "args": [
+        "1072.5627725548977"
+      ],
+      "outputs": [
+        "Geef je saldo: Goed sparen!"
+      ]
+    },
+    {
+      "description": "Run 4: args=283.71387789459067",
+      "args": [
+        "283.71387789459067"
+      ],
+      "outputs": [
+        "Geef je saldo: Lager dan gemiddeld."
+      ]
+    },
+    {
+      "description": "Run 5: args=1497.436770490393",
+      "args": [
+        "1497.436770490393"
+      ],
+      "outputs": [
+        "Geef je saldo: Goed sparen!"
+      ]
+    },
+    {
+      "description": "Run 6: args=924.4736273317973",
+      "args": [
+        "924.4736273317973"
+      ],
+      "outputs": [
+        "Geef je saldo: Bovengemiddeld"
+      ]
+    },
+    {
+      "description": "Run 7: args=606.8747948254191",
+      "args": [
+        "606.8747948254191"
+      ],
+      "outputs": [
+        "Geef je saldo: Bovengemiddeld"
+      ]
+    },
+    {
+      "description": "Run 8: args=1540.3172323182555",
+      "args": [
+        "1540.3172323182555"
+      ],
+      "outputs": [
+        "Geef je saldo: Goed sparen!"
+      ]
+    },
+    {
+      "description": "Run 9: args=1297.8361257223564",
+      "args": [
+        "1297.8361257223564"
+      ],
+      "outputs": [
+        "Geef je saldo: Goed sparen!"
+      ]
+    },
+    {
+      "description": "Run 10: args=1536.2599826332828",
+      "args": [
+        "1536.2599826332828"
+      ],
+      "outputs": [
+        "Geef je saldo: Goed sparen!"
+      ]
+    },
+    {
+      "description": "Run 11: args=250.63916921693541",
+      "args": [
+        "250.63916921693541"
+      ],
+      "outputs": [
+        "Geef je saldo: Lager dan gemiddeld."
+      ]
+    },
+    {
+      "description": "Run 12: args=1709.6058221821204",
+      "args": [
+        "1709.6058221821204"
+      ],
+      "outputs": [
+        "Geef je saldo: Goed sparen!"
+      ]
+    },
+    {
+      "description": "Run 13: args=470.95627858125846",
+      "args": [
+        "470.95627858125846"
+      ],
+      "outputs": [
+        "Geef je saldo: Lager dan gemiddeld."
+      ]
+    },
+    {
+      "description": "Run 14: args=388.22000560905434",
+      "args": [
+        "388.22000560905434"
+      ],
+      "outputs": [
+        "Geef je saldo: Lager dan gemiddeld."
+      ]
+    },
+    {
+      "description": "Run 15: args=296.89858909361664",
+      "args": [
+        "296.89858909361664"
+      ],
+      "outputs": [
+        "Geef je saldo: Lager dan gemiddeld."
+      ]
+    },
+    {
+      "description": "Run 16: args=321.89682208796586",
+      "args": [
+        "321.89682208796586"
+      ],
+      "outputs": [
+        "Geef je saldo: Lager dan gemiddeld."
+      ]
+    },
+    {
+      "description": "Run 17: args=1372.3820531737272",
+      "args": [
+        "1372.3820531737272"
+      ],
+      "outputs": [
+        "Geef je saldo: Goed sparen!"
+      ]
+    },
+    {
+      "description": "Run 18: args=986.0244075994435",
+      "args": [
+        "986.0244075994435"
+      ],
+      "outputs": [
+        "Geef je saldo: Bovengemiddeld"
+      ]
+    },
+    {
+      "description": "Run 19: args=838.4460148651731",
+      "args": [
+        "838.4460148651731"
+      ],
+      "outputs": [
+        "Geef je saldo: Bovengemiddeld"
+      ]
+    },
+    {
+      "description": "Run 20: args=101.97302281353183",
+      "args": [
+        "101.97302281353183"
+      ],
+      "outputs": [
+        "Geef je saldo: Lager dan gemiddeld."
+      ]
+    },
+    {
+      "description": "Run 21: args=1224.2994237697367",
+      "args": [
+        "1224.2994237697367"
+      ],
+      "outputs": [
+        "Geef je saldo: Goed sparen!"
+      ]
+    },
+    {
+      "description": "Run 22: args=1826.299902684679",
+      "args": [
+        "1826.299902684679"
+      ],
+      "outputs": [
+        "Geef je saldo: Goed sparen!"
+      ]
+    },
+    {
+      "description": "Run 23: args=1859.3013106589938",
+      "args": [
+        "1859.3013106589938"
+      ],
+      "outputs": [
+        "Geef je saldo: Goed sparen!"
+      ]
+    },
+    {
+      "description": "Run 24: args=1553.8470616372604",
+      "args": [
+        "1553.8470616372604"
+      ],
+      "outputs": [
+        "Geef je saldo: Goed sparen!"
+      ]
+    },
+    {
+      "description": "Run 25: args=1070.135483936859",
+      "args": [
+        "1070.135483936859"
+      ],
+      "outputs": [
+        "Geef je saldo: Goed sparen!"
+      ]
+    }
+  ]
+}

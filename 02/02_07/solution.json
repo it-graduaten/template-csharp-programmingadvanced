@@ -1,0 +1,229 @@
+{
+  "cases": [
+    {
+      "description": "Run 1: args=66",
+      "args": [
+        "66"
+      ],
+      "outputs": [
+        "Hoeveel minuten wandel je per dag? Lang wandelen"
+      ]
+    },
+    {
+      "description": "Run 2: args=35",
+      "args": [
+        "35"
+      ],
+      "outputs": [
+        "Hoeveel minuten wandel je per dag? Gemiddeld wandelen"
+      ]
+    },
+    {
+      "description": "Run 3: args=112",
+      "args": [
+        "112"
+      ],
+      "outputs": [
+        "Hoeveel minuten wandel je per dag? Lang wandelen"
+      ]
+    },
+    {
+      "description": "Run 4: args=29",
+      "args": [
+        "29"
+      ],
+      "outputs": [
+        "Hoeveel minuten wandel je per dag? Gemiddeld wandelen"
+      ]
+    },
+    {
+      "description": "Run 5: args=99",
+      "args": [
+        "99"
+      ],
+      "outputs": [
+        "Hoeveel minuten wandel je per dag? Lang wandelen"
+      ]
+    },
+    {
+      "description": "Run 6: args=80",
+      "args": [
+        "80"
+      ],
+      "outputs": [
+        "Hoeveel minuten wandel je per dag? Lang wandelen"
+      ]
+    },
+    {
+      "description": "Run 7: args=116",
+      "args": [
+        "116"
+      ],
+      "outputs": [
+        "Hoeveel minuten wandel je per dag? Lang wandelen"
+      ]
+    },
+    {
+      "description": "Run 8: args=64",
+      "args": [
+        "64"
+      ],
+      "outputs": [
+        "Hoeveel minuten wandel je per dag? Lang wandelen"
+      ]
+    },
+    {
+      "description": "Run 9: args=2",
+      "args": [
+        "2"
+      ],
+      "outputs": [
+        "Hoeveel minuten wandel je per dag? Kort wandelen"
+      ]
+    },
+    {
+      "description": "Run 10: args=37",
+      "args": [
+        "37"
+      ],
+      "outputs": [
+        "Hoeveel minuten wandel je per dag? Gemiddeld wandelen"
+      ]
+    },
+    {
+      "description": "Run 11: args=3",
+      "args": [
+        "3"
+      ],
+      "outputs": [
+        "Hoeveel minuten wandel je per dag? Kort wandelen"
+      ]
+    },
+    {
+      "description": "Run 12: args=44",
+      "args": [
+        "44"
+      ],
+      "outputs": [
+        "Hoeveel minuten wandel je per dag? Gemiddeld wandelen"
+      ]
+    },
+    {
+      "description": "Run 13: args=99",
+      "args": [
+        "99"
+      ],
+      "outputs": [
+        "Hoeveel minuten wandel je per dag? Lang wandelen"
+      ]
+    },
+    {
+      "description": "Run 14: args=34",
+      "args": [
+        "34"
+      ],
+      "outputs": [
+        "Hoeveel minuten wandel je per dag? Gemiddeld wandelen"
+      ]
+    },
+    {
+      "description": "Run 15: args=99",
+      "args": [
+        "99"
+      ],
+      "outputs": [
+        "Hoeveel minuten wandel je per dag? Lang wandelen"
+      ]
+    },
+    {
+      "description": "Run 16: args=34",
+      "args": [
+        "34"
+      ],
+      "outputs": [
+        "Hoeveel minuten wandel je per dag? Gemiddeld wandelen"
+      ]
+    },
+    {
+      "description": "Run 17: args=29",
+      "args": [
+        "29"
+      ],
+      "outputs": [
+        "Hoeveel minuten wandel je per dag? Gemiddeld wandelen"
+      ]
+    },
+    {
+      "description": "Run 18: args=23",
+      "args": [
+        "23"
+      ],
+      "outputs": [
+        "Hoeveel minuten wandel je per dag? Gemiddeld wandelen"
+      ]
+    },
+    {
+      "description": "Run 19: args=56",
+      "args": [
+        "56"
+      ],
+      "outputs": [
+        "Hoeveel minuten wandel je per dag? Lang wandelen"
+      ]
+    },
+    {
+      "description": "Run 20: args=30",
+      "args": [
+        "30"
+      ],
+      "outputs": [
+        "Hoeveel minuten wandel je per dag? Gemiddeld wandelen"
+      ]
+    },
+    {
+      "description": "Run 21: args=90",
+      "args": [
+        "90"
+      ],
+      "outputs": [
+        "Hoeveel minuten wandel je per dag? Lang wandelen"
+      ]
+    },
+    {
+      "description": "Run 22: args=72",
+      "args": [
+        "72"
+      ],
+      "outputs": [
+        "Hoeveel minuten wandel je per dag? Lang wandelen"
+      ]
+    },
+    {
+      "description": "Run 23: args=82",
+      "args": [
+        "82"
+      ],
+      "outputs": [
+        "Hoeveel minuten wandel je per dag? Lang wandelen"
+      ]
+    },
+    {
+      "description": "Run 24: args=56",
+      "args": [
+        "56"
+      ],
+      "outputs": [
+        "Hoeveel minuten wandel je per dag? Lang wandelen"
+      ]
+    },
+    {
+      "description": "Run 25: args=37",
+      "args": [
+        "37"
+      ],
+      "outputs": [
+        "Hoeveel minuten wandel je per dag? Gemiddeld wandelen"
+      ]
+    }
+  ]
+}

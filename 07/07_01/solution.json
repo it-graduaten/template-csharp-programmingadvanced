@@ -1,0 +1,379 @@
+{
+  "cases": [
+    {
+      "description": "Run 1: args=3, -94, 4",
+      "args": [
+        "3",
+        "-94",
+        "4"
+      ],
+      "outputs": [
+        "Kies een bewerking:",
+        "1. Optellen",
+        "2. Aftrekken",
+        "3. Vermenigvuldigen",
+        "Keuze: Voer het eerste getal in: Voer het tweede getal in: Resultaat: -376"
+      ]
+    },
+    {
+      "description": "Run 2: args=2, 32, -2",
+      "args": [
+        "2",
+        "32",
+        "-2"
+      ],
+      "outputs": [
+        "Kies een bewerking:",
+        "1. Optellen",
+        "2. Aftrekken",
+        "3. Vermenigvuldigen",
+        "Keuze: Voer het eerste getal in: Voer het tweede getal in: Resultaat: 34"
+      ]
+    },
+    {
+      "description": "Run 3: args=1, 12, 46",
+      "args": [
+        "1",
+        "12",
+        "46"
+      ],
+      "outputs": [
+        "Kies een bewerking:",
+        "1. Optellen",
+        "2. Aftrekken",
+        "3. Vermenigvuldigen",
+        "Keuze: Voer het eerste getal in: Voer het tweede getal in: Resultaat: 58"
+      ]
+    },
+    {
+      "description": "Run 4: args=2, -65, 56",
+      "args": [
+        "2",
+        "-65",
+        "56"
+      ],
+      "outputs": [
+        "Kies een bewerking:",
+        "1. Optellen",
+        "2. Aftrekken",
+        "3. Vermenigvuldigen",
+        "Keuze: Voer het eerste getal in: Voer het tweede getal in: Resultaat: -121"
+      ]
+    },
+    {
+      "description": "Run 5: args=2, -20, -76",
+      "args": [
+        "2",
+        "-20",
+        "-76"
+      ],
+      "outputs": [
+        "Kies een bewerking:",
+        "1. Optellen",
+        "2. Aftrekken",
+        "3. Vermenigvuldigen",
+        "Keuze: Voer het eerste getal in: Voer het tweede getal in: Resultaat: 56"
+      ]
+    },
+    {
+      "description": "Run 6: args=1, 68, -48",
+      "args": [
+        "1",
+        "68",
+        "-48"
+      ],
+      "outputs": [
+        "Kies een bewerking:",
+        "1. Optellen",
+        "2. Aftrekken",
+        "3. Vermenigvuldigen",
+        "Keuze: Voer het eerste getal in: Voer het tweede getal in: Resultaat: 20"
+      ]
+    },
+    {
+      "description": "Run 7: args=3, 37, 42",
+      "args": [
+        "3",
+        "37",
+        "42"
+      ],
+      "outputs": [
+        "Kies een bewerking:",
+        "1. Optellen",
+        "2. Aftrekken",
+        "3. Vermenigvuldigen",
+        "Keuze: Voer het eerste getal in: Voer het tweede getal in: Resultaat: 1554"
+      ]
+    },
+    {
+      "description": "Run 8: args=1, 7, 71",
+      "args": [
+        "1",
+        "7",
+        "71"
+      ],
+      "outputs": [
+        "Kies een bewerking:",
+        "1. Optellen",
+        "2. Aftrekken",
+        "3. Vermenigvuldigen",
+        "Keuze: Voer het eerste getal in: Voer het tweede getal in: Resultaat: 78"
+      ]
+    },
+    {
+      "description": "Run 9: args=3, 54, -100",
+      "args": [
+        "3",
+        "54",
+        "-100"
+      ],
+      "outputs": [
+        "Kies een bewerking:",
+        "1. Optellen",
+        "2. Aftrekken",
+        "3. Vermenigvuldigen",
+        "Keuze: Voer het eerste getal in: Voer het tweede getal in: Resultaat: -5400"
+      ]
+    },
+    {
+      "description": "Run 10: args=2, 44, -25",
+      "args": [
+        "2",
+        "44",
+        "-25"
+      ],
+      "outputs": [
+        "Kies een bewerking:",
+        "1. Optellen",
+        "2. Aftrekken",
+        "3. Vermenigvuldigen",
+        "Keuze: Voer het eerste getal in: Voer het tweede getal in: Resultaat: 69"
+      ]
+    },
+    {
+      "description": "Run 11: args=1, -96, 29",
+      "args": [
+        "1",
+        "-96",
+        "29"
+      ],
+      "outputs": [
+        "Kies een bewerking:",
+        "1. Optellen",
+        "2. Aftrekken",
+        "3. Vermenigvuldigen",
+        "Keuze: Voer het eerste getal in: Voer het tweede getal in: Resultaat: -67"
+      ]
+    },
+    {
+      "description": "Run 12: args=1, 40, -64",
+      "args": [
+        "1",
+        "40",
+        "-64"
+      ],
+      "outputs": [
+        "Kies een bewerking:",
+        "1. Optellen",
+        "2. Aftrekken",
+        "3. Vermenigvuldigen",
+        "Keuze: Voer het eerste getal in: Voer het tweede getal in: Resultaat: -24"
+      ]
+    },
+    {
+      "description": "Run 13: args=3, -58, 9",
+      "args": [
+        "3",
+        "-58",
+        "9"
+      ],
+      "outputs": [
+        "Kies een bewerking:",
+        "1. Optellen",
+        "2. Aftrekken",
+        "3. Vermenigvuldigen",
+        "Keuze: Voer het eerste getal in: Voer het tweede getal in: Resultaat: -522"
+      ]
+    },
+    {
+      "description": "Run 14: args=1, 32, -58",
+      "args": [
+        "1",
+        "32",
+        "-58"
+      ],
+      "outputs": [
+        "Kies een bewerking:",
+        "1. Optellen",
+        "2. Aftrekken",
+        "3. Vermenigvuldigen",
+        "Keuze: Voer het eerste getal in: Voer het tweede getal in: Resultaat: -26"
+      ]
+    },
+    {
+      "description": "Run 15: args=1, 57, 41",
+      "args": [
+        "1",
+        "57",
+        "41"
+      ],
+      "outputs": [
+        "Kies een bewerking:",
+        "1. Optellen",
+        "2. Aftrekken",
+        "3. Vermenigvuldigen",
+        "Keuze: Voer het eerste getal in: Voer het tweede getal in: Resultaat: 98"
+      ]
+    },
+    {
+      "description": "Run 16: args=2, 33, -93",
+      "args": [
+        "2",
+        "33",
+        "-93"
+      ],
+      "outputs": [
+        "Kies een bewerking:",
+        "1. Optellen",
+        "2. Aftrekken",
+        "3. Vermenigvuldigen",
+        "Keuze: Voer het eerste getal in: Voer het tweede getal in: Resultaat: 126"
+      ]
+    },
+    {
+      "description": "Run 17: args=3, 88, 68",
+      "args": [
+        "3",
+        "88",
+        "68"
+      ],
+      "outputs": [
+        "Kies een bewerking:",
+        "1. Optellen",
+        "2. Aftrekken",
+        "3. Vermenigvuldigen",
+        "Keuze: Voer het eerste getal in: Voer het tweede getal in: Resultaat: 5984"
+      ]
+    },
+    {
+      "description": "Run 18: args=1, 86, -88",
+      "args": [
+        "1",
+        "86",
+        "-88"
+      ],
+      "outputs": [
+        "Kies een bewerking:",
+        "1. Optellen",
+        "2. Aftrekken",
+        "3. Vermenigvuldigen",
+        "Keuze: Voer het eerste getal in: Voer het tweede getal in: Resultaat: -2"
+      ]
+    },
+    {
+      "description": "Run 19: args=3, 6, -84",
+      "args": [
+        "3",
+        "6",
+        "-84"
+      ],
+      "outputs": [
+        "Kies een bewerking:",
+        "1. Optellen",
+        "2. Aftrekken",
+        "3. Vermenigvuldigen",
+        "Keuze: Voer het eerste getal in: Voer het tweede getal in: Resultaat: -504"
+      ]
+    },
+    {
+      "description": "Run 20: args=1, 1, 6",
+      "args": [
+        "1",
+        "1",
+        "6"
+      ],
+      "outputs": [
+        "Kies een bewerking:",
+        "1. Optellen",
+        "2. Aftrekken",
+        "3. Vermenigvuldigen",
+        "Keuze: Voer het eerste getal in: Voer het tweede getal in: Resultaat: 7"
+      ]
+    },
+    {
+      "description": "Run 21: args=3, -63, 29",
+      "args": [
+        "3",
+        "-63",
+        "29"
+      ],
+      "outputs": [
+        "Kies een bewerking:",
+        "1. Optellen",
+        "2. Aftrekken",
+        "3. Vermenigvuldigen",
+        "Keuze: Voer het eerste getal in: Voer het tweede getal in: Resultaat: -1827"
+      ]
+    },
+    {
+      "description": "Run 22: args=3, 5, -97",
+      "args": [
+        "3",
+        "5",
+        "-97"
+      ],
+      "outputs": [
+        "Kies een bewerking:",
+        "1. Optellen",
+        "2. Aftrekken",
+        "3. Vermenigvuldigen",
+        "Keuze: Voer het eerste getal in: Voer het tweede getal in: Resultaat: -485"
+      ]
+    },
+    {
+      "description": "Run 23: args=3, -78, -98",
+      "args": [
+        "3",
+        "-78",
+        "-98"
+      ],
+      "outputs": [
+        "Kies een bewerking:",
+        "1. Optellen",
+        "2. Aftrekken",
+        "3. Vermenigvuldigen",
+        "Keuze: Voer het eerste getal in: Voer het tweede getal in: Resultaat: 7644"
+      ]
+    },
+    {
+      "description": "Run 24: args=3, 40, 55",
+      "args": [
+        "3",
+        "40",
+        "55"
+      ],
+      "outputs": [
+        "Kies een bewerking:",
+        "1. Optellen",
+        "2. Aftrekken",
+        "3. Vermenigvuldigen",
+        "Keuze: Voer het eerste getal in: Voer het tweede getal in: Resultaat: 2200"
+      ]
+    },
+    {
+      "description": "Run 25: args=3, -50, -75",
+      "args": [
+        "3",
+        "-50",
+        "-75"
+      ],
+      "outputs": [
+        "Kies een bewerking:",
+        "1. Optellen",
+        "2. Aftrekken",
+        "3. Vermenigvuldigen",
+        "Keuze: Voer het eerste getal in: Voer het tweede getal in: Resultaat: 3750"
+      ]
+    }
+  ]
+}

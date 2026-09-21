@@ -1,0 +1,254 @@
+{
+  "cases": [
+    {
+      "description": "Run 1: args=365, 621",
+      "args": [
+        "365",
+        "621"
+      ],
+      "outputs": [
+        "171.00"
+      ]
+    },
+    {
+      "description": "Run 2: args=54, 261",
+      "args": [
+        "54",
+        "261"
+      ],
+      "outputs": [
+        "73.57"
+      ]
+    },
+    {
+      "description": "Run 3: args=883, 191",
+      "args": [
+        "883",
+        "191"
+      ],
+      "outputs": [
+        "183.77"
+      ]
+    },
+    {
+      "description": "Run 4: args=203, 78",
+      "args": [
+        "203",
+        "78"
+      ],
+      "outputs": [
+        "68.63"
+      ]
+    },
+    {
+      "description": "Run 5: args=609, 267",
+      "args": [
+        "609",
+        "267"
+      ],
+      "outputs": [
+        "155.03"
+      ]
+    },
+    {
+      "description": "Run 6: args=968, 923",
+      "args": [
+        "968",
+        "923"
+      ],
+      "outputs": [
+        "302.40"
+      ]
+    },
+    {
+      "description": "Run 7: args=544, 239",
+      "args": [
+        "544",
+        "239"
+      ],
+      "outputs": [
+        "141.52"
+      ]
+    },
+    {
+      "description": "Run 8: args=859, 715",
+      "args": [
+        "859",
+        "715"
+      ],
+      "outputs": [
+        "256.37"
+      ]
+    },
+    {
+      "description": "Run 9: args=965, 87",
+      "args": [
+        "965",
+        "87"
+      ],
+      "outputs": [
+        "180.58"
+      ]
+    },
+    {
+      "description": "Run 10: args=945, 499",
+      "args": [
+        "945",
+        "499"
+      ],
+      "outputs": [
+        "237.50"
+      ]
+    },
+    {
+      "description": "Run 11: args=688, 933",
+      "args": [
+        "688",
+        "933"
+      ],
+      "outputs": [
+        "263.20"
+      ]
+    },
+    {
+      "description": "Run 12: args=155, 935",
+      "args": [
+        "155",
+        "935"
+      ],
+      "outputs": [
+        "186.10"
+      ]
+    },
+    {
+      "description": "Run 13: args=100, 784",
+      "args": [
+        "100",
+        "784"
+      ],
+      "outputs": [
+        "156.19"
+      ]
+    },
+    {
+      "description": "Run 14: args=211, 121",
+      "args": [
+        "211",
+        "121"
+      ],
+      "outputs": [
+        "76.04"
+      ]
+    },
+    {
+      "description": "Run 15: args=174, 824",
+      "args": [
+        "174",
+        "824"
+      ],
+      "outputs": [
+        "172.74"
+      ]
+    },
+    {
+      "description": "Run 16: args=96, 669",
+      "args": [
+        "96",
+        "669"
+      ],
+      "outputs": [
+        "138.91"
+      ]
+    },
+    {
+      "description": "Run 17: args=613, 150",
+      "args": [
+        "613",
+        "150"
+      ],
+      "outputs": [
+        "138.62"
+      ]
+    },
+    {
+      "description": "Run 18: args=996, 662",
+      "args": [
+        "996",
+        "662"
+      ],
+      "outputs": [
+        "268.57"
+      ]
+    },
+    {
+      "description": "Run 19: args=46, 736",
+      "args": [
+        "46",
+        "736"
+      ],
+      "outputs": [
+        "141.38"
+      ]
+    },
+    {
+      "description": "Run 20: args=701, 578",
+      "args": [
+        "701",
+        "578"
+      ],
+      "outputs": [
+        "213.54"
+      ]
+    },
+    {
+      "description": "Run 21: args=10, 330",
+      "args": [
+        "10",
+        "330"
+      ],
+      "outputs": [
+        "77.20"
+      ]
+    },
+    {
+      "description": "Run 22: args=575, 550",
+      "args": [
+        "575",
+        "550"
+      ],
+      "outputs": [
+        "191.18"
+      ]
+    },
+    {
+      "description": "Run 23: args=741, 455",
+      "args": [
+        "741",
+        "455"
+      ],
+      "outputs": [
+        "201.49"
+      ]
+    },
+    {
+      "description": "Run 24: args=610, 307",
+      "args": [
+        "610",
+        "307"
+      ],
+      "outputs": [
+        "160.98"
+      ]
+    },
+    {
+      "description": "Run 25: args=975, 641",
+      "args": [
+        "975",
+        "641"
+      ],
+      "outputs": [
+        "262.47"
+      ]
+    }
+  ]
+}

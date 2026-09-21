@@ -1,0 +1,279 @@
+{
+  "cases": [
+    {
+      "description": "Run 1: args=1, V, ja",
+      "args": [
+        "1",
+        "V",
+        "ja"
+      ],
+      "outputs": [
+        "Geef je leeftijd: Geef je geslacht (M of V): Toegang geweigerd"
+      ]
+    },
+    {
+      "description": "Run 2: args=38, M, nee",
+      "args": [
+        "38",
+        "M",
+        "nee"
+      ],
+      "outputs": [
+        "Geef je leeftijd: Geef je geslacht (M of V): Toegang toegestaan"
+      ]
+    },
+    {
+      "description": "Run 3: args=28, M, nee",
+      "args": [
+        "28",
+        "M",
+        "nee"
+      ],
+      "outputs": [
+        "Geef je leeftijd: Geef je geslacht (M of V): Toegang toegestaan"
+      ]
+    },
+    {
+      "description": "Run 4: args=29, V, nee",
+      "args": [
+        "29",
+        "V",
+        "nee"
+      ],
+      "outputs": [
+        "Geef je leeftijd: Geef je geslacht (M of V): Toegang toegestaan"
+      ]
+    },
+    {
+      "description": "Run 5: args=3, V, nee",
+      "args": [
+        "3",
+        "V",
+        "nee"
+      ],
+      "outputs": [
+        "Geef je leeftijd: Geef je geslacht (M of V): Toegang geweigerd"
+      ]
+    },
+    {
+      "description": "Run 6: args=10, V, nee",
+      "args": [
+        "10",
+        "V",
+        "nee"
+      ],
+      "outputs": [
+        "Geef je leeftijd: Geef je geslacht (M of V): Ben je vergezeld van een volwassene? (ja/neen): Toegang geweigerd"
+      ]
+    },
+    {
+      "description": "Run 7: args=0, M, nee",
+      "args": [
+        "0",
+        "M",
+        "nee"
+      ],
+      "outputs": [
+        "Geef je leeftijd: Geef je geslacht (M of V): Toegang geweigerd"
+      ]
+    },
+    {
+      "description": "Run 8: args=36, V, ja",
+      "args": [
+        "36",
+        "V",
+        "ja"
+      ],
+      "outputs": [
+        "Geef je leeftijd: Geef je geslacht (M of V): Toegang toegestaan"
+      ]
+    },
+    {
+      "description": "Run 9: args=17, V, ja",
+      "args": [
+        "17",
+        "V",
+        "ja"
+      ],
+      "outputs": [
+        "Geef je leeftijd: Geef je geslacht (M of V): Ben je vergezeld van een volwassene? (ja/neen): Toegang toegestaan"
+      ]
+    },
+    {
+      "description": "Run 10: args=25, M, ja",
+      "args": [
+        "25",
+        "M",
+        "ja"
+      ],
+      "outputs": [
+        "Geef je leeftijd: Geef je geslacht (M of V): Toegang toegestaan"
+      ]
+    },
+    {
+      "description": "Run 11: args=35, M, nee",
+      "args": [
+        "35",
+        "M",
+        "nee"
+      ],
+      "outputs": [
+        "Geef je leeftijd: Geef je geslacht (M of V): Toegang toegestaan"
+      ]
+    },
+    {
+      "description": "Run 12: args=24, V, ja",
+      "args": [
+        "24",
+        "V",
+        "ja"
+      ],
+      "outputs": [
+        "Geef je leeftijd: Geef je geslacht (M of V): Toegang toegestaan"
+      ]
+    },
+    {
+      "description": "Run 13: args=39, M, ja",
+      "args": [
+        "39",
+        "M",
+        "ja"
+      ],
+      "outputs": [
+        "Geef je leeftijd: Geef je geslacht (M of V): Toegang toegestaan"
+      ]
+    },
+    {
+      "description": "Run 14: args=10, V, nee",
+      "args": [
+        "10",
+        "V",
+        "nee"
+      ],
+      "outputs": [
+        "Geef je leeftijd: Geef je geslacht (M of V): Ben je vergezeld van een volwassene? (ja/neen): Toegang geweigerd"
+      ]
+    },
+    {
+      "description": "Run 15: args=38, M, ja",
+      "args": [
+        "38",
+        "M",
+        "ja"
+      ],
+      "outputs": [
+        "Geef je leeftijd: Geef je geslacht (M of V): Toegang toegestaan"
+      ]
+    },
+    {
+      "description": "Run 16: args=34, M, ja",
+      "args": [
+        "34",
+        "M",
+        "ja"
+      ],
+      "outputs": [
+        "Geef je leeftijd: Geef je geslacht (M of V): Toegang toegestaan"
+      ]
+    },
+    {
+      "description": "Run 17: args=2, M, nee",
+      "args": [
+        "2",
+        "M",
+        "nee"
+      ],
+      "outputs": [
+        "Geef je leeftijd: Geef je geslacht (M of V): Toegang geweigerd"
+      ]
+    },
+    {
+      "description": "Run 18: args=38, V, nee",
+      "args": [
+        "38",
+        "V",
+        "nee"
+      ],
+      "outputs": [
+        "Geef je leeftijd: Geef je geslacht (M of V): Toegang toegestaan"
+      ]
+    },
+    {
+      "description": "Run 19: args=28, M, nee",
+      "args": [
+        "28",
+        "M",
+        "nee"
+      ],
+      "outputs": [
+        "Geef je leeftijd: Geef je geslacht (M of V): Toegang toegestaan"
+      ]
+    },
+    {
+      "description": "Run 20: args=26, V, nee",
+      "args": [
+        "26",
+        "V",
+        "nee"
+      ],
+      "outputs": [
+        "Geef je leeftijd: Geef je geslacht (M of V): Toegang toegestaan"
+      ]
+    },
+    {
+      "description": "Run 21: args=17, V, ja",
+      "args": [
+        "17",
+        "V",
+        "ja"
+      ],
+      "outputs": [
+        "Geef je leeftijd: Geef je geslacht (M of V): Ben je vergezeld van een volwassene? (ja/neen): Toegang toegestaan"
+      ]
+    },
+    {
+      "description": "Run 22: args=30, V, nee",
+      "args": [
+        "30",
+        "V",
+        "nee"
+      ],
+      "outputs": [
+        "Geef je leeftijd: Geef je geslacht (M of V): Toegang toegestaan"
+      ]
+    },
+    {
+      "description": "Run 23: args=10, M, ja",
+      "args": [
+        "10",
+        "M",
+        "ja"
+      ],
+      "outputs": [
+        "Geef je leeftijd: Geef je geslacht (M of V): Ben je vergezeld van een volwassene? (ja/neen): Toegang toegestaan"
+      ]
+    },
+    {
+      "description": "Run 24: args=19, V, nee",
+      "args": [
+        "19",
+        "V",
+        "nee"
+      ],
+      "outputs": [
+        "Geef je leeftijd: Geef je geslacht (M of V): Toegang toegestaan"
+      ]
+    },
+    {
+      "description": "Run 25: args=8, M, ja",
+      "args": [
+        "8",
+        "M",
+        "ja"
+      ],
+      "outputs": [
+        "Geef je leeftijd: Geef je geslacht (M of V): Toegang geweigerd"
+      ]
+    }
+  ]
+}

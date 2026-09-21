@@ -1,0 +1,229 @@
+{
+  "cases": [
+    {
+      "description": "Run 1: args=149",
+      "args": [
+        "149"
+      ],
+      "outputs": [
+        "Geef een jaartal: Geen schrikkeljaar"
+      ]
+    },
+    {
+      "description": "Run 2: args=1409",
+      "args": [
+        "1409"
+      ],
+      "outputs": [
+        "Geef een jaartal: Geen schrikkeljaar"
+      ]
+    },
+    {
+      "description": "Run 3: args=1070",
+      "args": [
+        "1070"
+      ],
+      "outputs": [
+        "Geef een jaartal: Geen schrikkeljaar"
+      ]
+    },
+    {
+      "description": "Run 4: args=716",
+      "args": [
+        "716"
+      ],
+      "outputs": [
+        "Geef een jaartal: Schrikkeljaar"
+      ]
+    },
+    {
+      "description": "Run 5: args=604",
+      "args": [
+        "604"
+      ],
+      "outputs": [
+        "Geef een jaartal: Schrikkeljaar"
+      ]
+    },
+    {
+      "description": "Run 6: args=1766",
+      "args": [
+        "1766"
+      ],
+      "outputs": [
+        "Geef een jaartal: Geen schrikkeljaar"
+      ]
+    },
+    {
+      "description": "Run 7: args=496",
+      "args": [
+        "496"
+      ],
+      "outputs": [
+        "Geef een jaartal: Schrikkeljaar"
+      ]
+    },
+    {
+      "description": "Run 8: args=888",
+      "args": [
+        "888"
+      ],
+      "outputs": [
+        "Geef een jaartal: Schrikkeljaar"
+      ]
+    },
+    {
+      "description": "Run 9: args=22",
+      "args": [
+        "22"
+      ],
+      "outputs": [
+        "Geef een jaartal: Geen schrikkeljaar"
+      ]
+    },
+    {
+      "description": "Run 10: args=1935",
+      "args": [
+        "1935"
+      ],
+      "outputs": [
+        "Geef een jaartal: Geen schrikkeljaar"
+      ]
+    },
+    {
+      "description": "Run 11: args=1900",
+      "args": [
+        "1900"
+      ],
+      "outputs": [
+        "Geef een jaartal: Geen schrikkeljaar"
+      ]
+    },
+    {
+      "description": "Run 12: args=568",
+      "args": [
+        "568"
+      ],
+      "outputs": [
+        "Geef een jaartal: Schrikkeljaar"
+      ]
+    },
+    {
+      "description": "Run 13: args=849",
+      "args": [
+        "849"
+      ],
+      "outputs": [
+        "Geef een jaartal: Geen schrikkeljaar"
+      ]
+    },
+    {
+      "description": "Run 14: args=1259",
+      "args": [
+        "1259"
+      ],
+      "outputs": [
+        "Geef een jaartal: Geen schrikkeljaar"
+      ]
+    },
+    {
+      "description": "Run 15: args=601",
+      "args": [
+        "601"
+      ],
+      "outputs": [
+        "Geef een jaartal: Geen schrikkeljaar"
+      ]
+    },
+    {
+      "description": "Run 16: args=1196",
+      "args": [
+        "1196"
+      ],
+      "outputs": [
+        "Geef een jaartal: Schrikkeljaar"
+      ]
+    },
+    {
+      "description": "Run 17: args=1544",
+      "args": [
+        "1544"
+      ],
+      "outputs": [
+        "Geef een jaartal: Schrikkeljaar"
+      ]
+    },
+    {
+      "description": "Run 18: args=2015",
+      "args": [
+        "2015"
+      ],
+      "outputs": [
+        "Geef een jaartal: Geen schrikkeljaar"
+      ]
+    },
+    {
+      "description": "Run 19: args=497",
+      "args": [
+        "497"
+      ],
+      "outputs": [
+        "Geef een jaartal: Geen schrikkeljaar"
+      ]
+    },
+    {
+      "description": "Run 20: args=147",
+      "args": [
+        "147"
+      ],
+      "outputs": [
+        "Geef een jaartal: Geen schrikkeljaar"
+      ]
+    },
+    {
+      "description": "Run 21: args=861",
+      "args": [
+        "861"
+      ],
+      "outputs": [
+        "Geef een jaartal: Geen schrikkeljaar"
+      ]
+    },
+    {
+      "description": "Run 22: args=1277",
+      "args": [
+        "1277"
+      ],
+      "outputs": [
+        "Geef een jaartal: Geen schrikkeljaar"
+      ]
+    },
+    {
+      "description": "Run 23: args=661",
+      "args": [
+        "661"
+      ],
+      "outputs": [
+        "Geef een jaartal: Geen schrikkeljaar"
+      ]
+    },
+    {
+      "description": "Run 24: args=975",
+      "args": [
+        "975"
+      ],
+      "outputs": [
+        "Geef een jaartal: Geen schrikkeljaar"
+      ]
+    },
+    {
+      "description": "Run 25: args=1550",
+      "args": [
+        "1550"
+      ],
+      "outputs": [
+        "Geef een jaartal: Geen schrikkeljaar"
+      ]
+    }
+  ]
+}

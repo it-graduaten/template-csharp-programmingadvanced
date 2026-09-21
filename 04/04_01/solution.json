@@ -1,0 +1,169 @@
+{
+  "cases": [
+    {
+      "description": "Run 1: args=28, 46, -15",
+      "args": [
+        "28",
+        "46",
+        "-15"
+      ],
+      "outputs": [
+        "Geef getal 1: Geef getal 2: Geef getal 3: Het grootste getal is 46."
+      ]
+    },
+    {
+      "description": "Run 2: args=-25, -13, -21",
+      "args": [
+        "-25",
+        "-13",
+        "-21"
+      ],
+      "outputs": [
+        "Geef getal 1: Geef getal 2: Geef getal 3: Het grootste getal is -13."
+      ]
+    },
+    {
+      "description": "Run 3: args=-12, -88, -45",
+      "args": [
+        "-12",
+        "-88",
+        "-45"
+      ],
+      "outputs": [
+        "Geef getal 1: Geef getal 2: Geef getal 3: Het grootste getal is -12."
+      ]
+    },
+    {
+      "description": "Run 4: args=-30, 83, -6",
+      "args": [
+        "-30",
+        "83",
+        "-6"
+      ],
+      "outputs": [
+        "Geef getal 1: Geef getal 2: Geef getal 3: Het grootste getal is 83."
+      ]
+    },
+    {
+      "description": "Run 5: args=27, -14, 36",
+      "args": [
+        "27",
+        "-14",
+        "36"
+      ],
+      "outputs": [
+        "Geef getal 1: Geef getal 2: Geef getal 3: Het grootste getal is 36."
+      ]
+    },
+    {
+      "description": "Run 6: args=16, 33, 72",
+      "args": [
+        "16",
+        "33",
+        "72"
+      ],
+      "outputs": [
+        "Geef getal 1: Geef getal 2: Geef getal 3: Het grootste getal is 72."
+      ]
+    },
+    {
+      "description": "Run 7: args=-24, 55, -51",
+      "args": [
+        "-24",
+        "55",
+        "-51"
+      ],
+      "outputs": [
+        "Geef getal 1: Geef getal 2: Geef getal 3: Het grootste getal is 55."
+      ]
+    },
+    {
+      "description": "Run 8: args=37, 28, 1",
+      "args": [
+        "37",
+        "28",
+        "1"
+      ],
+      "outputs": [
+        "Geef getal 1: Geef getal 2: Geef getal 3: Het grootste getal is 37."
+      ]
+    },
+    {
+      "description": "Run 9: args=41, 33, 52",
+      "args": [
+        "41",
+        "33",
+        "52"
+      ],
+      "outputs": [
+        "Geef getal 1: Geef getal 2: Geef getal 3: Het grootste getal is 52."
+      ]
+    },
+    {
+      "description": "Run 10: args=74, -52, 59",
+      "args": [
+        "74",
+        "-52",
+        "59"
+      ],
+      "outputs": [
+        "Geef getal 1: Geef getal 2: Geef getal 3: Het grootste getal is 74."
+      ]
+    },
+    {
+      "description": "Run 11: args=-42, 18, -82",
+      "args": [
+        "-42",
+        "18",
+        "-82"
+      ],
+      "outputs": [
+        "Geef getal 1: Geef getal 2: Geef getal 3: Het grootste getal is 18."
+      ]
+    },
+    {
+      "description": "Run 12: args=21, -44, 88",
+      "args": [
+        "21",
+        "-44",
+        "88"
+      ],
+      "outputs": [
+        "Geef getal 1: Geef getal 2: Geef getal 3: Het grootste getal is 88."
+      ]
+    },
+    {
+      "description": "Run 13: args=84, 70, -18",
+      "args": [
+        "84",
+        "70",
+        "-18"
+      ],
+      "outputs": [
+        "Geef getal 1: Geef getal 2: Geef getal 3: Het grootste getal is 84."
+      ]
+    },
+    {
+      "description": "Run 14: args=33, -59, 6",
+      "args": [
+        "33",
+        "-59",
+        "6"
+      ],
+      "outputs": [
+        "Geef getal 1: Geef getal 2: Geef getal 3: Het grootste getal is 33."
+      ]
+    },
+    {
+      "description": "Run 15: args=-28, 48, -50",
+      "args": [
+        "-28",
+        "48",
+        "-50"
+      ],
+      "outputs": [
+        "Geef getal 1: Geef getal 2: Geef getal 3: Het grootste getal is 48."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,144 @@
+{
+  "cases": [
+    {
+      "description": "Run 1: args=melk, boter, stop",
+      "args": [
+        "melk",
+        "boter",
+        "stop"
+      ],
+      "outputs": [
+        "Geef een woord (stop = einde):",
+        "Geef een woord (stop = einde):",
+        "Geef een woord (stop = einde):",
+        "Aantal woorden: 2"
+      ]
+    },
+    {
+      "description": "Run 2: args=brood, water, stop",
+      "args": [
+        "brood",
+        "water",
+        "stop"
+      ],
+      "outputs": [
+        "Geef een woord (stop = einde):",
+        "Geef een woord (stop = einde):",
+        "Geef een woord (stop = einde):",
+        "Aantal woorden: 2"
+      ]
+    },
+    {
+      "description": "Run 3: args=appel, kaas, stop",
+      "args": [
+        "appel",
+        "kaas",
+        "stop"
+      ],
+      "outputs": [
+        "Geef een woord (stop = einde):",
+        "Geef een woord (stop = einde):",
+        "Geef een woord (stop = einde):",
+        "Aantal woorden: 2"
+      ]
+    },
+    {
+      "description": "Run 4: args=brood, water, stop",
+      "args": [
+        "brood",
+        "water",
+        "stop"
+      ],
+      "outputs": [
+        "Geef een woord (stop = einde):",
+        "Geef een woord (stop = einde):",
+        "Geef een woord (stop = einde):",
+        "Aantal woorden: 2"
+      ]
+    },
+    {
+      "description": "Run 5: args=appel, water, stop",
+      "args": [
+        "appel",
+        "water",
+        "stop"
+      ],
+      "outputs": [
+        "Geef een woord (stop = einde):",
+        "Geef een woord (stop = einde):",
+        "Geef een woord (stop = einde):",
+        "Aantal woorden: 2"
+      ]
+    },
+    {
+      "description": "Run 6: args=appel, water, stop",
+      "args": [
+        "appel",
+        "water",
+        "stop"
+      ],
+      "outputs": [
+        "Geef een woord (stop = einde):",
+        "Geef een woord (stop = einde):",
+        "Geef een woord (stop = einde):",
+        "Aantal woorden: 2"
+      ]
+    },
+    {
+      "description": "Run 7: args=melk, water, stop",
+      "args": [
+        "melk",
+        "water",
+        "stop"
+      ],
+      "outputs": [
+        "Geef een woord (stop = einde):",
+        "Geef een woord (stop = einde):",
+        "Geef een woord (stop = einde):",
+        "Aantal woorden: 2"
+      ]
+    },
+    {
+      "description": "Run 8: args=appel, kaas, stop",
+      "args": [
+        "appel",
+        "kaas",
+        "stop"
+      ],
+      "outputs": [
+        "Geef een woord (stop = einde):",
+        "Geef een woord (stop = einde):",
+        "Geef een woord (stop = einde):",
+        "Aantal woorden: 2"
+      ]
+    },
+    {
+      "description": "Run 9: args=melk, boter, stop",
+      "args": [
+        "melk",
+        "boter",
+        "stop"
+      ],
+      "outputs": [
+        "Geef een woord (stop = einde):",
+        "Geef een woord (stop = einde):",
+        "Geef een woord (stop = einde):",
+        "Aantal woorden: 2"
+      ]
+    },
+    {
+      "description": "Run 10: args=melk, boter, stop",
+      "args": [
+        "melk",
+        "boter",
+        "stop"
+      ],
+      "outputs": [
+        "Geef een woord (stop = einde):",
+        "Geef een woord (stop = einde):",
+        "Geef een woord (stop = einde):",
+        "Aantal woorden: 2"
+      ]
+    }
+  ]
+}

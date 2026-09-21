@@ -1,0 +1,37 @@
+{
+  "runs": 25,
+  "inputs": [
+    {
+      "type": "int",
+      "name": "keuze",
+      "min": 1,
+      "max": 5
+    },
+    {
+      "condition": {
+        "left": "$keuze",
+        "operator": "eq",
+        "right": 1
+      },
+      "inputs": [
+        {
+          "type": "string",
+          "name": "nieuweNaam"
+        }
+      ]
+    },
+    {
+      "condition": {
+        "left": "$keuze",
+        "operator": "eq",
+        "right": 3
+      },
+      "inputs": [
+        {
+          "type": "string",
+          "name": "gezochteNaam"
+        }
+      ]
+    }
+  ]
+}

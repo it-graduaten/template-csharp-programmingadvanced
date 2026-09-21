@@ -1,0 +1,254 @@
+{
+  "cases": [
+    {
+      "description": "Run 1: args=user, geheim123",
+      "args": [
+        "user",
+        "geheim123"
+      ],
+      "outputs": [
+        "Geef je gebruikersnaam: Geef je wachtwoord: Toegang geweigerd."
+      ]
+    },
+    {
+      "description": "Run 2: args=user, wachtwoord",
+      "args": [
+        "user",
+        "wachtwoord"
+      ],
+      "outputs": [
+        "Geef je gebruikersnaam: Geef je wachtwoord: Toegang geweigerd."
+      ]
+    },
+    {
+      "description": "Run 3: args=user, geheim123",
+      "args": [
+        "user",
+        "geheim123"
+      ],
+      "outputs": [
+        "Geef je gebruikersnaam: Geef je wachtwoord: Toegang geweigerd."
+      ]
+    },
+    {
+      "description": "Run 4: args=admin, wachtwoord",
+      "args": [
+        "admin",
+        "wachtwoord"
+      ],
+      "outputs": [
+        "Geef je gebruikersnaam: Geef je wachtwoord: Toegang geweigerd."
+      ]
+    },
+    {
+      "description": "Run 5: args=admin, geheim123",
+      "args": [
+        "admin",
+        "geheim123"
+      ],
+      "outputs": [
+        "Geef je gebruikersnaam: Geef je wachtwoord: Toegang toegestaan"
+      ]
+    },
+    {
+      "description": "Run 6: args=admin, wachtwoord",
+      "args": [
+        "admin",
+        "wachtwoord"
+      ],
+      "outputs": [
+        "Geef je gebruikersnaam: Geef je wachtwoord: Toegang geweigerd."
+      ]
+    },
+    {
+      "description": "Run 7: args=user, wachtwoord",
+      "args": [
+        "user",
+        "wachtwoord"
+      ],
+      "outputs": [
+        "Geef je gebruikersnaam: Geef je wachtwoord: Toegang geweigerd."
+      ]
+    },
+    {
+      "description": "Run 8: args=user, wachtwoord",
+      "args": [
+        "user",
+        "wachtwoord"
+      ],
+      "outputs": [
+        "Geef je gebruikersnaam: Geef je wachtwoord: Toegang geweigerd."
+      ]
+    },
+    {
+      "description": "Run 9: args=admin, wachtwoord",
+      "args": [
+        "admin",
+        "wachtwoord"
+      ],
+      "outputs": [
+        "Geef je gebruikersnaam: Geef je wachtwoord: Toegang geweigerd."
+      ]
+    },
+    {
+      "description": "Run 10: args=admin, wachtwoord",
+      "args": [
+        "admin",
+        "wachtwoord"
+      ],
+      "outputs": [
+        "Geef je gebruikersnaam: Geef je wachtwoord: Toegang geweigerd."
+      ]
+    },
+    {
+      "description": "Run 11: args=user, geheim123",
+      "args": [
+        "user",
+        "geheim123"
+      ],
+      "outputs": [
+        "Geef je gebruikersnaam: Geef je wachtwoord: Toegang geweigerd."
+      ]
+    },
+    {
+      "description": "Run 12: args=user, geheim123",
+      "args": [
+        "user",
+        "geheim123"
+      ],
+      "outputs": [
+        "Geef je gebruikersnaam: Geef je wachtwoord: Toegang geweigerd."
+      ]
+    },
+    {
+      "description": "Run 13: args=user, geheim123",
+      "args": [
+        "user",
+        "geheim123"
+      ],
+      "outputs": [
+        "Geef je gebruikersnaam: Geef je wachtwoord: Toegang geweigerd."
+      ]
+    },
+    {
+      "description": "Run 14: args=admin, wachtwoord",
+      "args": [
+        "admin",
+        "wachtwoord"
+      ],
+      "outputs": [
+        "Geef je gebruikersnaam: Geef je wachtwoord: Toegang geweigerd."
+      ]
+    },
+    {
+      "description": "Run 15: args=user, geheim123",
+      "args": [
+        "user",
+        "geheim123"
+      ],
+      "outputs": [
+        "Geef je gebruikersnaam: Geef je wachtwoord: Toegang geweigerd."
+      ]
+    },
+    {
+      "description": "Run 16: args=admin, wachtwoord",
+      "args": [
+        "admin",
+        "wachtwoord"
+      ],
+      "outputs": [
+        "Geef je gebruikersnaam: Geef je wachtwoord: Toegang geweigerd."
+      ]
+    },
+    {
+      "description": "Run 17: args=user, geheim123",
+      "args": [
+        "user",
+        "geheim123"
+      ],
+      "outputs": [
+        "Geef je gebruikersnaam: Geef je wachtwoord: Toegang geweigerd."
+      ]
+    },
+    {
+      "description": "Run 18: args=admin, geheim123",
+      "args": [
+        "admin",
+        "geheim123"
+      ],
+      "outputs": [
+        "Geef je gebruikersnaam: Geef je wachtwoord: Toegang toegestaan"
+      ]
+    },
+    {
+      "description": "Run 19: args=admin, wachtwoord",
+      "args": [
+        "admin",
+        "wachtwoord"
+      ],
+      "outputs": [
+        "Geef je gebruikersnaam: Geef je wachtwoord: Toegang geweigerd."
+      ]
+    },
+    {
+      "description": "Run 20: args=admin, geheim123",
+      "args": [
+        "admin",
+        "geheim123"
+      ],
+      "outputs": [
+        "Geef je gebruikersnaam: Geef je wachtwoord: Toegang toegestaan"
+      ]
+    },
+    {
+      "description": "Run 21: args=user, geheim123",
+      "args": [
+        "user",
+        "geheim123"
+      ],
+      "outputs": [
+        "Geef je gebruikersnaam: Geef je wachtwoord: Toegang geweigerd."
+      ]
+    },
+    {
+      "description": "Run 22: args=admin, wachtwoord",
+      "args": [
+        "admin",
+        "wachtwoord"
+      ],
+      "outputs": [
+        "Geef je gebruikersnaam: Geef je wachtwoord: Toegang geweigerd."
+      ]
+    },
+    {
+      "description": "Run 23: args=user, geheim123",
+      "args": [
+        "user",
+        "geheim123"
+      ],
+      "outputs": [
+        "Geef je gebruikersnaam: Geef je wachtwoord: Toegang geweigerd."
+      ]
+    },
+    {
+      "description": "Run 24: args=admin, geheim123",
+      "args": [
+        "admin",
+        "geheim123"
+      ],
+      "outputs": [
+        "Geef je gebruikersnaam: Geef je wachtwoord: Toegang toegestaan"
+      ]
+    },
+    {
+      "description": "Run 25: args=user, wachtwoord",
+      "args": [
+        "user",
+        "wachtwoord"
+      ],
+      "outputs": [
+        "Geef je gebruikersnaam: Geef je wachtwoord: Toegang geweigerd."
+      ]
+    }
+  ]
+}

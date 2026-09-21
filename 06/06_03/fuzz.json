@@ -1,0 +1,22 @@
+{
+  "runs": 10,
+  "inputs": [
+    {
+      "repeat": {
+        "count": 5,
+        "inputs": [
+          {
+            "type": "int",
+            "min": 0,
+            "max": 15
+          }
+        ]
+      }
+    },
+    {
+      "type": "int",
+      "min": 0,
+      "max": 0
+    }
+  ]
+}

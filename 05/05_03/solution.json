@@ -1,0 +1,136 @@
+{
+  "cases": [
+    {
+      "description": "Run 1: args=2, -2, 10",
+      "args": [
+        "2",
+        "-2",
+        "10"
+      ],
+      "outputs": [
+        "Hoeveel getallen wil je invoeren?",
+        "Geef getal 1: Geef getal 2: Gemiddelde: 4"
+      ]
+    },
+    {
+      "description": "Run 2: args=2, 1, -9",
+      "args": [
+        "2",
+        "1",
+        "-9"
+      ],
+      "outputs": [
+        "Hoeveel getallen wil je invoeren?",
+        "Geef getal 1: Geef getal 2: Gemiddelde: -4"
+      ]
+    },
+    {
+      "description": "Run 3: args=1, 7",
+      "args": [
+        "1",
+        "7"
+      ],
+      "outputs": [
+        "Hoeveel getallen wil je invoeren?",
+        "Geef getal 1: Gemiddelde: 7"
+      ]
+    },
+    {
+      "description": "Run 4: args=4, 2, -4, -8, 8",
+      "args": [
+        "4",
+        "2",
+        "-4",
+        "-8",
+        "8"
+      ],
+      "outputs": [
+        "Hoeveel getallen wil je invoeren?",
+        "Geef getal 1: Geef getal 2: Geef getal 3: Geef getal 4: Gemiddelde: -0.5"
+      ]
+    },
+    {
+      "description": "Run 5: args=2, 10, 8",
+      "args": [
+        "2",
+        "10",
+        "8"
+      ],
+      "outputs": [
+        "Hoeveel getallen wil je invoeren?",
+        "Geef getal 1: Geef getal 2: Gemiddelde: 9"
+      ]
+    },
+    {
+      "description": "Run 6: args=4, 1, 6, 15, 0",
+      "args": [
+        "4",
+        "1",
+        "6",
+        "15",
+        "0"
+      ],
+      "outputs": [
+        "Hoeveel getallen wil je invoeren?",
+        "Geef getal 1: Geef getal 2: Geef getal 3: Geef getal 4: Gemiddelde: 5.5"
+      ]
+    },
+    {
+      "description": "Run 7: args=5, 11, 13, 16, 3, 14",
+      "args": [
+        "5",
+        "11",
+        "13",
+        "16",
+        "3",
+        "14"
+      ],
+      "outputs": [
+        "Hoeveel getallen wil je invoeren?",
+        "Geef getal 1: Geef getal 2: Geef getal 3: Geef getal 4: Geef getal 5: Gemiddelde: 11.4"
+      ]
+    },
+    {
+      "description": "Run 8: args=3, -5, 17, -6",
+      "args": [
+        "3",
+        "-5",
+        "17",
+        "-6"
+      ],
+      "outputs": [
+        "Hoeveel getallen wil je invoeren?",
+        "Geef getal 1: Geef getal 2: Geef getal 3: Gemiddelde: 2"
+      ]
+    },
+    {
+      "description": "Run 9: args=4, 11, -2, 14, -9",
+      "args": [
+        "4",
+        "11",
+        "-2",
+        "14",
+        "-9"
+      ],
+      "outputs": [
+        "Hoeveel getallen wil je invoeren?",
+        "Geef getal 1: Geef getal 2: Geef getal 3: Geef getal 4: Gemiddelde: 3.5"
+      ]
+    },
+    {
+      "description": "Run 10: args=5, 17, 13, 8, -1, -4",
+      "args": [
+        "5",
+        "17",
+        "13",
+        "8",
+        "-1",
+        "-4"
+      ],
+      "outputs": [
+        "Hoeveel getallen wil je invoeren?",
+        "Geef getal 1: Geef getal 2: Geef getal 3: Geef getal 4: Geef getal 5: Gemiddelde: 6.6"
+      ]
+    }
+  ]
+}

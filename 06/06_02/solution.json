@@ -1,0 +1,144 @@
+{
+  "cases": [
+    {
+      "description": "Run 1: args=-4, 15, 8",
+      "args": [
+        "-4",
+        "15",
+        "8"
+      ],
+      "outputs": [
+        "Geef een getal tussen 1 en 10:",
+        "Ongeldig getal. Geef een getal tussen 1 en 10:",
+        "Ongeldig getal. Geef een getal tussen 1 en 10:",
+        "Je hebt het getal 8 ingevoerd."
+      ]
+    },
+    {
+      "description": "Run 2: args=-5, 13, 9",
+      "args": [
+        "-5",
+        "13",
+        "9"
+      ],
+      "outputs": [
+        "Geef een getal tussen 1 en 10:",
+        "Ongeldig getal. Geef een getal tussen 1 en 10:",
+        "Ongeldig getal. Geef een getal tussen 1 en 10:",
+        "Je hebt het getal 9 ingevoerd."
+      ]
+    },
+    {
+      "description": "Run 3: args=-4, 12, 10",
+      "args": [
+        "-4",
+        "12",
+        "10"
+      ],
+      "outputs": [
+        "Geef een getal tussen 1 en 10:",
+        "Ongeldig getal. Geef een getal tussen 1 en 10:",
+        "Ongeldig getal. Geef een getal tussen 1 en 10:",
+        "Je hebt het getal 10 ingevoerd."
+      ]
+    },
+    {
+      "description": "Run 4: args=-1, 12, 2",
+      "args": [
+        "-1",
+        "12",
+        "2"
+      ],
+      "outputs": [
+        "Geef een getal tussen 1 en 10:",
+        "Ongeldig getal. Geef een getal tussen 1 en 10:",
+        "Ongeldig getal. Geef een getal tussen 1 en 10:",
+        "Je hebt het getal 2 ingevoerd."
+      ]
+    },
+    {
+      "description": "Run 5: args=-1, 15, 5",
+      "args": [
+        "-1",
+        "15",
+        "5"
+      ],
+      "outputs": [
+        "Geef een getal tussen 1 en 10:",
+        "Ongeldig getal. Geef een getal tussen 1 en 10:",
+        "Ongeldig getal. Geef een getal tussen 1 en 10:",
+        "Je hebt het getal 5 ingevoerd."
+      ]
+    },
+    {
+      "description": "Run 6: args=-5, 13, 4",
+      "args": [
+        "-5",
+        "13",
+        "4"
+      ],
+      "outputs": [
+        "Geef een getal tussen 1 en 10:",
+        "Ongeldig getal. Geef een getal tussen 1 en 10:",
+        "Ongeldig getal. Geef een getal tussen 1 en 10:",
+        "Je hebt het getal 4 ingevoerd."
+      ]
+    },
+    {
+      "description": "Run 7: args=-3, 12, 6",
+      "args": [
+        "-3",
+        "12",
+        "6"
+      ],
+      "outputs": [
+        "Geef een getal tussen 1 en 10:",
+        "Ongeldig getal. Geef een getal tussen 1 en 10:",
+        "Ongeldig getal. Geef een getal tussen 1 en 10:",
+        "Je hebt het getal 6 ingevoerd."
+      ]
+    },
+    {
+      "description": "Run 8: args=-2, 11, 10",
+      "args": [
+        "-2",
+        "11",
+        "10"
+      ],
+      "outputs": [
+        "Geef een getal tussen 1 en 10:",
+        "Ongeldig getal. Geef een getal tussen 1 en 10:",
+        "Ongeldig getal. Geef een getal tussen 1 en 10:",
+        "Je hebt het getal 10 ingevoerd."
+      ]
+    },
+    {
+      "description": "Run 9: args=-3, 13, 6",
+      "args": [
+        "-3",
+        "13",
+        "6"
+      ],
+      "outputs": [
+        "Geef een getal tussen 1 en 10:",
+        "Ongeldig getal. Geef een getal tussen 1 en 10:",
+        "Ongeldig getal. Geef een getal tussen 1 en 10:",
+        "Je hebt het getal 6 ingevoerd."
+      ]
+    },
+    {
+      "description": "Run 10: args=0, 12, 4",
+      "args": [
+        "0",
+        "12",
+        "4"
+      ],
+      "outputs": [
+        "Geef een getal tussen 1 en 10:",
+        "Ongeldig getal. Geef een getal tussen 1 en 10:",
+        "Ongeldig getal. Geef een getal tussen 1 en 10:",
+        "Je hebt het getal 4 ingevoerd."
+      ]
+    }
+  ]
+}

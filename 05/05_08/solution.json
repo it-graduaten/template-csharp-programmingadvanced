@@ -1,0 +1,140 @@
+{
+  "cases": [
+    {
+      "description": "Run 1: args=3, Robin, 551, Geoffrey, 857, Heidi, 262",
+      "args": [
+        "3",
+        "Robin",
+        "551",
+        "Geoffrey",
+        "857",
+        "Heidi",
+        "262"
+      ],
+      "outputs": [
+        "Hoeveel producten wil je invoeren?",
+        "Geef naam product 1: Geef prijs van product 1 in centen: Geef naam product 2: Geef prijs van product 2 in centen: Geef naam product 3: Geef prijs van product 3 in centen: Duurste product: Geoffrey voor 857 centen"
+      ]
+    },
+    {
+      "description": "Run 2: args=1, Emily, 147",
+      "args": [
+        "1",
+        "Emily",
+        "147"
+      ],
+      "outputs": [
+        "Hoeveel producten wil je invoeren?",
+        "Geef naam product 1: Geef prijs van product 1 in centen: Duurste product: Emily voor 147 centen"
+      ]
+    },
+    {
+      "description": "Run 3: args=2, Dorien, 871, Nele, 328",
+      "args": [
+        "2",
+        "Dorien",
+        "871",
+        "Nele",
+        "328"
+      ],
+      "outputs": [
+        "Hoeveel producten wil je invoeren?",
+        "Geef naam product 1: Geef prijs van product 1 in centen: Geef naam product 2: Geef prijs van product 2 in centen: Duurste product: Dorien voor 871 centen"
+      ]
+    },
+    {
+      "description": "Run 4: args=2, Jeanne, 637, Etienne, 289",
+      "args": [
+        "2",
+        "Jeanne",
+        "637",
+        "Etienne",
+        "289"
+      ],
+      "outputs": [
+        "Hoeveel producten wil je invoeren?",
+        "Geef naam product 1: Geef prijs van product 1 in centen: Geef naam product 2: Geef prijs van product 2 in centen: Duurste product: Jeanne voor 637 centen"
+      ]
+    },
+    {
+      "description": "Run 5: args=1, Marie, 440",
+      "args": [
+        "1",
+        "Marie",
+        "440"
+      ],
+      "outputs": [
+        "Hoeveel producten wil je invoeren?",
+        "Geef naam product 1: Geef prijs van product 1 in centen: Duurste product: Marie voor 440 centen"
+      ]
+    },
+    {
+      "description": "Run 6: args=2, Anna, 631, Rafaël, 727",
+      "args": [
+        "2",
+        "Anna",
+        "631",
+        "Rafaël",
+        "727"
+      ],
+      "outputs": [
+        "Hoeveel producten wil je invoeren?",
+        "Geef naam product 1: Geef prijs van product 1 in centen: Geef naam product 2: Geef prijs van product 2 in centen: Duurste product: Rafaël voor 727 centen"
+      ]
+    },
+    {
+      "description": "Run 7: args=2, Wannes, 192, Samira, 130",
+      "args": [
+        "2",
+        "Wannes",
+        "192",
+        "Samira",
+        "130"
+      ],
+      "outputs": [
+        "Hoeveel producten wil je invoeren?",
+        "Geef naam product 1: Geef prijs van product 1 in centen: Geef naam product 2: Geef prijs van product 2 in centen: Duurste product: Wannes voor 192 centen"
+      ]
+    },
+    {
+      "description": "Run 8: args=1, Pieter, 693",
+      "args": [
+        "1",
+        "Pieter",
+        "693"
+      ],
+      "outputs": [
+        "Hoeveel producten wil je invoeren?",
+        "Geef naam product 1: Geef prijs van product 1 in centen: Duurste product: Pieter voor 693 centen"
+      ]
+    },
+    {
+      "description": "Run 9: args=1, Jasper, 100",
+      "args": [
+        "1",
+        "Jasper",
+        "100"
+      ],
+      "outputs": [
+        "Hoeveel producten wil je invoeren?",
+        "Geef naam product 1: Geef prijs van product 1 in centen: Duurste product: Jasper voor 100 centen"
+      ]
+    },
+    {
+      "description": "Run 10: args=3, Hannelore, 380, André, 626, Bart, 780",
+      "args": [
+        "3",
+        "Hannelore",
+        "380",
+        "André",
+        "626",
+        "Bart",
+        "780"
+      ],
+      "outputs": [
+        "Hoeveel producten wil je invoeren?",
+        "Geef naam product 1: Geef prijs van product 1 in centen: Geef naam product 2: Geef prijs van product 2 in centen: Geef naam product 3: Geef prijs van product 3 in centen: Duurste product: Bart voor 780 centen"
+      ]
+    }
+  ]
+}

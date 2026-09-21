@@ -1,0 +1,17 @@
+{
+    "runs": 25,
+    "inputs": [
+        {
+            "type": "string",
+            "choices": [
+                "1234",
+                "0147"
+            ]
+        },
+        {
+            "type": "int",
+            "min": 400,
+            "max": 600
+        }
+    ]
+}

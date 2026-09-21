@@ -1,0 +1,10 @@
+{
+    "runs": 15,
+    "inputs": [
+        {"type": "int", "min": 0, "max": 100},
+        {"type": "int", "min": 0, "max": 100},
+        {"type": "int", "min": 0, "max": 100},
+        {"type": "int", "min": 0, "max": 100},
+        {"type": "int", "min": 0, "max": 100}
+    ]
+}

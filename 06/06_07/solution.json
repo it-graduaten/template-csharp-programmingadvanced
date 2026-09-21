@@ -1,0 +1,106 @@
+{
+  "cases": [
+    {
+      "description": "Run 1: args=abcdefgh, MTTWZQXH",
+      "args": [
+        "abcdefgh",
+        "MTTWZQXH"
+      ],
+      "outputs": [
+        "Geef een wachtwoord:"
+      ]
+    },
+    {
+      "description": "Run 2: args=abc, nM53zvao",
+      "args": [
+        "abc",
+        "nM53zvao"
+      ],
+      "outputs": [
+        "Geef een wachtwoord:",
+        "Wachtwoord moet minstens 8 tekens lang zijn. Probeer opnieuw:"
+      ]
+    },
+    {
+      "description": "Run 3: args=abcdefgh, yzEwJNEE",
+      "args": [
+        "abcdefgh",
+        "yzEwJNEE"
+      ],
+      "outputs": [
+        "Geef een wachtwoord:"
+      ]
+    },
+    {
+      "description": "Run 4: args=abcdefgh, 6li9LSM1",
+      "args": [
+        "abcdefgh",
+        "6li9LSM1"
+      ],
+      "outputs": [
+        "Geef een wachtwoord:"
+      ]
+    },
+    {
+      "description": "Run 5: args=abcdefgh, 1eu6vuRv",
+      "args": [
+        "abcdefgh",
+        "1eu6vuRv"
+      ],
+      "outputs": [
+        "Geef een wachtwoord:"
+      ]
+    },
+    {
+      "description": "Run 6: args=abcdefgh, LHM9Q5lK",
+      "args": [
+        "abcdefgh",
+        "LHM9Q5lK"
+      ],
+      "outputs": [
+        "Geef een wachtwoord:"
+      ]
+    },
+    {
+      "description": "Run 7: args=abcdefgh, xte4SZug",
+      "args": [
+        "abcdefgh",
+        "xte4SZug"
+      ],
+      "outputs": [
+        "Geef een wachtwoord:"
+      ]
+    },
+    {
+      "description": "Run 8: args=abc, zozUWMbD",
+      "args": [
+        "abc",
+        "zozUWMbD"
+      ],
+      "outputs": [
+        "Geef een wachtwoord:",
+        "Wachtwoord moet minstens 8 tekens lang zijn. Probeer opnieuw:"
+      ]
+    },
+    {
+      "description": "Run 9: args=abcdefgh, ZTEQA4D4",
+      "args": [
+        "abcdefgh",
+        "ZTEQA4D4"
+      ],
+      "outputs": [
+        "Geef een wachtwoord:"
+      ]
+    },
+    {
+      "description": "Run 10: args=abcdefgh, kUy1pR8S",
+      "args": [
+        "abcdefgh",
+        "kUy1pR8S"
+      ],
+      "outputs": [
+        "Geef een wachtwoord:"
+      ]
+    }
+  ]
+}

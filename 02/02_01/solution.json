@@ -1,0 +1,229 @@
+{
+  "cases": [
+    {
+      "description": "Run 1: args=-9",
+      "args": [
+        "-9"
+      ],
+      "outputs": [
+        "Geef een getal: Het getal is negatief"
+      ]
+    },
+    {
+      "description": "Run 2: args=32",
+      "args": [
+        "32"
+      ],
+      "outputs": [
+        "Geef een getal: Het getal is positief"
+      ]
+    },
+    {
+      "description": "Run 3: args=22",
+      "args": [
+        "22"
+      ],
+      "outputs": [
+        "Geef een getal: Het getal is positief"
+      ]
+    },
+    {
+      "description": "Run 4: args=77",
+      "args": [
+        "77"
+      ],
+      "outputs": [
+        "Geef een getal: Het getal is positief"
+      ]
+    },
+    {
+      "description": "Run 5: args=71",
+      "args": [
+        "71"
+      ],
+      "outputs": [
+        "Geef een getal: Het getal is positief"
+      ]
+    },
+    {
+      "description": "Run 6: args=11",
+      "args": [
+        "11"
+      ],
+      "outputs": [
+        "Geef een getal: Het getal is positief"
+      ]
+    },
+    {
+      "description": "Run 7: args=55",
+      "args": [
+        "55"
+      ],
+      "outputs": [
+        "Geef een getal: Het getal is positief"
+      ]
+    },
+    {
+      "description": "Run 8: args=-55",
+      "args": [
+        "-55"
+      ],
+      "outputs": [
+        "Geef een getal: Het getal is negatief"
+      ]
+    },
+    {
+      "description": "Run 9: args=-17",
+      "args": [
+        "-17"
+      ],
+      "outputs": [
+        "Geef een getal: Het getal is negatief"
+      ]
+    },
+    {
+      "description": "Run 10: args=54",
+      "args": [
+        "54"
+      ],
+      "outputs": [
+        "Geef een getal: Het getal is positief"
+      ]
+    },
+    {
+      "description": "Run 11: args=-39",
+      "args": [
+        "-39"
+      ],
+      "outputs": [
+        "Geef een getal: Het getal is negatief"
+      ]
+    },
+    {
+      "description": "Run 12: args=-51",
+      "args": [
+        "-51"
+      ],
+      "outputs": [
+        "Geef een getal: Het getal is negatief"
+      ]
+    },
+    {
+      "description": "Run 13: args=-13",
+      "args": [
+        "-13"
+      ],
+      "outputs": [
+        "Geef een getal: Het getal is negatief"
+      ]
+    },
+    {
+      "description": "Run 14: args=11",
+      "args": [
+        "11"
+      ],
+      "outputs": [
+        "Geef een getal: Het getal is positief"
+      ]
+    },
+    {
+      "description": "Run 15: args=-67",
+      "args": [
+        "-67"
+      ],
+      "outputs": [
+        "Geef een getal: Het getal is negatief"
+      ]
+    },
+    {
+      "description": "Run 16: args=-53",
+      "args": [
+        "-53"
+      ],
+      "outputs": [
+        "Geef een getal: Het getal is negatief"
+      ]
+    },
+    {
+      "description": "Run 17: args=-27",
+      "args": [
+        "-27"
+      ],
+      "outputs": [
+        "Geef een getal: Het getal is negatief"
+      ]
+    },
+    {
+      "description": "Run 18: args=56",
+      "args": [
+        "56"
+      ],
+      "outputs": [
+        "Geef een getal: Het getal is positief"
+      ]
+    },
+    {
+      "description": "Run 19: args=-52",
+      "args": [
+        "-52"
+      ],
+      "outputs": [
+        "Geef een getal: Het getal is negatief"
+      ]
+    },
+    {
+      "description": "Run 20: args=-67",
+      "args": [
+        "-67"
+      ],
+      "outputs": [
+        "Geef een getal: Het getal is negatief"
+      ]
+    },
+    {
+      "description": "Run 21: args=-24",
+      "args": [
+        "-24"
+      ],
+      "outputs": [
+        "Geef een getal: Het getal is negatief"
+      ]
+    },
+    {
+      "description": "Run 22: args=-62",
+      "args": [
+        "-62"
+      ],
+      "outputs": [
+        "Geef een getal: Het getal is negatief"
+      ]
+    },
+    {
+      "description": "Run 23: args=-42",
+      "args": [
+        "-42"
+      ],
+      "outputs": [
+        "Geef een getal: Het getal is negatief"
+      ]
+    },
+    {
+      "description": "Run 24: args=-45",
+      "args": [
+        "-45"
+      ],
+      "outputs": [
+        "Geef een getal: Het getal is negatief"
+      ]
+    },
+    {
+      "description": "Run 25: args=-95",
+      "args": [
+        "-95"
+      ],
+      "outputs": [
+        "Geef een getal: Het getal is negatief"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "runs": 10,
+  "inputs": [
+    {
+      "type": "string",
+      "choices": ["abc", "abcdefgh"]
+    },
+    {
+      "type": "string",
+      "length": 8
+    }
+  ]
+}

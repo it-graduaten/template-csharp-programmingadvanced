@@ -1,0 +1,254 @@
+{
+  "cases": [
+    {
+      "description": "Run 1: args=51, 1",
+      "args": [
+        "51",
+        "1"
+      ],
+      "outputs": [
+        "Geef je leeftijd: Geef de dag van de week (1-7): 12 euro"
+      ]
+    },
+    {
+      "description": "Run 2: args=16, 2",
+      "args": [
+        "16",
+        "2"
+      ],
+      "outputs": [
+        "Geef je leeftijd: Geef de dag van de week (1-7): 10 euro"
+      ]
+    },
+    {
+      "description": "Run 3: args=87, 4",
+      "args": [
+        "87",
+        "4"
+      ],
+      "outputs": [
+        "Geef je leeftijd: Geef de dag van de week (1-7): 9 euro"
+      ]
+    },
+    {
+      "description": "Run 4: args=45, 3",
+      "args": [
+        "45",
+        "3"
+      ],
+      "outputs": [
+        "Geef je leeftijd: Geef de dag van de week (1-7): 12 euro"
+      ]
+    },
+    {
+      "description": "Run 5: args=39, 3",
+      "args": [
+        "39",
+        "3"
+      ],
+      "outputs": [
+        "Geef je leeftijd: Geef de dag van de week (1-7): 12 euro"
+      ]
+    },
+    {
+      "description": "Run 6: args=81, 4",
+      "args": [
+        "81",
+        "4"
+      ],
+      "outputs": [
+        "Geef je leeftijd: Geef de dag van de week (1-7): 9 euro"
+      ]
+    },
+    {
+      "description": "Run 7: args=61, 4",
+      "args": [
+        "61",
+        "4"
+      ],
+      "outputs": [
+        "Geef je leeftijd: Geef de dag van de week (1-7): 12 euro"
+      ]
+    },
+    {
+      "description": "Run 8: args=67, 5",
+      "args": [
+        "67",
+        "5"
+      ],
+      "outputs": [
+        "Geef je leeftijd: Geef de dag van de week (1-7): 9 euro"
+      ]
+    },
+    {
+      "description": "Run 9: args=29, 1",
+      "args": [
+        "29",
+        "1"
+      ],
+      "outputs": [
+        "Geef je leeftijd: Geef de dag van de week (1-7): 12 euro"
+      ]
+    },
+    {
+      "description": "Run 10: args=19, 7",
+      "args": [
+        "19",
+        "7"
+      ],
+      "outputs": [
+        "Geef je leeftijd: Geef de dag van de week (1-7): 12 euro"
+      ]
+    },
+    {
+      "description": "Run 11: args=52, 3",
+      "args": [
+        "52",
+        "3"
+      ],
+      "outputs": [
+        "Geef je leeftijd: Geef de dag van de week (1-7): 12 euro"
+      ]
+    },
+    {
+      "description": "Run 12: args=85, 4",
+      "args": [
+        "85",
+        "4"
+      ],
+      "outputs": [
+        "Geef je leeftijd: Geef de dag van de week (1-7): 9 euro"
+      ]
+    },
+    {
+      "description": "Run 13: args=57, 5",
+      "args": [
+        "57",
+        "5"
+      ],
+      "outputs": [
+        "Geef je leeftijd: Geef de dag van de week (1-7): 12 euro"
+      ]
+    },
+    {
+      "description": "Run 14: args=98, 5",
+      "args": [
+        "98",
+        "5"
+      ],
+      "outputs": [
+        "Geef je leeftijd: Geef de dag van de week (1-7): 9 euro"
+      ]
+    },
+    {
+      "description": "Run 15: args=78, 2",
+      "args": [
+        "78",
+        "2"
+      ],
+      "outputs": [
+        "Geef je leeftijd: Geef de dag van de week (1-7): 7 euro"
+      ]
+    },
+    {
+      "description": "Run 16: args=10, 3",
+      "args": [
+        "10",
+        "3"
+      ],
+      "outputs": [
+        "Geef je leeftijd: Geef de dag van de week (1-7): 7 euro"
+      ]
+    },
+    {
+      "description": "Run 17: args=5, 2",
+      "args": [
+        "5",
+        "2"
+      ],
+      "outputs": [
+        "Geef je leeftijd: Geef de dag van de week (1-7): 5 euro"
+      ]
+    },
+    {
+      "description": "Run 18: args=73, 2",
+      "args": [
+        "73",
+        "2"
+      ],
+      "outputs": [
+        "Geef je leeftijd: Geef de dag van de week (1-7): 7 euro"
+      ]
+    },
+    {
+      "description": "Run 19: args=58, 5",
+      "args": [
+        "58",
+        "5"
+      ],
+      "outputs": [
+        "Geef je leeftijd: Geef de dag van de week (1-7): 12 euro"
+      ]
+    },
+    {
+      "description": "Run 20: args=34, 6",
+      "args": [
+        "34",
+        "6"
+      ],
+      "outputs": [
+        "Geef je leeftijd: Geef de dag van de week (1-7): 12 euro"
+      ]
+    },
+    {
+      "description": "Run 21: args=99, 1",
+      "args": [
+        "99",
+        "1"
+      ],
+      "outputs": [
+        "Geef je leeftijd: Geef de dag van de week (1-7): 9 euro"
+      ]
+    },
+    {
+      "description": "Run 22: args=23, 4",
+      "args": [
+        "23",
+        "4"
+      ],
+      "outputs": [
+        "Geef je leeftijd: Geef de dag van de week (1-7): 12 euro"
+      ]
+    },
+    {
+      "description": "Run 23: args=4, 3",
+      "args": [
+        "4",
+        "3"
+      ],
+      "outputs": [
+        "Geef je leeftijd: Geef de dag van de week (1-7): 7 euro"
+      ]
+    },
+    {
+      "description": "Run 24: args=75, 4",
+      "args": [
+        "75",
+        "4"
+      ],
+      "outputs": [
+        "Geef je leeftijd: Geef de dag van de week (1-7): 9 euro"
+      ]
+    },
+    {
+      "description": "Run 25: args=67, 3",
+      "args": [
+        "67",
+        "3"
+      ],
+      "outputs": [
+        "Geef je leeftijd: Geef de dag van de week (1-7): 9 euro"
+      ]
+    }
+  ]
+}

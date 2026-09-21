@@ -1,0 +1,229 @@
+{
+  "cases": [
+    {
+      "description": "Run 1: args=10",
+      "args": [
+        "10"
+      ],
+      "outputs": [
+        "Voer een getal tussen 1 en 10 in: Het geldige getal is 10."
+      ]
+    },
+    {
+      "description": "Run 2: args=5",
+      "args": [
+        "5"
+      ],
+      "outputs": [
+        "Voer een getal tussen 1 en 10 in: Het geldige getal is 5."
+      ]
+    },
+    {
+      "description": "Run 3: args=5",
+      "args": [
+        "5"
+      ],
+      "outputs": [
+        "Voer een getal tussen 1 en 10 in: Het geldige getal is 5."
+      ]
+    },
+    {
+      "description": "Run 4: args=3",
+      "args": [
+        "3"
+      ],
+      "outputs": [
+        "Voer een getal tussen 1 en 10 in: Het geldige getal is 3."
+      ]
+    },
+    {
+      "description": "Run 5: args=6",
+      "args": [
+        "6"
+      ],
+      "outputs": [
+        "Voer een getal tussen 1 en 10 in: Het geldige getal is 6."
+      ]
+    },
+    {
+      "description": "Run 6: args=8",
+      "args": [
+        "8"
+      ],
+      "outputs": [
+        "Voer een getal tussen 1 en 10 in: Het geldige getal is 8."
+      ]
+    },
+    {
+      "description": "Run 7: args=10",
+      "args": [
+        "10"
+      ],
+      "outputs": [
+        "Voer een getal tussen 1 en 10 in: Het geldige getal is 10."
+      ]
+    },
+    {
+      "description": "Run 8: args=6",
+      "args": [
+        "6"
+      ],
+      "outputs": [
+        "Voer een getal tussen 1 en 10 in: Het geldige getal is 6."
+      ]
+    },
+    {
+      "description": "Run 9: args=6",
+      "args": [
+        "6"
+      ],
+      "outputs": [
+        "Voer een getal tussen 1 en 10 in: Het geldige getal is 6."
+      ]
+    },
+    {
+      "description": "Run 10: args=5",
+      "args": [
+        "5"
+      ],
+      "outputs": [
+        "Voer een getal tussen 1 en 10 in: Het geldige getal is 5."
+      ]
+    },
+    {
+      "description": "Run 11: args=1",
+      "args": [
+        "1"
+      ],
+      "outputs": [
+        "Voer een getal tussen 1 en 10 in: Het geldige getal is 1."
+      ]
+    },
+    {
+      "description": "Run 12: args=9",
+      "args": [
+        "9"
+      ],
+      "outputs": [
+        "Voer een getal tussen 1 en 10 in: Het geldige getal is 9."
+      ]
+    },
+    {
+      "description": "Run 13: args=7",
+      "args": [
+        "7"
+      ],
+      "outputs": [
+        "Voer een getal tussen 1 en 10 in: Het geldige getal is 7."
+      ]
+    },
+    {
+      "description": "Run 14: args=3",
+      "args": [
+        "3"
+      ],
+      "outputs": [
+        "Voer een getal tussen 1 en 10 in: Het geldige getal is 3."
+      ]
+    },
+    {
+      "description": "Run 15: args=3",
+      "args": [
+        "3"
+      ],
+      "outputs": [
+        "Voer een getal tussen 1 en 10 in: Het geldige getal is 3."
+      ]
+    },
+    {
+      "description": "Run 16: args=2",
+      "args": [
+        "2"
+      ],
+      "outputs": [
+        "Voer een getal tussen 1 en 10 in: Het geldige getal is 2."
+      ]
+    },
+    {
+      "description": "Run 17: args=4",
+      "args": [
+        "4"
+      ],
+      "outputs": [
+        "Voer een getal tussen 1 en 10 in: Het geldige getal is 4."
+      ]
+    },
+    {
+      "description": "Run 18: args=5",
+      "args": [
+        "5"
+      ],
+      "outputs": [
+        "Voer een getal tussen 1 en 10 in: Het geldige getal is 5."
+      ]
+    },
+    {
+      "description": "Run 19: args=8",
+      "args": [
+        "8"
+      ],
+      "outputs": [
+        "Voer een getal tussen 1 en 10 in: Het geldige getal is 8."
+      ]
+    },
+    {
+      "description": "Run 20: args=4",
+      "args": [
+        "4"
+      ],
+      "outputs": [
+        "Voer een getal tussen 1 en 10 in: Het geldige getal is 4."
+      ]
+    },
+    {
+      "description": "Run 21: args=4",
+      "args": [
+        "4"
+      ],
+      "outputs": [
+        "Voer een getal tussen 1 en 10 in: Het geldige getal is 4."
+      ]
+    },
+    {
+      "description": "Run 22: args=9",
+      "args": [
+        "9"
+      ],
+      "outputs": [
+        "Voer een getal tussen 1 en 10 in: Het geldige getal is 9."
+      ]
+    },
+    {
+      "description": "Run 23: args=6",
+      "args": [
+        "6"
+      ],
+      "outputs": [
+        "Voer een getal tussen 1 en 10 in: Het geldige getal is 6."
+      ]
+    },
+    {
+      "description": "Run 24: args=5",
+      "args": [
+        "5"
+      ],
+      "outputs": [
+        "Voer een getal tussen 1 en 10 in: Het geldige getal is 5."
+      ]
+    },
+    {
+      "description": "Run 25: args=6",
+      "args": [
+        "6"
+      ],
+      "outputs": [
+        "Voer een getal tussen 1 en 10 in: Het geldige getal is 6."
+      ]
+    }
+  ]
+}

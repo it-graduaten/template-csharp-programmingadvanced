@@ -1,0 +1,6 @@
+{
+    "runs": 25,
+    "inputs": [
+        {"type": "int", "min": -10, "max": 20}
+    ]
+}

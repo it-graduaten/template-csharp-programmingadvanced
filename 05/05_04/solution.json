@@ -1,0 +1,146 @@
+{
+  "cases": [
+    {
+      "description": "Run 1: args=4, Ines, Piet, Kurt, Ronny, I",
+      "args": [
+        "4",
+        "Ines",
+        "Piet",
+        "Kurt",
+        "Ronny",
+        "I"
+      ],
+      "outputs": [
+        "Hoeveel namen wil je invoeren?",
+        "Geef naam 1: Geef naam 2: Geef naam 3: Geef naam 4: Geef een letter: Aantal namen dat begint met 'I': 1"
+      ]
+    },
+    {
+      "description": "Run 2: args=4, Sandra, Kevin, Roger, Peggy, B",
+      "args": [
+        "4",
+        "Sandra",
+        "Kevin",
+        "Roger",
+        "Peggy",
+        "B"
+      ],
+      "outputs": [
+        "Hoeveel namen wil je invoeren?",
+        "Geef naam 1: Geef naam 2: Geef naam 3: Geef naam 4: Geef een letter: Aantal namen dat begint met 'B': 0"
+      ]
+    },
+    {
+      "description": "Run 3: args=3, Muhammed, Ludovicus, Karin, Q",
+      "args": [
+        "3",
+        "Muhammed",
+        "Ludovicus",
+        "Karin",
+        "Q"
+      ],
+      "outputs": [
+        "Hoeveel namen wil je invoeren?",
+        "Geef naam 1: Geef naam 2: Geef naam 3: Geef een letter: Aantal namen dat begint met 'Q': 0"
+      ]
+    },
+    {
+      "description": "Run 4: args=1, Elisabeth, M",
+      "args": [
+        "1",
+        "Elisabeth",
+        "M"
+      ],
+      "outputs": [
+        "Hoeveel namen wil je invoeren?",
+        "Geef naam 1: Geef een letter: Aantal namen dat begint met 'M': 0"
+      ]
+    },
+    {
+      "description": "Run 5: args=1, Laura, U",
+      "args": [
+        "1",
+        "Laura",
+        "U"
+      ],
+      "outputs": [
+        "Hoeveel namen wil je invoeren?",
+        "Geef naam 1: Geef een letter: Aantal namen dat begint met 'U': 0"
+      ]
+    },
+    {
+      "description": "Run 6: args=5, Lucien, Gabrielle, Bernadette, Frieda, Marc, D",
+      "args": [
+        "5",
+        "Lucien",
+        "Gabrielle",
+        "Bernadette",
+        "Frieda",
+        "Marc",
+        "D"
+      ],
+      "outputs": [
+        "Hoeveel namen wil je invoeren?",
+        "Geef naam 1: Geef naam 2: Geef naam 3: Geef naam 4: Geef naam 5: Geef een letter: Aantal namen dat begint met 'D': 0"
+      ]
+    },
+    {
+      "description": "Run 7: args=1, Mohamed, X",
+      "args": [
+        "1",
+        "Mohamed",
+        "X"
+      ],
+      "outputs": [
+        "Hoeveel namen wil je invoeren?",
+        "Geef naam 1: Geef een letter: Aantal namen dat begint met 'X': 0"
+      ]
+    },
+    {
+      "description": "Run 8: args=4, Anita, Eva, Theo, René, A",
+      "args": [
+        "4",
+        "Anita",
+        "Eva",
+        "Theo",
+        "René",
+        "A"
+      ],
+      "outputs": [
+        "Hoeveel namen wil je invoeren?",
+        "Geef naam 1: Geef naam 2: Geef naam 3: Geef naam 4: Geef een letter: Aantal namen dat begint met 'A': 1"
+      ]
+    },
+    {
+      "description": "Run 9: args=4, Amelie, Marc, Vic, Fatima, A",
+      "args": [
+        "4",
+        "Amelie",
+        "Marc",
+        "Vic",
+        "Fatima",
+        "A"
+      ],
+      "outputs": [
+        "Hoeveel namen wil je invoeren?",
+        "Geef naam 1: Geef naam 2: Geef naam 3: Geef naam 4: Geef een letter: Aantal namen dat begint met 'A': 1"
+      ]
+    },
+    {
+      "description": "Run 10: args=5, Nils, Yvonne, Ryan, Peter, André, U",
+      "args": [
+        "5",
+        "Nils",
+        "Yvonne",
+        "Ryan",
+        "Peter",
+        "André",
+        "U"
+      ],
+      "outputs": [
+        "Hoeveel namen wil je invoeren?",
+        "Geef naam 1: Geef naam 2: Geef naam 3: Geef naam 4: Geef naam 5: Geef een letter: Aantal namen dat begint met 'U': 0"
+      ]
+    }
+  ]
+}

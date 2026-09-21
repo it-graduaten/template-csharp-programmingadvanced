@@ -1,0 +1,254 @@
+{
+  "cases": [
+    {
+      "description": "Run 1: args=1234, 457",
+      "args": [
+        "1234",
+        "457"
+      ],
+      "outputs": [
+        "Geef je pincode (4 cijfers): Geef het bedrag dat je wil opnemen: Uitbetaling van 457€ gaat door. Nieuw saldo: 43€"
+      ]
+    },
+    {
+      "description": "Run 2: args=1234, 414",
+      "args": [
+        "1234",
+        "414"
+      ],
+      "outputs": [
+        "Geef je pincode (4 cijfers): Geef het bedrag dat je wil opnemen: Uitbetaling van 414€ gaat door. Nieuw saldo: 86€"
+      ]
+    },
+    {
+      "description": "Run 3: args=0147, 440",
+      "args": [
+        "0147",
+        "440"
+      ],
+      "outputs": [
+        "Geef je pincode (4 cijfers): Foute pincode."
+      ]
+    },
+    {
+      "description": "Run 4: args=1234, 499",
+      "args": [
+        "1234",
+        "499"
+      ],
+      "outputs": [
+        "Geef je pincode (4 cijfers): Geef het bedrag dat je wil opnemen: Uitbetaling van 499€ gaat door. Nieuw saldo: 1€"
+      ]
+    },
+    {
+      "description": "Run 5: args=1234, 460",
+      "args": [
+        "1234",
+        "460"
+      ],
+      "outputs": [
+        "Geef je pincode (4 cijfers): Geef het bedrag dat je wil opnemen: Uitbetaling van 460€ gaat door. Nieuw saldo: 40€"
+      ]
+    },
+    {
+      "description": "Run 6: args=0147, 483",
+      "args": [
+        "0147",
+        "483"
+      ],
+      "outputs": [
+        "Geef je pincode (4 cijfers): Foute pincode."
+      ]
+    },
+    {
+      "description": "Run 7: args=1234, 596",
+      "args": [
+        "1234",
+        "596"
+      ],
+      "outputs": [
+        "Geef je pincode (4 cijfers): Geef het bedrag dat je wil opnemen: Onvoldoende saldo."
+      ]
+    },
+    {
+      "description": "Run 8: args=1234, 510",
+      "args": [
+        "1234",
+        "510"
+      ],
+      "outputs": [
+        "Geef je pincode (4 cijfers): Geef het bedrag dat je wil opnemen: Onvoldoende saldo."
+      ]
+    },
+    {
+      "description": "Run 9: args=0147, 420",
+      "args": [
+        "0147",
+        "420"
+      ],
+      "outputs": [
+        "Geef je pincode (4 cijfers): Foute pincode."
+      ]
+    },
+    {
+      "description": "Run 10: args=0147, 493",
+      "args": [
+        "0147",
+        "493"
+      ],
+      "outputs": [
+        "Geef je pincode (4 cijfers): Foute pincode."
+      ]
+    },
+    {
+      "description": "Run 11: args=0147, 478",
+      "args": [
+        "0147",
+        "478"
+      ],
+      "outputs": [
+        "Geef je pincode (4 cijfers): Foute pincode."
+      ]
+    },
+    {
+      "description": "Run 12: args=0147, 404",
+      "args": [
+        "0147",
+        "404"
+      ],
+      "outputs": [
+        "Geef je pincode (4 cijfers): Foute pincode."
+      ]
+    },
+    {
+      "description": "Run 13: args=1234, 536",
+      "args": [
+        "1234",
+        "536"
+      ],
+      "outputs": [
+        "Geef je pincode (4 cijfers): Geef het bedrag dat je wil opnemen: Onvoldoende saldo."
+      ]
+    },
+    {
+      "description": "Run 14: args=1234, 462",
+      "args": [
+        "1234",
+        "462"
+      ],
+      "outputs": [
+        "Geef je pincode (4 cijfers): Geef het bedrag dat je wil opnemen: Uitbetaling van 462€ gaat door. Nieuw saldo: 38€"
+      ]
+    },
+    {
+      "description": "Run 15: args=0147, 564",
+      "args": [
+        "0147",
+        "564"
+      ],
+      "outputs": [
+        "Geef je pincode (4 cijfers): Foute pincode."
+      ]
+    },
+    {
+      "description": "Run 16: args=0147, 412",
+      "args": [
+        "0147",
+        "412"
+      ],
+      "outputs": [
+        "Geef je pincode (4 cijfers): Foute pincode."
+      ]
+    },
+    {
+      "description": "Run 17: args=0147, 506",
+      "args": [
+        "0147",
+        "506"
+      ],
+      "outputs": [
+        "Geef je pincode (4 cijfers): Foute pincode."
+      ]
+    },
+    {
+      "description": "Run 18: args=1234, 427",
+      "args": [
+        "1234",
+        "427"
+      ],
+      "outputs": [
+        "Geef je pincode (4 cijfers): Geef het bedrag dat je wil opnemen: Uitbetaling van 427€ gaat door. Nieuw saldo: 73€"
+      ]
+    },
+    {
+      "description": "Run 19: args=0147, 597",
+      "args": [
+        "0147",
+        "597"
+      ],
+      "outputs": [
+        "Geef je pincode (4 cijfers): Foute pincode."
+      ]
+    },
+    {
+      "description": "Run 20: args=1234, 579",
+      "args": [
+        "1234",
+        "579"
+      ],
+      "outputs": [
+        "Geef je pincode (4 cijfers): Geef het bedrag dat je wil opnemen: Onvoldoende saldo."
+      ]
+    },
+    {
+      "description": "Run 21: args=1234, 557",
+      "args": [
+        "1234",
+        "557"
+      ],
+      "outputs": [
+        "Geef je pincode (4 cijfers): Geef het bedrag dat je wil opnemen: Onvoldoende saldo."
+      ]
+    },
+    {
+      "description": "Run 22: args=0147, 460",
+      "args": [
+        "0147",
+        "460"
+      ],
+      "outputs": [
+        "Geef je pincode (4 cijfers): Foute pincode."
+      ]
+    },
+    {
+      "description": "Run 23: args=1234, 492",
+      "args": [
+        "1234",
+        "492"
+      ],
+      "outputs": [
+        "Geef je pincode (4 cijfers): Geef het bedrag dat je wil opnemen: Uitbetaling van 492€ gaat door. Nieuw saldo: 8€"
+      ]
+    },
+    {
+      "description": "Run 24: args=1234, 564",
+      "args": [
+        "1234",
+        "564"
+      ],
+      "outputs": [
+        "Geef je pincode (4 cijfers): Geef het bedrag dat je wil opnemen: Onvoldoende saldo."
+      ]
+    },
+    {
+      "description": "Run 25: args=1234, 486",
+      "args": [
+        "1234",
+        "486"
+      ],
+      "outputs": [
+        "Geef je pincode (4 cijfers): Geef het bedrag dat je wil opnemen: Uitbetaling van 486€ gaat door. Nieuw saldo: 14€"
+      ]
+    }
+  ]
+}

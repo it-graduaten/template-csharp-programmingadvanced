@@ -1,0 +1,160 @@
+{
+  "cases": [
+    {
+      "description": "Run 1: args=10",
+      "args": [
+        "10"
+      ],
+      "outputs": [
+        "Geef een positief getal:",
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ]
+    },
+    {
+      "description": "Run 2: args=8",
+      "args": [
+        "8"
+      ],
+      "outputs": [
+        "Geef een positief getal:",
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ]
+    },
+    {
+      "description": "Run 3: args=4",
+      "args": [
+        "4"
+      ],
+      "outputs": [
+        "Geef een positief getal:",
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "description": "Run 4: args=8",
+      "args": [
+        "8"
+      ],
+      "outputs": [
+        "Geef een positief getal:",
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ]
+    },
+    {
+      "description": "Run 5: args=1",
+      "args": [
+        "1"
+      ],
+      "outputs": [
+        "Geef een positief getal:",
+        1
+      ]
+    },
+    {
+      "description": "Run 6: args=4",
+      "args": [
+        "4"
+      ],
+      "outputs": [
+        "Geef een positief getal:",
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "description": "Run 7: args=8",
+      "args": [
+        "8"
+      ],
+      "outputs": [
+        "Geef een positief getal:",
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ]
+    },
+    {
+      "description": "Run 8: args=4",
+      "args": [
+        "4"
+      ],
+      "outputs": [
+        "Geef een positief getal:",
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "description": "Run 9: args=9",
+      "args": [
+        "9"
+      ],
+      "outputs": [
+        "Geef een positief getal:",
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "description": "Run 10: args=10",
+      "args": [
+        "10"
+      ],
+      "outputs": [
+        "Geef een positief getal:",
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ]
+    }
+  ]
+}

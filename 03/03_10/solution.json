@@ -1,0 +1,229 @@
+{
+  "cases": [
+    {
+      "description": "Run 1: args=info@organisatie.org",
+      "args": [
+        "info@organisatie.org"
+      ],
+      "outputs": [
+        "Geef een e-mail adres: Geldig e-mailadres"
+      ]
+    },
+    {
+      "description": "Run 2: args=.....@.....com",
+      "args": [
+        ".....@.....com"
+      ],
+      "outputs": [
+        "Geef een e-mail adres: Geldig e-mailadres"
+      ]
+    },
+    {
+      "description": "Run 3: args=hello@world.org",
+      "args": [
+        "hello@world.org"
+      ],
+      "outputs": [
+        "Geef een e-mail adres: Geldig e-mailadres"
+      ]
+    },
+    {
+      "description": "Run 4: args=.....@.....com",
+      "args": [
+        ".....@.....com"
+      ],
+      "outputs": [
+        "Geef een e-mail adres: Geldig e-mailadres"
+      ]
+    },
+    {
+      "description": "Run 5: args=name@domain.com",
+      "args": [
+        "name@domain.com"
+      ],
+      "outputs": [
+        "Geef een e-mail adres: Geldig e-mailadres"
+      ]
+    },
+    {
+      "description": "Run 6: args=test@",
+      "args": [
+        "test@"
+      ],
+      "outputs": [
+        "Geef een e-mail adres: Ongeldig e-mailadres. Geen punt na @ gevonden."
+      ]
+    },
+    {
+      "description": "Run 7: args=a@b.be",
+      "args": [
+        "a@b.be"
+      ],
+      "outputs": [
+        "Geef een e-mail adres: Geldig e-mailadres"
+      ]
+    },
+    {
+      "description": "Run 8: args=test@.be",
+      "args": [
+        "test@.be"
+      ],
+      "outputs": [
+        "Geef een e-mail adres: Geldig e-mailadres"
+      ]
+    },
+    {
+      "description": "Run 9: args=info@organisatie.org",
+      "args": [
+        "info@organisatie.org"
+      ],
+      "outputs": [
+        "Geef een e-mail adres: Geldig e-mailadres"
+      ]
+    },
+    {
+      "description": "Run 10: args=test@",
+      "args": [
+        "test@"
+      ],
+      "outputs": [
+        "Geef een e-mail adres: Ongeldig e-mailadres. Geen punt na @ gevonden."
+      ]
+    },
+    {
+      "description": "Run 11: args=student@school.nl",
+      "args": [
+        "student@school.nl"
+      ],
+      "outputs": [
+        "Geef een e-mail adres: Geldig e-mailadres"
+      ]
+    },
+    {
+      "description": "Run 12: args=student@school.nl",
+      "args": [
+        "student@school.nl"
+      ],
+      "outputs": [
+        "Geef een e-mail adres: Geldig e-mailadres"
+      ]
+    },
+    {
+      "description": "Run 13: args=test@example.com",
+      "args": [
+        "test@example.com"
+      ],
+      "outputs": [
+        "Geef een e-mail adres: Geldig e-mailadres"
+      ]
+    },
+    {
+      "description": "Run 14: args=a@b.be",
+      "args": [
+        "a@b.be"
+      ],
+      "outputs": [
+        "Geef een e-mail adres: Geldig e-mailadres"
+      ]
+    },
+    {
+      "description": "Run 15: args=@test.be",
+      "args": [
+        "@test.be"
+      ],
+      "outputs": [
+        "Geef een e-mail adres: Geldig e-mailadres"
+      ]
+    },
+    {
+      "description": "Run 16: args=a@b.be",
+      "args": [
+        "a@b.be"
+      ],
+      "outputs": [
+        "Geef een e-mail adres: Geldig e-mailadres"
+      ]
+    },
+    {
+      "description": "Run 17: args=.....@.....com",
+      "args": [
+        ".....@.....com"
+      ],
+      "outputs": [
+        "Geef een e-mail adres: Geldig e-mailadres"
+      ]
+    },
+    {
+      "description": "Run 18: args=a@b.c",
+      "args": [
+        "a@b.c"
+      ],
+      "outputs": [
+        "Geef een e-mail adres: Ongeldige e-mail extensie."
+      ]
+    },
+    {
+      "description": "Run 19: args=a@b.be",
+      "args": [
+        "a@b.be"
+      ],
+      "outputs": [
+        "Geef een e-mail adres: Geldig e-mailadres"
+      ]
+    },
+    {
+      "description": "Run 20: args=test@test.be",
+      "args": [
+        "test@test.be"
+      ],
+      "outputs": [
+        "Geef een e-mail adres: Geldig e-mailadres"
+      ]
+    },
+    {
+      "description": "Run 21: args=hello@world.org",
+      "args": [
+        "hello@world.org"
+      ],
+      "outputs": [
+        "Geef een e-mail adres: Geldig e-mailadres"
+      ]
+    },
+    {
+      "description": "Run 22: args=test@test.be",
+      "args": [
+        "test@test.be"
+      ],
+      "outputs": [
+        "Geef een e-mail adres: Geldig e-mailadres"
+      ]
+    },
+    {
+      "description": "Run 23: args=joren@thomasmore.be",
+      "args": [
+        "joren@thomasmore.be"
+      ],
+      "outputs": [
+        "Geef een e-mail adres: Geldig e-mailadres"
+      ]
+    },
+    {
+      "description": "Run 24: args=a@b.be",
+      "args": [
+        "a@b.be"
+      ],
+      "outputs": [
+        "Geef een e-mail adres: Geldig e-mailadres"
+      ]
+    },
+    {
+      "description": "Run 25: args=test@example.eu",
+      "args": [
+        "test@example.eu"
+      ],
+      "outputs": [
+        "Geef een e-mail adres: Ongeldige e-mail extensie."
+      ]
+    }
+  ]
+}

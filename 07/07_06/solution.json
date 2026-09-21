@@ -1,0 +1,229 @@
+{
+  "cases": [
+    {
+      "description": "Run 1: args=-91",
+      "args": [
+        "-91"
+      ],
+      "outputs": [
+        "Voer een getal in: -91 is oneven."
+      ]
+    },
+    {
+      "description": "Run 2: args=30",
+      "args": [
+        "30"
+      ],
+      "outputs": [
+        "Voer een getal in: 30 is even."
+      ]
+    },
+    {
+      "description": "Run 3: args=21",
+      "args": [
+        "21"
+      ],
+      "outputs": [
+        "Voer een getal in: 21 is oneven."
+      ]
+    },
+    {
+      "description": "Run 4: args=-49",
+      "args": [
+        "-49"
+      ],
+      "outputs": [
+        "Voer een getal in: -49 is oneven."
+      ]
+    },
+    {
+      "description": "Run 5: args=-49",
+      "args": [
+        "-49"
+      ],
+      "outputs": [
+        "Voer een getal in: -49 is oneven."
+      ]
+    },
+    {
+      "description": "Run 6: args=81",
+      "args": [
+        "81"
+      ],
+      "outputs": [
+        "Voer een getal in: 81 is oneven."
+      ]
+    },
+    {
+      "description": "Run 7: args=-84",
+      "args": [
+        "-84"
+      ],
+      "outputs": [
+        "Voer een getal in: -84 is even."
+      ]
+    },
+    {
+      "description": "Run 8: args=10",
+      "args": [
+        "10"
+      ],
+      "outputs": [
+        "Voer een getal in: 10 is even."
+      ]
+    },
+    {
+      "description": "Run 9: args=-94",
+      "args": [
+        "-94"
+      ],
+      "outputs": [
+        "Voer een getal in: -94 is even."
+      ]
+    },
+    {
+      "description": "Run 10: args=-93",
+      "args": [
+        "-93"
+      ],
+      "outputs": [
+        "Voer een getal in: -93 is oneven."
+      ]
+    },
+    {
+      "description": "Run 11: args=-83",
+      "args": [
+        "-83"
+      ],
+      "outputs": [
+        "Voer een getal in: -83 is oneven."
+      ]
+    },
+    {
+      "description": "Run 12: args=51",
+      "args": [
+        "51"
+      ],
+      "outputs": [
+        "Voer een getal in: 51 is oneven."
+      ]
+    },
+    {
+      "description": "Run 13: args=13",
+      "args": [
+        "13"
+      ],
+      "outputs": [
+        "Voer een getal in: 13 is oneven."
+      ]
+    },
+    {
+      "description": "Run 14: args=-70",
+      "args": [
+        "-70"
+      ],
+      "outputs": [
+        "Voer een getal in: -70 is even."
+      ]
+    },
+    {
+      "description": "Run 15: args=83",
+      "args": [
+        "83"
+      ],
+      "outputs": [
+        "Voer een getal in: 83 is oneven."
+      ]
+    },
+    {
+      "description": "Run 16: args=-72",
+      "args": [
+        "-72"
+      ],
+      "outputs": [
+        "Voer een getal in: -72 is even."
+      ]
+    },
+    {
+      "description": "Run 17: args=74",
+      "args": [
+        "74"
+      ],
+      "outputs": [
+        "Voer een getal in: 74 is even."
+      ]
+    },
+    {
+      "description": "Run 18: args=9",
+      "args": [
+        "9"
+      ],
+      "outputs": [
+        "Voer een getal in: 9 is oneven."
+      ]
+    },
+    {
+      "description": "Run 19: args=-39",
+      "args": [
+        "-39"
+      ],
+      "outputs": [
+        "Voer een getal in: -39 is oneven."
+      ]
+    },
+    {
+      "description": "Run 20: args=-57",
+      "args": [
+        "-57"
+      ],
+      "outputs": [
+        "Voer een getal in: -57 is oneven."
+      ]
+    },
+    {
+      "description": "Run 21: args=37",
+      "args": [
+        "37"
+      ],
+      "outputs": [
+        "Voer een getal in: 37 is oneven."
+      ]
+    },
+    {
+      "description": "Run 22: args=78",
+      "args": [
+        "78"
+      ],
+      "outputs": [
+        "Voer een getal in: 78 is even."
+      ]
+    },
+    {
+      "description": "Run 23: args=94",
+      "args": [
+        "94"
+      ],
+      "outputs": [
+        "Voer een getal in: 94 is even."
+      ]
+    },
+    {
+      "description": "Run 24: args=15",
+      "args": [
+        "15"
+      ],
+      "outputs": [
+        "Voer een getal in: 15 is oneven."
+      ]
+    },
+    {
+      "description": "Run 25: args=97",
+      "args": [
+        "97"
+      ],
+      "outputs": [
+        "Voer een getal in: 97 is oneven."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,279 @@
+{
+  "cases": [
+    {
+      "description": "Run 1: args=69, 50",
+      "args": [
+        "69",
+        "50"
+      ],
+      "outputs": [
+        238,
+        3450
+      ]
+    },
+    {
+      "description": "Run 2: args=44, 29",
+      "args": [
+        "44",
+        "29"
+      ],
+      "outputs": [
+        146,
+        1276
+      ]
+    },
+    {
+      "description": "Run 3: args=13, 10",
+      "args": [
+        "13",
+        "10"
+      ],
+      "outputs": [
+        46,
+        130
+      ]
+    },
+    {
+      "description": "Run 4: args=2, 46",
+      "args": [
+        "2",
+        "46"
+      ],
+      "outputs": [
+        96,
+        92
+      ]
+    },
+    {
+      "description": "Run 5: args=54, 1",
+      "args": [
+        "54",
+        "1"
+      ],
+      "outputs": [
+        110,
+        54
+      ]
+    },
+    {
+      "description": "Run 6: args=34, 43",
+      "args": [
+        "34",
+        "43"
+      ],
+      "outputs": [
+        154,
+        1462
+      ]
+    },
+    {
+      "description": "Run 7: args=53, 38",
+      "args": [
+        "53",
+        "38"
+      ],
+      "outputs": [
+        182,
+        2014
+      ]
+    },
+    {
+      "description": "Run 8: args=62, 65",
+      "args": [
+        "62",
+        "65"
+      ],
+      "outputs": [
+        254,
+        4030
+      ]
+    },
+    {
+      "description": "Run 9: args=87, 52",
+      "args": [
+        "87",
+        "52"
+      ],
+      "outputs": [
+        278,
+        4524
+      ]
+    },
+    {
+      "description": "Run 10: args=54, 5",
+      "args": [
+        "54",
+        "5"
+      ],
+      "outputs": [
+        118,
+        270
+      ]
+    },
+    {
+      "description": "Run 11: args=31, 19",
+      "args": [
+        "31",
+        "19"
+      ],
+      "outputs": [
+        100,
+        589
+      ]
+    },
+    {
+      "description": "Run 12: args=59, 67",
+      "args": [
+        "59",
+        "67"
+      ],
+      "outputs": [
+        252,
+        3953
+      ]
+    },
+    {
+      "description": "Run 13: args=91, 92",
+      "args": [
+        "91",
+        "92"
+      ],
+      "outputs": [
+        366,
+        8372
+      ]
+    },
+    {
+      "description": "Run 14: args=44, 6",
+      "args": [
+        "44",
+        "6"
+      ],
+      "outputs": [
+        100,
+        264
+      ]
+    },
+    {
+      "description": "Run 15: args=30, 60",
+      "args": [
+        "30",
+        "60"
+      ],
+      "outputs": [
+        180,
+        1800
+      ]
+    },
+    {
+      "description": "Run 16: args=97, 57",
+      "args": [
+        "97",
+        "57"
+      ],
+      "outputs": [
+        308,
+        5529
+      ]
+    },
+    {
+      "description": "Run 17: args=57, 79",
+      "args": [
+        "57",
+        "79"
+      ],
+      "outputs": [
+        272,
+        4503
+      ]
+    },
+    {
+      "description": "Run 18: args=11, 99",
+      "args": [
+        "11",
+        "99"
+      ],
+      "outputs": [
+        220,
+        1089
+      ]
+    },
+    {
+      "description": "Run 19: args=83, 73",
+      "args": [
+        "83",
+        "73"
+      ],
+      "outputs": [
+        312,
+        6059
+      ]
+    },
+    {
+      "description": "Run 20: args=5, 80",
+      "args": [
+        "5",
+        "80"
+      ],
+      "outputs": [
+        170,
+        400
+      ]
+    },
+    {
+      "description": "Run 21: args=3, 53",
+      "args": [
+        "3",
+        "53"
+      ],
+      "outputs": [
+        112,
+        159
+      ]
+    },
+    {
+      "description": "Run 22: args=69, 77",
+      "args": [
+        "69",
+        "77"
+      ],
+      "outputs": [
+        292,
+        5313
+      ]
+    },
+    {
+      "description": "Run 23: args=53, 41",
+      "args": [
+        "53",
+        "41"
+      ],
+      "outputs": [
+        188,
+        2173
+      ]
+    },
+    {
+      "description": "Run 24: args=65, 9",
+      "args": [
+        "65",
+        "9"
+      ],
+      "outputs": [
+        148,
+        585
+      ]
+    },
+    {
+      "description": "Run 25: args=70, 18",
+      "args": [
+        "70",
+        "18"
+      ],
+      "outputs": [
+        176,
+        1260
+      ]
+    }
+  ]
+}

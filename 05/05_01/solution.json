@@ -1,0 +1,133 @@
+{
+  "cases": [
+    {
+      "description": "Run 1: args=4",
+      "args": [
+        "4"
+      ],
+      "outputs": [
+        "Hoeveel lijnen wil je tonen?",
+        "Lijn 1",
+        "Lijn 2",
+        "Lijn 3",
+        "Lijn 4"
+      ]
+    },
+    {
+      "description": "Run 2: args=4",
+      "args": [
+        "4"
+      ],
+      "outputs": [
+        "Hoeveel lijnen wil je tonen?",
+        "Lijn 1",
+        "Lijn 2",
+        "Lijn 3",
+        "Lijn 4"
+      ]
+    },
+    {
+      "description": "Run 3: args=3",
+      "args": [
+        "3"
+      ],
+      "outputs": [
+        "Hoeveel lijnen wil je tonen?",
+        "Lijn 1",
+        "Lijn 2",
+        "Lijn 3"
+      ]
+    },
+    {
+      "description": "Run 4: args=2",
+      "args": [
+        "2"
+      ],
+      "outputs": [
+        "Hoeveel lijnen wil je tonen?",
+        "Lijn 1",
+        "Lijn 2"
+      ]
+    },
+    {
+      "description": "Run 5: args=4",
+      "args": [
+        "4"
+      ],
+      "outputs": [
+        "Hoeveel lijnen wil je tonen?",
+        "Lijn 1",
+        "Lijn 2",
+        "Lijn 3",
+        "Lijn 4"
+      ]
+    },
+    {
+      "description": "Run 6: args=5",
+      "args": [
+        "5"
+      ],
+      "outputs": [
+        "Hoeveel lijnen wil je tonen?",
+        "Lijn 1",
+        "Lijn 2",
+        "Lijn 3",
+        "Lijn 4",
+        "Lijn 5"
+      ]
+    },
+    {
+      "description": "Run 7: args=4",
+      "args": [
+        "4"
+      ],
+      "outputs": [
+        "Hoeveel lijnen wil je tonen?",
+        "Lijn 1",
+        "Lijn 2",
+        "Lijn 3",
+        "Lijn 4"
+      ]
+    },
+    {
+      "description": "Run 8: args=5",
+      "args": [
+        "5"
+      ],
+      "outputs": [
+        "Hoeveel lijnen wil je tonen?",
+        "Lijn 1",
+        "Lijn 2",
+        "Lijn 3",
+        "Lijn 4",
+        "Lijn 5"
+      ]
+    },
+    {
+      "description": "Run 9: args=3",
+      "args": [
+        "3"
+      ],
+      "outputs": [
+        "Hoeveel lijnen wil je tonen?",
+        "Lijn 1",
+        "Lijn 2",
+        "Lijn 3"
+      ]
+    },
+    {
+      "description": "Run 10: args=5",
+      "args": [
+        "5"
+      ],
+      "outputs": [
+        "Hoeveel lijnen wil je tonen?",
+        "Lijn 1",
+        "Lijn 2",
+        "Lijn 3",
+        "Lijn 4",
+        "Lijn 5"
+      ]
+    }
+  ]
+}

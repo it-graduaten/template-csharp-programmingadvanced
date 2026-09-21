@@ -1,0 +1,21 @@
+{
+  "runs": 10,
+  "inputs": [
+    {
+      "name": "aantal",
+      "type": "int",
+      "min": 1,
+      "max": 5
+    },
+    {
+      "repeat": {
+        "count": "$aantal",
+        "inputs": [
+          {
+            "type": "firstname"
+          }
+        ]
+      }
+    }
+  ]
+}

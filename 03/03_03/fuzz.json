@@ -1,0 +1,10 @@
+{
+    "runs": 25,
+    "inputs": [
+        {
+            "type": "string",
+            "alphabet": "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ",
+            "length": 1
+        }
+    ]
+}

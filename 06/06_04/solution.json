@@ -1,0 +1,156 @@
+{
+  "cases": [
+    {
+      "description": "Run 1: args=3, Jayden, Inge, Sander",
+      "args": [
+        "3",
+        "Jayden",
+        "Inge",
+        "Sander"
+      ],
+      "outputs": [
+        "Hoeveel namen wil je invoeren?",
+        "Geef naam 1: Geef naam 2: Geef naam 3: Index 0: Jayden",
+        "Index 1: Inge",
+        "Index 2: Sander"
+      ]
+    },
+    {
+      "description": "Run 2: args=2, Robin, Sarah",
+      "args": [
+        "2",
+        "Robin",
+        "Sarah"
+      ],
+      "outputs": [
+        "Hoeveel namen wil je invoeren?",
+        "Geef naam 1: Geef naam 2: Index 0: Robin",
+        "Index 1: Sarah"
+      ]
+    },
+    {
+      "description": "Run 3: args=5, Christel, Bart, Ellie, Karen, Lutgarde",
+      "args": [
+        "5",
+        "Christel",
+        "Bart",
+        "Ellie",
+        "Karen",
+        "Lutgarde"
+      ],
+      "outputs": [
+        "Hoeveel namen wil je invoeren?",
+        "Geef naam 1: Geef naam 2: Geef naam 3: Geef naam 4: Geef naam 5: Index 0: Christel",
+        "Index 1: Bart",
+        "Index 2: Ellie",
+        "Index 3: Karen",
+        "Index 4: Lutgarde"
+      ]
+    },
+    {
+      "description": "Run 4: args=5, Johan, Mathijs, Joeri, Lara, Nore",
+      "args": [
+        "5",
+        "Johan",
+        "Mathijs",
+        "Joeri",
+        "Lara",
+        "Nore"
+      ],
+      "outputs": [
+        "Hoeveel namen wil je invoeren?",
+        "Geef naam 1: Geef naam 2: Geef naam 3: Geef naam 4: Geef naam 5: Index 0: Johan",
+        "Index 1: Mathijs",
+        "Index 2: Joeri",
+        "Index 3: Lara",
+        "Index 4: Nore"
+      ]
+    },
+    {
+      "description": "Run 5: args=2, Jeannette, Cecile",
+      "args": [
+        "2",
+        "Jeannette",
+        "Cecile"
+      ],
+      "outputs": [
+        "Hoeveel namen wil je invoeren?",
+        "Geef naam 1: Geef naam 2: Index 0: Jeannette",
+        "Index 1: Cecile"
+      ]
+    },
+    {
+      "description": "Run 6: args=1, Maria",
+      "args": [
+        "1",
+        "Maria"
+      ],
+      "outputs": [
+        "Hoeveel namen wil je invoeren?",
+        "Geef naam 1: Index 0: Maria"
+      ]
+    },
+    {
+      "description": "Run 7: args=4, Brenda, Marc, Kevin, Daniel",
+      "args": [
+        "4",
+        "Brenda",
+        "Marc",
+        "Kevin",
+        "Daniel"
+      ],
+      "outputs": [
+        "Hoeveel namen wil je invoeren?",
+        "Geef naam 1: Geef naam 2: Geef naam 3: Geef naam 4: Index 0: Brenda",
+        "Index 1: Marc",
+        "Index 2: Kevin",
+        "Index 3: Daniel"
+      ]
+    },
+    {
+      "description": "Run 8: args=3, Hanne, Bart, Wim",
+      "args": [
+        "3",
+        "Hanne",
+        "Bart",
+        "Wim"
+      ],
+      "outputs": [
+        "Hoeveel namen wil je invoeren?",
+        "Geef naam 1: Geef naam 2: Geef naam 3: Index 0: Hanne",
+        "Index 1: Bart",
+        "Index 2: Wim"
+      ]
+    },
+    {
+      "description": "Run 9: args=1, Imane",
+      "args": [
+        "1",
+        "Imane"
+      ],
+      "outputs": [
+        "Hoeveel namen wil je invoeren?",
+        "Geef naam 1: Index 0: Imane"
+      ]
+    },
+    {
+      "description": "Run 10: args=5, Juliette, Ann, Danielle, Eline, Noëlla",
+      "args": [
+        "5",
+        "Juliette",
+        "Ann",
+        "Danielle",
+        "Eline",
+        "Noëlla"
+      ],
+      "outputs": [
+        "Hoeveel namen wil je invoeren?",
+        "Geef naam 1: Geef naam 2: Geef naam 3: Geef naam 4: Geef naam 5: Index 0: Juliette",
+        "Index 1: Ann",
+        "Index 2: Danielle",
+        "Index 3: Eline",
+        "Index 4: Noëlla"
+      ]
+    }
+  ]
+}

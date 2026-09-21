@@ -1,0 +1,286 @@
+{
+  "cases": [
+    {
+      "description": "Run 1: args=Ga1X1, oeBAD, 7A5El, FQ7ls, nee, tbezS",
+      "args": [
+        "Ga1X1",
+        "oeBAD",
+        "7A5El",
+        "FQ7ls",
+        "nee",
+        "tbezS"
+      ],
+      "outputs": [
+        "Geef kleur 1: Geef kleur 2: Geef kleur 3: Geef kleur 4: Wil je een vijfde kleur toevoegen? (ja/nee): Totaal aantal kleuren: 4",
+        "Ga1X1",
+        "oeBAD",
+        "7A5El",
+        "FQ7ls"
+      ]
+    },
+    {
+      "description": "Run 2: args=6P8Ye, pcNBN, EoC1j, jrYIa, ja, rYYog",
+      "args": [
+        "6P8Ye",
+        "pcNBN",
+        "EoC1j",
+        "jrYIa",
+        "ja",
+        "rYYog"
+      ],
+      "outputs": [
+        "Geef kleur 1: Geef kleur 2: Geef kleur 3: Geef kleur 4: Wil je een vijfde kleur toevoegen? (ja/nee): Geef de vijfde kleur: Totaal aantal kleuren: 5",
+        "6P8Ye",
+        "pcNBN",
+        "EoC1j",
+        "jrYIa",
+        "rYYog"
+      ]
+    },
+    {
+      "description": "Run 3: args=bsi4L, 39q67, BtBlg, sKsPG, ja, j2sMJ",
+      "args": [
+        "bsi4L",
+        "39q67",
+        "BtBlg",
+        "sKsPG",
+        "ja",
+        "j2sMJ"
+      ],
+      "outputs": [
+        "Geef kleur 1: Geef kleur 2: Geef kleur 3: Geef kleur 4: Wil je een vijfde kleur toevoegen? (ja/nee): Geef de vijfde kleur: Totaal aantal kleuren: 5",
+        "bsi4L",
+        "39q67",
+        "BtBlg",
+        "sKsPG",
+        "j2sMJ"
+      ]
+    },
+    {
+      "description": "Run 4: args=cf3Uc, dzwwE, 628R3, UXGti, ja, FCJpF",
+      "args": [
+        "cf3Uc",
+        "dzwwE",
+        "628R3",
+        "UXGti",
+        "ja",
+        "FCJpF"
+      ],
+      "outputs": [
+        "Geef kleur 1: Geef kleur 2: Geef kleur 3: Geef kleur 4: Wil je een vijfde kleur toevoegen? (ja/nee): Geef de vijfde kleur: Totaal aantal kleuren: 5",
+        "cf3Uc",
+        "dzwwE",
+        "628R3",
+        "UXGti",
+        "FCJpF"
+      ]
+    },
+    {
+      "description": "Run 5: args=RCdgQ, qSFdo, tVbVX, R1o3R, ja, 7gV3X",
+      "args": [
+        "RCdgQ",
+        "qSFdo",
+        "tVbVX",
+        "R1o3R",
+        "ja",
+        "7gV3X"
+      ],
+      "outputs": [
+        "Geef kleur 1: Geef kleur 2: Geef kleur 3: Geef kleur 4: Wil je een vijfde kleur toevoegen? (ja/nee): Geef de vijfde kleur: Totaal aantal kleuren: 5",
+        "RCdgQ",
+        "qSFdo",
+        "tVbVX",
+        "R1o3R",
+        "7gV3X"
+      ]
+    },
+    {
+      "description": "Run 6: args=AGaln, 2N67i, ousc8, lPd96, nee, EpUoC",
+      "args": [
+        "AGaln",
+        "2N67i",
+        "ousc8",
+        "lPd96",
+        "nee",
+        "EpUoC"
+      ],
+      "outputs": [
+        "Geef kleur 1: Geef kleur 2: Geef kleur 3: Geef kleur 4: Wil je een vijfde kleur toevoegen? (ja/nee): Totaal aantal kleuren: 4",
+        "AGaln",
+        "2N67i",
+        "ousc8",
+        "lPd96"
+      ]
+    },
+    {
+      "description": "Run 7: args=fmtQB, r68EB, NQCM7, 7pH33, ja, nJq1K",
+      "args": [
+        "fmtQB",
+        "r68EB",
+        "NQCM7",
+        "7pH33",
+        "ja",
+        "nJq1K"
+      ],
+      "outputs": [
+        "Geef kleur 1: Geef kleur 2: Geef kleur 3: Geef kleur 4: Wil je een vijfde kleur toevoegen? (ja/nee): Geef de vijfde kleur: Totaal aantal kleuren: 5",
+        "fmtQB",
+        "r68EB",
+        "NQCM7",
+        "7pH33",
+        "nJq1K"
+      ]
+    },
+    {
+      "description": "Run 8: args=48FSc, 7aIlW, G0FDX, uqgLW, ja, 0QDJF",
+      "args": [
+        "48FSc",
+        "7aIlW",
+        "G0FDX",
+        "uqgLW",
+        "ja",
+        "0QDJF"
+      ],
+      "outputs": [
+        "Geef kleur 1: Geef kleur 2: Geef kleur 3: Geef kleur 4: Wil je een vijfde kleur toevoegen? (ja/nee): Geef de vijfde kleur: Totaal aantal kleuren: 5",
+        "48FSc",
+        "7aIlW",
+        "G0FDX",
+        "uqgLW",
+        "0QDJF"
+      ]
+    },
+    {
+      "description": "Run 9: args=5RX1e, VUVPH, vIBJ1, p7XFD, ja, jSgkZ",
+      "args": [
+        "5RX1e",
+        "VUVPH",
+        "vIBJ1",
+        "p7XFD",
+        "ja",
+        "jSgkZ"
+      ],
+      "outputs": [
+        "Geef kleur 1: Geef kleur 2: Geef kleur 3: Geef kleur 4: Wil je een vijfde kleur toevoegen? (ja/nee): Geef de vijfde kleur: Totaal aantal kleuren: 5",
+        "5RX1e",
+        "VUVPH",
+        "vIBJ1",
+        "p7XFD",
+        "jSgkZ"
+      ]
+    },
+    {
+      "description": "Run 10: args=j2Apq, xUiBA, NmWnH, Y14Qi, ja, 5Bim7",
+      "args": [
+        "j2Apq",
+        "xUiBA",
+        "NmWnH",
+        "Y14Qi",
+        "ja",
+        "5Bim7"
+      ],
+      "outputs": [
+        "Geef kleur 1: Geef kleur 2: Geef kleur 3: Geef kleur 4: Wil je een vijfde kleur toevoegen? (ja/nee): Geef de vijfde kleur: Totaal aantal kleuren: 5",
+        "j2Apq",
+        "xUiBA",
+        "NmWnH",
+        "Y14Qi",
+        "5Bim7"
+      ]
+    },
+    {
+      "description": "Run 11: args=a4DJc, pTx7F, 9yADT, LIrAv, ja, DnflT",
+      "args": [
+        "a4DJc",
+        "pTx7F",
+        "9yADT",
+        "LIrAv",
+        "ja",
+        "DnflT"
+      ],
+      "outputs": [
+        "Geef kleur 1: Geef kleur 2: Geef kleur 3: Geef kleur 4: Wil je een vijfde kleur toevoegen? (ja/nee): Geef de vijfde kleur: Totaal aantal kleuren: 5",
+        "a4DJc",
+        "pTx7F",
+        "9yADT",
+        "LIrAv",
+        "DnflT"
+      ]
+    },
+    {
+      "description": "Run 12: args=14F3z, Xuy3c, s8hwS, qTlUS, ja, TaTQ8",
+      "args": [
+        "14F3z",
+        "Xuy3c",
+        "s8hwS",
+        "qTlUS",
+        "ja",
+        "TaTQ8"
+      ],
+      "outputs": [
+        "Geef kleur 1: Geef kleur 2: Geef kleur 3: Geef kleur 4: Wil je een vijfde kleur toevoegen? (ja/nee): Geef de vijfde kleur: Totaal aantal kleuren: 5",
+        "14F3z",
+        "Xuy3c",
+        "s8hwS",
+        "qTlUS",
+        "TaTQ8"
+      ]
+    },
+    {
+      "description": "Run 13: args=6uON0, zRNRr, zsuF1, XyOKk, ja, GcKdt",
+      "args": [
+        "6uON0",
+        "zRNRr",
+        "zsuF1",
+        "XyOKk",
+        "ja",
+        "GcKdt"
+      ],
+      "outputs": [
+        "Geef kleur 1: Geef kleur 2: Geef kleur 3: Geef kleur 4: Wil je een vijfde kleur toevoegen? (ja/nee): Geef de vijfde kleur: Totaal aantal kleuren: 5",
+        "6uON0",
+        "zRNRr",
+        "zsuF1",
+        "XyOKk",
+        "GcKdt"
+      ]
+    },
+    {
+      "description": "Run 14: args=zcZBy, JSJIs, KO2B0, 9fMPi, ja, fDTCG",
+      "args": [
+        "zcZBy",
+        "JSJIs",
+        "KO2B0",
+        "9fMPi",
+        "ja",
+        "fDTCG"
+      ],
+      "outputs": [
+        "Geef kleur 1: Geef kleur 2: Geef kleur 3: Geef kleur 4: Wil je een vijfde kleur toevoegen? (ja/nee): Geef de vijfde kleur: Totaal aantal kleuren: 5",
+        "zcZBy",
+        "JSJIs",
+        "KO2B0",
+        "9fMPi",
+        "fDTCG"
+      ]
+    },
+    {
+      "description": "Run 15: args=cNTEd, uJDj6, weyss, OH0cz, nee, bHE55",
+      "args": [
+        "cNTEd",
+        "uJDj6",
+        "weyss",
+        "OH0cz",
+        "nee",
+        "bHE55"
+      ],
+      "outputs": [
+        "Geef kleur 1: Geef kleur 2: Geef kleur 3: Geef kleur 4: Wil je een vijfde kleur toevoegen? (ja/nee): Totaal aantal kleuren: 4",
+        "cNTEd",
+        "uJDj6",
+        "weyss",
+        "OH0cz"
+      ]
+    }
+  ]
+}

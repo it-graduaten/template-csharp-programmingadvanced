@@ -1,0 +1,254 @@
+{
+  "cases": [
+    {
+      "description": "Run 1: args=15, nee",
+      "args": [
+        "15",
+        "nee"
+      ],
+      "outputs": [
+        "Geef je gemiddelde percentage: Heb je wiskunde gevolgd? (ja/nee): richtingskeuzebegeleiding"
+      ]
+    },
+    {
+      "description": "Run 2: args=68, nee",
+      "args": [
+        "68",
+        "nee"
+      ],
+      "outputs": [
+        "Geef je gemiddelde percentage: Heb je wiskunde gevolgd? (ja/nee): Techniek"
+      ]
+    },
+    {
+      "description": "Run 3: args=21, ja",
+      "args": [
+        "21",
+        "ja"
+      ],
+      "outputs": [
+        "Geef je gemiddelde percentage: Heb je wiskunde gevolgd? (ja/nee): richtingskeuzebegeleiding"
+      ]
+    },
+    {
+      "description": "Run 4: args=2, ja",
+      "args": [
+        "2",
+        "ja"
+      ],
+      "outputs": [
+        "Geef je gemiddelde percentage: Heb je wiskunde gevolgd? (ja/nee): richtingskeuzebegeleiding"
+      ]
+    },
+    {
+      "description": "Run 5: args=12, nee",
+      "args": [
+        "12",
+        "nee"
+      ],
+      "outputs": [
+        "Geef je gemiddelde percentage: Heb je wiskunde gevolgd? (ja/nee): richtingskeuzebegeleiding"
+      ]
+    },
+    {
+      "description": "Run 6: args=73, ja",
+      "args": [
+        "73",
+        "ja"
+      ],
+      "outputs": [
+        "Geef je gemiddelde percentage: Heb je wiskunde gevolgd? (ja/nee): Techniek"
+      ]
+    },
+    {
+      "description": "Run 7: args=77, ja",
+      "args": [
+        "77",
+        "ja"
+      ],
+      "outputs": [
+        "Geef je gemiddelde percentage: Heb je wiskunde gevolgd? (ja/nee): Wetenschap"
+      ]
+    },
+    {
+      "description": "Run 8: args=98, ja",
+      "args": [
+        "98",
+        "ja"
+      ],
+      "outputs": [
+        "Geef je gemiddelde percentage: Heb je wiskunde gevolgd? (ja/nee): Wetenschap"
+      ]
+    },
+    {
+      "description": "Run 9: args=69, nee",
+      "args": [
+        "69",
+        "nee"
+      ],
+      "outputs": [
+        "Geef je gemiddelde percentage: Heb je wiskunde gevolgd? (ja/nee): Techniek"
+      ]
+    },
+    {
+      "description": "Run 10: args=5, ja",
+      "args": [
+        "5",
+        "ja"
+      ],
+      "outputs": [
+        "Geef je gemiddelde percentage: Heb je wiskunde gevolgd? (ja/nee): richtingskeuzebegeleiding"
+      ]
+    },
+    {
+      "description": "Run 11: args=55, ja",
+      "args": [
+        "55",
+        "ja"
+      ],
+      "outputs": [
+        "Geef je gemiddelde percentage: Heb je wiskunde gevolgd? (ja/nee): richtingskeuzebegeleiding"
+      ]
+    },
+    {
+      "description": "Run 12: args=14, nee",
+      "args": [
+        "14",
+        "nee"
+      ],
+      "outputs": [
+        "Geef je gemiddelde percentage: Heb je wiskunde gevolgd? (ja/nee): richtingskeuzebegeleiding"
+      ]
+    },
+    {
+      "description": "Run 13: args=6, nee",
+      "args": [
+        "6",
+        "nee"
+      ],
+      "outputs": [
+        "Geef je gemiddelde percentage: Heb je wiskunde gevolgd? (ja/nee): richtingskeuzebegeleiding"
+      ]
+    },
+    {
+      "description": "Run 14: args=56, nee",
+      "args": [
+        "56",
+        "nee"
+      ],
+      "outputs": [
+        "Geef je gemiddelde percentage: Heb je wiskunde gevolgd? (ja/nee): richtingskeuzebegeleiding"
+      ]
+    },
+    {
+      "description": "Run 15: args=65, ja",
+      "args": [
+        "65",
+        "ja"
+      ],
+      "outputs": [
+        "Geef je gemiddelde percentage: Heb je wiskunde gevolgd? (ja/nee): Techniek"
+      ]
+    },
+    {
+      "description": "Run 16: args=22, ja",
+      "args": [
+        "22",
+        "ja"
+      ],
+      "outputs": [
+        "Geef je gemiddelde percentage: Heb je wiskunde gevolgd? (ja/nee): richtingskeuzebegeleiding"
+      ]
+    },
+    {
+      "description": "Run 17: args=25, ja",
+      "args": [
+        "25",
+        "ja"
+      ],
+      "outputs": [
+        "Geef je gemiddelde percentage: Heb je wiskunde gevolgd? (ja/nee): richtingskeuzebegeleiding"
+      ]
+    },
+    {
+      "description": "Run 18: args=99, nee",
+      "args": [
+        "99",
+        "nee"
+      ],
+      "outputs": [
+        "Geef je gemiddelde percentage: Heb je wiskunde gevolgd? (ja/nee): Letteren"
+      ]
+    },
+    {
+      "description": "Run 19: args=98, nee",
+      "args": [
+        "98",
+        "nee"
+      ],
+      "outputs": [
+        "Geef je gemiddelde percentage: Heb je wiskunde gevolgd? (ja/nee): Letteren"
+      ]
+    },
+    {
+      "description": "Run 20: args=87, nee",
+      "args": [
+        "87",
+        "nee"
+      ],
+      "outputs": [
+        "Geef je gemiddelde percentage: Heb je wiskunde gevolgd? (ja/nee): Letteren"
+      ]
+    },
+    {
+      "description": "Run 21: args=12, ja",
+      "args": [
+        "12",
+        "ja"
+      ],
+      "outputs": [
+        "Geef je gemiddelde percentage: Heb je wiskunde gevolgd? (ja/nee): richtingskeuzebegeleiding"
+      ]
+    },
+    {
+      "description": "Run 22: args=47, nee",
+      "args": [
+        "47",
+        "nee"
+      ],
+      "outputs": [
+        "Geef je gemiddelde percentage: Heb je wiskunde gevolgd? (ja/nee): richtingskeuzebegeleiding"
+      ]
+    },
+    {
+      "description": "Run 23: args=53, nee",
+      "args": [
+        "53",
+        "nee"
+      ],
+      "outputs": [
+        "Geef je gemiddelde percentage: Heb je wiskunde gevolgd? (ja/nee): richtingskeuzebegeleiding"
+      ]
+    },
+    {
+      "description": "Run 24: args=37, ja",
+      "args": [
+        "37",
+        "ja"
+      ],
+      "outputs": [
+        "Geef je gemiddelde percentage: Heb je wiskunde gevolgd? (ja/nee): richtingskeuzebegeleiding"
+      ]
+    },
+    {
+      "description": "Run 25: args=65, nee",
+      "args": [
+        "65",
+        "nee"
+      ],
+      "outputs": [
+        "Geef je gemiddelde percentage: Heb je wiskunde gevolgd? (ja/nee): Techniek"
+      ]
+    }
+  ]
+}

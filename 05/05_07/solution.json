@@ -1,0 +1,154 @@
+{
+  "cases": [
+    {
+      "description": "Run 1: args=1, Fatima",
+      "args": [
+        "1",
+        "Fatima"
+      ],
+      "outputs": [
+        "Hoeveel namen wil je invoeren?",
+        "Geef naam 1:",
+        "Fatima"
+      ]
+    },
+    {
+      "description": "Run 2: args=1, Maria",
+      "args": [
+        "1",
+        "Maria"
+      ],
+      "outputs": [
+        "Hoeveel namen wil je invoeren?",
+        "Geef naam 1:",
+        "Maria"
+      ]
+    },
+    {
+      "description": "Run 3: args=4, Patrick, Bo, Heidi, Marie",
+      "args": [
+        "4",
+        "Patrick",
+        "Bo",
+        "Heidi",
+        "Marie"
+      ],
+      "outputs": [
+        "Hoeveel namen wil je invoeren?",
+        "Geef naam 1: Geef naam 2: Geef naam 3: Geef naam 4:",
+        "Marie",
+        "Heidi",
+        "Bo",
+        "Patrick"
+      ]
+    },
+    {
+      "description": "Run 4: args=1, Willy",
+      "args": [
+        "1",
+        "Willy"
+      ],
+      "outputs": [
+        "Hoeveel namen wil je invoeren?",
+        "Geef naam 1:",
+        "Willy"
+      ]
+    },
+    {
+      "description": "Run 5: args=1, Lode",
+      "args": [
+        "1",
+        "Lode"
+      ],
+      "outputs": [
+        "Hoeveel namen wil je invoeren?",
+        "Geef naam 1:",
+        "Lode"
+      ]
+    },
+    {
+      "description": "Run 6: args=4, Hilde, Giovanni, Sara, Katrien",
+      "args": [
+        "4",
+        "Hilde",
+        "Giovanni",
+        "Sara",
+        "Katrien"
+      ],
+      "outputs": [
+        "Hoeveel namen wil je invoeren?",
+        "Geef naam 1: Geef naam 2: Geef naam 3: Geef naam 4:",
+        "Katrien",
+        "Sara",
+        "Giovanni",
+        "Hilde"
+      ]
+    },
+    {
+      "description": "Run 7: args=4, Muhammed, Mila, Gert, Dennis",
+      "args": [
+        "4",
+        "Muhammed",
+        "Mila",
+        "Gert",
+        "Dennis"
+      ],
+      "outputs": [
+        "Hoeveel namen wil je invoeren?",
+        "Geef naam 1: Geef naam 2: Geef naam 3: Geef naam 4:",
+        "Dennis",
+        "Gert",
+        "Mila",
+        "Muhammed"
+      ]
+    },
+    {
+      "description": "Run 8: args=2, Erik, Kevin",
+      "args": [
+        "2",
+        "Erik",
+        "Kevin"
+      ],
+      "outputs": [
+        "Hoeveel namen wil je invoeren?",
+        "Geef naam 1: Geef naam 2:",
+        "Kevin",
+        "Erik"
+      ]
+    },
+    {
+      "description": "Run 9: args=2, Philippe, Tania",
+      "args": [
+        "2",
+        "Philippe",
+        "Tania"
+      ],
+      "outputs": [
+        "Hoeveel namen wil je invoeren?",
+        "Geef naam 1: Geef naam 2:",
+        "Tania",
+        "Philippe"
+      ]
+    },
+    {
+      "description": "Run 10: args=5, Herman, François, Liliane, José, Denise",
+      "args": [
+        "5",
+        "Herman",
+        "François",
+        "Liliane",
+        "José",
+        "Denise"
+      ],
+      "outputs": [
+        "Hoeveel namen wil je invoeren?",
+        "Geef naam 1: Geef naam 2: Geef naam 3: Geef naam 4: Geef naam 5:",
+        "Denise",
+        "José",
+        "Liliane",
+        "François",
+        "Herman"
+      ]
+    }
+  ]
+}
