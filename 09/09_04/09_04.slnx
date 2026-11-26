@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="WebApi.Tests/WebApi.Tests.csproj" Id="09404040-4040-4040-8040-404040404040" />
+  <Project Path="WebApi/WebApi.csproj" />
+</Solution>
