@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="BibliotheekApp.Tests/BibliotheekApp.Tests.csproj" Id="840047f1-3f24-4aa3-9143-f3bb1e0d348f" />
+  <Project Path="BibliotheekApp/BibliotheekApp.csproj" />
+</Solution>

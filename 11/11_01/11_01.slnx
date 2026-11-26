@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="VerhuurApp.Tests/VerhuurApp.Tests.csproj" Id="ef118a15-1da7-4ffc-afeb-024ac11e558d" />
+  <Project Path="VerhuurApp/VerhuurApp.csproj" />
+</Solution>

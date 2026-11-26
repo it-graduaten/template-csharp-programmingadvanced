@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="PakketApi.Tests/PakketApi.Tests.csproj" Id="fb852f52-605e-4fb1-bb58-7a19ccf74150" />
+  <Project Path="PakketApi/PakketApi.csproj" />
+</Solution>
